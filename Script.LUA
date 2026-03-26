@@ -1,0 +1,508 @@
+howNames = v
+getgenv().Language = "VN"
+
+local L = {
+    VN = { Title = "RDM & LEO Universal", RP = "🚓 Cảnh Sát RP", Radar = "Bật ALPR Radar", SpdUnit = "Đơn vị tốc độ", TStop = "📢 Dừng Xe (Traffic Stop)", FStop = "📢 Giơ tay lên (Felony Stop)", Backup = "🚨 1O-78 Hỗ trợ", Shots = "💥 1O-71 Bắn nhau", Track = "🔍 Truy Nã", SelT = "Chọn Nghi Phạm", DrawL = "Vẽ Laser đến Nghi phạm", Mod = "🚀 Độ Xe & An Toàn", Nitro = "Lực Nitro (Phím H)", ARag = "Chống Ngã (Anti-Ragdoll)", Bail = "Trốn tù (Bail Out)", EMP = "Bom EMP (Tắt máy diện rộng)", Traf = "💥 Giao Thông", Spike = "Lưới Đinh (Nổ lốp xe bám đuôi)", XP = "🔥 Nhận 400 XP / Rank", AutoXP = "⚡ Auto Rank Farm", Cmb = "🎯 Chiến Đấu", Aim = "Bật AUTO-AIM", TBot = "Tự động bắn (Triggerbot)", HExp = "Phóng to đầu (Hitbox)", HSize = "Kích cỡ Hitbox", SFov = "Hiện FOV", FSize = "Kích cỡ FOV", ASm = "Độ mượt Aim", APart = "Vị trí khóa (Aim Part)", BPred = "Đoán hướng di chuyển", DMult = "Hệ số khoảng cách", HChan = "Tỷ lệ trúng %", RDel = "Độ trễ chuyển mục tiêu", RMs = "Độ trễ (ms)", DChk = "Bỏ qua xác chết", WChk = "Kiểm tra xuyên tường", TChk = "Không bắn đồng đội", FTeam = "Đội thân thiện", Veh = "🏎️ Xe Cộ", GDes = "Chống Lật (Gravity Desync)", VSpoof = "Ép gầm (Velocity Spoof)", HMode = "Chế độ bay lơ lửng", BRam = "Tường tàng hình hất văng", PITH = "Hỗ trợ Húc (PIT Helper)", IFlip = "Lật Xe Lại", Vis = "👁️ Đồ Họa", HUD = "Hiện HUD Báo Đài 1O-8O", EESP = "Bật ESP", EInfo = "Hiện Thông tin & Vũ khí", EBox = "Vẽ Hộp 3D", Chams = "Glow Xuyên Tường", SBea = "Hiện tên đường trên trời", SName = "Hiện Tên Đường", STrac = "Vẽ tia đến đường", SOff = "Độ cao chữ trên trời", MDist = "Tầm nhìn tối đa" },
+    EN = { Title = "RDM & LEO Universal", RP = "🚓 Police RP", Radar = "Enable ALPR Radar", SpdUnit = "Speed Unit", TStop = "📢 Traffic Stop", FStop = "📢 Felony Stop", Backup = "🚨 1O-78 Backup", Shots = "💥 1O-71 Shots Fired", Track = "🔍 Suspect Tracker", SelT = "Select Suspect", DrawL = "Draw Laser to Suspect", Mod = "🚀 Mods & Safety", Nitro = "Nitro Power (H)", ARag = "Anti-Ragdoll", Bail = "Bail Out", EMP = "EMP Blast", Traf = "💥 Traffic Control", Spike = "Fake Spike Strips", XP = "🔥 Get 400 XP / Rank", AutoXP = "⚡ Auto Rank Farm", Cmb = "🎯 Combat", Aim = "Enable AUTO-AIM", TBot = "Auto-Shoot (Triggerbot)", HExp = "Hitbox Expander", HSize = "Hitbox Size", SFov = "Show FOV", FSize = "FOV Size", ASm = "Aim Smoothness", APart = "Aimlock Part", BPred = "Base Prediction", DMult = "Distance Multiplier", HChan = "Hit Chance %", RDel = "Enable Retarget Delay", RMs = "Retarget Delay (ms)", DChk = "Dead Check", WChk = "Wall Check", TChk = "Team Check", FTeam = "Friendly Teams", Veh = "🏎️ Vehicle", GDes = "Gravity Desync", VSpoof = "Velocity Spoof", HMode = "Hover Mode", BRam = "Bumper Ram Aura", PITH = "Enable PIT Helper", IFlip = "Insta-Flip", Vis = "👁️ Visuals", HUD = "Show Pursuit HUD", EESP = "Enable Player ESP", EInfo = "Show Info & Weapon", EBox = "Draw 3D Boxes", Chams = "Enable Chams", SBea = "Enable Sky Beacons", SName = "Show Street Names", STrac = "Draw Street Tracers", SOff = "Sky Offset Height", MDist = "Max Render Distance" },
+    ES = { Title = "RDM & LEO Universal", RP = "🚓 Rol Policial", Radar = "Activar ALPR Radar", SpdUnit = "Unidad de Velocidad", TStop = "📢 Parada de Tráfico", FStop = "📢 Parada de Delito", Backup = "🚨 1O-78 Refuerzos", Shots = "💥 1O-71 Disparos", Track = "🔍 Rastreador", SelT = "Elegir Sospechoso", DrawL = "Dibujar Láser", Mod = "🚀 Mods y Seguridad", Nitro = "Poder Nitro (Tecla H)", ARag = "Anti-Muñeco", Bail = "Escapar", EMP = "Ráfaga EMP", Traf = "💥 Control de Tráfico", Spike = "Tiras de Púas Falsas", XP = "🔥 Obtener 400 XP", AutoXP = "⚡ Auto Farm de Rango", Cmb = "🎯 Combate", Aim = "Activar AUTO-AIM", TBot = "Disparo Automático", HExp = "Expandir Hitbox", HSize = "Tamaño de Hitbox", SFov = "Mostrar FOV", FSize = "Tamaño de FOV", ASm = "Suavidad de Aim", APart = "Parte de Aimlock", BPred = "Predicción Base", DMult = "Multiplicador de Dist.", HChan = "Probabilidad Golpe %", RDel = "Retraso de Cambio", RMs = "Retraso (ms)", DChk = "Omitir Muertos", WChk = "Verificar Paredes", TChk = "Omitir Equipo", FTeam = "Equipos Aliados", Veh = "🏎️ Vehículo", GDes = "Desincronización Gravedad", VSpoof = "Falsificación de Vel.", HMode = "Modo Flotante", BRam = "Aura de Choque", PITH = "Ayuda de PIT", IFlip = "Volteo Rápido", Vis = "👁️ Visuales", HUD = "Mostrar HUD Persecución", EESP = "Activar ESP Jugador", EInfo = "Mostrar Info y Arma", EBox = "Cajas 3D", Chams = "Activar Chams", SBea = "Balizas en el Cielo", SName = "Mostrar Calles", STrac = "Trazadores de Calle", SOff = "Altura en el Cielo", MDist = "Distancia Máx. Render" }
+}
+
+local lang = getgenv().Language or "EN"
+local T = L[lang] or L["EN"]
+
+pcall(function()
+    setfflag("FIntFRMMinGrassDistance", "0")
+    setfflag("FIntFRMMaxGrassDistance", "0")
+    setfflag("FIntRenderShadowmapBias", "75")
+    setfflag("FFlagFastGPULightCulling3", "True")
+    setfflag("DFIntPhysicsSenderMaxBandwidthBps", "2147483647")
+    setfflag("DFIntDataSenderMaxBandwidthBps", "2147483647")
+    setfflag("DFIntPhysicsNetworkFrameRate", "120")
+    setfflag("FFlagOptimizeNetwork", "True")
+    setfflag("FFlagOptimizeNetworkRouting", "True")
+    setfflag("FFlagOptimizeNetworkTransport", "True")
+    setfflag("FFlagEnableSimDesync", "True")
+    setfflag("FFlagEnableCharacterDesync", "True")
+    setfflag("FFlagSimInterpolationClientDesync", "True")
+end)
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+local Teams = game:GetService("Teams")
+local TextChatService = game:GetService("TextChatService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local lp = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local AimSettings = { Enabled = false, ShowFOV = false, FOVSize = 150, Prediction = 0.165, DistMultiplier = 0.5, TeamCheck = false, WallCheck = false, DeadCheck = true, AimPart = "Head", LegitShake = false, ShakePower = 3, Smoothness = 1, FriendlyTeams = {}, NoRecoil = false, HitChance = 100, UseRetargetDelay = false, RetargetDelay = 100, Triggerbot = false, HitboxExpander = false, HitboxSize = 5 }
+local vehSettings = { DesyncControl = false, GravitySpoof = false, DownforceMass = 8, ServerAntiFling = true, DriveByDesync = false, PitDesyncHelper = false, HoverMode = false, RamAura = false }
+local ESPSettings = { Enabled = false, Draw3DBox = false, ShowInfo = false, TeamCheck = false, MaxDistance = 1000, StreetESPEnabled = false, StreetShowNames = false, StreetShowTracers = false, SkyOffset = 150, ShowPursuitHUD = false, Chams = false }
+local FarmSettings = { AutoXP = false }
+local RoleplaySettings = { RadarEnabled = false, RadarUnit = "MPH" }
+local SuspectSettings = { Target = nil, Enabled = false }
+local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, SpikeStrips = false, AntiRagdoll = false, EMPRadius = 100 }
+
+local isShooting, isBraking = false, false
+local currentTarget, lastTarget = nil, nil
+local targetLostTime, lastHitChanceCheck = 0, 0
+local isCurrentlyLocking = true
+local hitDebounce = {}
+local currentCalloutMsg = ""
+
+local SkidSound = Instance.new("Sound")
+SkidSound.SoundId = "rbxassetid://461019670"; SkidSound.Volume = 2; SkidSound.Parent = game:GetService("SoundService")
+
+local function SendToChat(msg)
+    local cleanMsg = string.gsub(msg, "0", "O")
+    pcall(function()
+        if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then
+            TextChatService.TextChannels.RBXGeneral:SendAsync(cleanMsg)
+        else
+            ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(cleanMsg, "All")
+        end
+    end)
+    pcall(function() setclipboard(cleanMsg) end)
+end
+
+local function GetAcronym(str)
+    local acronym = ""
+    for word in string.gmatch(str, "%w+") do acronym = acronym .. string.upper(string.sub(word, 1, 1)) end
+    return acronym
+end
+
+local function GetCompassDirection()
+    local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return "UNKNOWN" end
+    local dir = root.CFrame.LookVector
+    local angle = math.deg(math.atan2(dir.X, -dir.Z))
+    if angle < 0 then angle = angle + 360 end
+    if angle >= 337.5 or angle < 22.5 then return "Northbound"
+    elseif angle >= 22.5 and angle < 67.5 then return "Northeast bound"
+    elseif angle >= 67.5 and angle < 112.5 then return "Eastbound"
+    elseif angle >= 112.5 and angle < 157.5 then return "Southeast bound"
+    elseif angle >= 157.5 and angle < 202.5 then return "Southbound"
+    elseif angle >= 202.5 and angle < 247.5 then return "Southwest bound"
+    elseif angle >= 247.5 and angle < 292.5 then return "Westbound"
+    elseif angle >= 292.5 and angle < 337.5 then return "Northwest bound" end
+    return "UNKNOWN"
+end
+
+local function GetDistanceToOBB(part, pos)
+    local relPos = part.CFrame:PointToObjectSpace(pos)
+    local halfSize = part.Size / 2
+    local closest = Vector3.new(math.clamp(relPos.X, -halfSize.X, halfSize.X), math.clamp(relPos.Y, -halfSize.Y, halfSize.Y), math.clamp(relPos.Z, -halfSize.Z, halfSize.Z))
+    return (pos - part.CFrame:PointToWorldSpace(closest)).Magnitude
+end
+
+local function GetPlayerWeapon(char)
+    local tool = char:FindFirstChildOfClass("Tool")
+    if tool then return tool.Name else return "Unarmed" end
+end
+
+if CoreGui:FindFirstChild("GeminiMobileUI") then CoreGui.GeminiMobileUI:Destroy() end
+local MobileGui = Instance.new("ScreenGui"); MobileGui.Name = "GeminiMobileUI"; MobileGui.Parent = CoreGui
+
+local function CreateMobileButton(name, text, color, pos)
+    local btn = Instance.new("TextButton")
+    btn.Name = name; btn.Parent = MobileGui; btn.BackgroundColor3 = color; btn.BackgroundTransparency = 0.5
+    btn.Position = pos; btn.Size = UDim2.new(0, 110, 0, 50); btn.Font = Enum.Font.GothamBold
+    btn.Text = text; btn.TextColor3 = Color3.fromRGB(255, 255, 255); btn.TextSize = 14
+    local corner = Instance.new("UICorner", btn); corner.CornerRadius = UDim.new(0, 8)
+    local dragging, dragInput, dragStart, startPos
+    btn.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = true; dragStart = input.Position; startPos = btn.Position end end)
+    btn.InputChanged:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement then dragInput = input end end)
+    UserInputService.InputChanged:Connect(function(input) if input == dragInput and dragging then local delta = input.Position - dragStart; btn.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y) end end)
+    btn.InputEnded:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end end)
+    return btn
+end
+
+local BrakeBtn = CreateMobileButton("BrakeBtn", "🛑 BRAKE", Color3.fromRGB(180, 20, 20), UDim2.new(1, -130, 0.5, 10))
+local function BtnFx(btn, state) TweenService:Create(btn, TweenInfo.new(0.1), {BackgroundTransparency = state and 0.2 or 0.5}):Play() end
+BrakeBtn.InputBegan:Connect(function() isBraking = true; BtnFx(BrakeBtn, true) end); BrakeBtn.InputEnded:Connect(function() isBraking = false; BtnFx(BrakeBtn, false) end)
+
+UserInputService.InputBegan:Connect(function(i, g)
+    if not g then
+        if i.UserInputType == Enum.UserInputType.MouseButton1 then isShooting = true
+        elseif i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = true
+        elseif i.KeyCode == ModSettings.NitroKey then
+            local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+            if vSeat and vSeat:IsA("VehicleSeat") then vSeat.AssemblyLinearVelocity = vSeat.CFrame.LookVector * ModSettings.NitroPower end
+        end
+    end
+end)
+UserInputService.InputEnded:Connect(function(i, g) if not g then if i.UserInputType == Enum.UserInputType.MouseButton1 then isShooting = false elseif i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = false end end end)
+
+if CoreGui:FindFirstChild("PursuitHUDGui") then CoreGui.PursuitHUDGui:Destroy() end
+local PursuitHUDGui = Instance.new("ScreenGui"); PursuitHUDGui.Name = "PursuitHUDGui"; PursuitHUDGui.Parent = CoreGui
+
+local PursuitLabel = Instance.new("TextLabel")
+PursuitLabel.Parent = PursuitHUDGui; PursuitLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 20); PursuitLabel.BackgroundTransparency = 0.4
+PursuitLabel.AnchorPoint = Vector2.new(0.5, 1); PursuitLabel.Position = UDim2.new(0.5, 0, 1, -60); PursuitLabel.Size = UDim2.new(0, 400, 0, 40)
+PursuitLabel.Font = Enum.Font.GothamBlack; PursuitLabel.Text = "🚔 SCANNING"; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0); PursuitLabel.TextSize = 16; PursuitLabel.Visible = false
+local PursuitCorner = Instance.new("UICorner", PursuitLabel); PursuitCorner.CornerRadius = UDim.new(0, 8)
+local PursuitStroke = Instance.new("UIStroke", PursuitLabel); PursuitStroke.Thickness = 2; PursuitStroke.Color = Color3.fromRGB(0, 0, 0)
+
+local RadioBtn = Instance.new("TextButton")
+RadioBtn.Parent = PursuitHUDGui; RadioBtn.BackgroundColor3 = Color3.fromRGB(30, 100, 200); RadioBtn.BackgroundTransparency = 0.2
+RadioBtn.AnchorPoint = Vector2.new(0.5, 1); RadioBtn.Position = UDim2.new(0.5, 0, 1, -15); RadioBtn.Size = UDim2.new(0, 120, 0, 35)
+RadioBtn.Font = Enum.Font.GothamBold; RadioBtn.Text = "📢 CALLOUT"; RadioBtn.TextColor3 = Color3.fromRGB(255, 255, 255); RadioBtn.TextSize = 14; RadioBtn.Visible = false
+local RadioCorner = Instance.new("UICorner", RadioBtn); RadioCorner.CornerRadius = UDim.new(0, 6)
+RadioBtn.MouseButton1Click:Connect(function() if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg); BtnFx(RadioBtn, true); task.wait(0.2); BtnFx(RadioBtn, false) end end)
+
+local RadarLabel = Instance.new("TextLabel")
+RadarLabel.Parent = PursuitHUDGui; RadarLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 15); RadarLabel.BackgroundTransparency = 0.3
+RadarLabel.AnchorPoint = Vector2.new(0.5, 0); RadarLabel.Position = UDim2.new(0.5, 0, 0, 20); RadarLabel.Size = UDim2.new(0, 350, 0, 35)
+RadarLabel.Font = Enum.Font.Code; RadarLabel.Text = "📡 ALPR STANDBY"; RadarLabel.TextColor3 = Color3.fromRGB(0, 255, 0); RadarLabel.TextSize = 18; RadarLabel.Visible = false
+local RadarCorner = Instance.new("UICorner", RadarLabel); RadarCorner.CornerRadius = UDim.new(0, 6)
+local RadarStroke = Instance.new("UIStroke", RadarLabel); RadarStroke.Thickness = 1.5; RadarStroke.Color = Color3.fromRGB(0, 0, 0)
+
+local SuspectTracer = Drawing.new("Line"); SuspectTracer.Visible = false; SuspectTracer.Color = Color3.fromRGB(255, 0, 0); SuspectTracer.Thickness = 2
+local FOVCircle = Drawing.new("Circle"); FOVCircle.Visible = false; FOVCircle.Thickness = 1.5; FOVCircle.Color = Color3.fromRGB(255, 255, 255); FOVCircle.Filled = false
+
+local function IsVisible(tPart)
+    if not AimSettings.WallCheck then return true end
+    local ray = RaycastParams.new()
+    ray.FilterDescendantsInstances = {lp.Character, camera}; ray.FilterType = Enum.RaycastFilterType.Exclude
+    local hit = workspace:Raycast(camera.CFrame.Position, tPart.Position - camera.CFrame.Position, ray)
+    if hit and hit.Instance then if not hit.Instance:IsDescendantOf(tPart.Parent) then return false end end
+    return true
+end
+
+local teamNames = {}
+for _, team in pairs(Teams:GetTeams()) do table.insert(teamNames, team.Name) end
+if #teamNames == 0 then table.insert(teamNames, "No Teams Detected") end
+
+local ESP_Cache = {}
+local Street_Cache = {}
+local function GetTeamColor(p) if p.Team then return p.Team.TeamColor.Color else return Color3.fromRGB(255, 255, 255) end end
+local function DrawLine() local l = Drawing.new("Line"); l.Thickness = 1.5; l.Visible = false; return l end
+
+RunService.RenderStepped:Connect(function()
+    if AimSettings.NoRecoil and isShooting then
+        local pitch = camera.CFrame:ToEulerAnglesYXZ()
+        if pitch > 0.1 then camera.CFrame = camera.CFrame * CFrame.Angles(-0.01, 0, 0) end
+    end
+    
+    FOVCircle.Position = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+    FOVCircle.Radius = AimSettings.FOVSize
+    FOVCircle.Visible = AimSettings.ShowFOV and AimSettings.Enabled
+    
+    local target = nil; local shortest = AimSettings.FOVSize; local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+    
+    if AimSettings.Enabled then
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character and (not AimSettings.DeadCheck or (p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0)) then
+                if AimSettings.TeamCheck and p.Team == lp.Team then continue end
+                local isFriendly = false
+                if p.Team and AimSettings.FriendlyTeams then for _, tName in pairs(AimSettings.FriendlyTeams) do if p.Team.Name == tName then isFriendly = true; break end end end
+                if isFriendly then continue end
+                local aPart = p.Character:FindFirstChild(AimSettings.AimPart) or p.Character:FindFirstChild("Head")
+                if AimSettings.HitboxExpander and aPart then aPart.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize); aPart.Transparency = 0.5; aPart.CanCollide = false end
+                if aPart and IsVisible(aPart) then
+                    local pos, onScreen = camera:WorldToViewportPoint(aPart.Position)
+                    if onScreen then
+                        local dist = (Vector2.new(pos.X, pos.Y) - center).Magnitude
+                        if dist < shortest then shortest = dist; target = aPart end
+                    end
+                end
+            end
+        end
+        if AimSettings.UseRetargetDelay then if target ~= lastTarget then if lastTarget ~= nil then targetLostTime = tick() end; if target ~= nil and tick() - targetLostTime < (AimSettings.RetargetDelay / 1000) then target = nil end end end
+        lastTarget = target; currentTarget = target
+        if tick() - lastHitChanceCheck > 0.2 then lastHitChanceCheck = tick(); if math.random(1, 100) <= AimSettings.HitChance then isCurrentlyLocking = true else isCurrentlyLocking = false end end
+        if target and isCurrentlyLocking then
+            local distToTarget = (target.Position - camera.CFrame.Position).Magnitude
+            local dynamicPrediction = AimSettings.Prediction + ((distToTarget / 100) * (AimSettings.DistMultiplier * 0.05))
+            local fPos = target.Position + (target.AssemblyLinearVelocity * dynamicPrediction)
+            if AimSettings.LegitShake then local s = AimSettings.ShakePower / 10; fPos = fPos + Vector3.new((math.random() - 0.5) * s, (math.random() - 0.5) * s, (math.random() - 0.5) * s) end
+            if AimSettings.Smoothness >= 1 then camera.CFrame = CFrame.new(camera.CFrame.Position, fPos) else camera.CFrame = camera.CFrame:Lerp(CFrame.new(camera.CFrame.Position, fPos), AimSettings.Smoothness) end
+            if AimSettings.Triggerbot then mouse1click() end
+        end
+    end
+
+    for _, p in pairs(Players:GetPlayers()) do
+        if p == lp then continue end
+        if not ESP_Cache[p] then 
+            ESP_Cache[p] = { Text = Drawing.new("Text"), Hl = Instance.new("Highlight"), Lines = {} }
+            ESP_Cache[p].Text.Size = 13; ESP_Cache[p].Text.Center = true; ESP_Cache[p].Text.Outline = true
+            ESP_Cache[p].Hl.Parent = CoreGui; ESP_Cache[p].Hl.FillTransparency = 0.5; ESP_Cache[p].Hl.OutlineTransparency = 0
+            for i = 1, 12 do table.insert(ESP_Cache[p].Lines, DrawLine()) end
+        end
+        local esp = ESP_Cache[p]; local char = p.Character; local root = char and char:FindFirstChild("HumanoidRootPart")
+        if root and ESPSettings.Enabled and char:FindFirstChild("Humanoid") and char.Humanoid.Health > 0 then
+            local tColor = GetTeamColor(p); local dist = (root.Position - camera.CFrame.Position).Magnitude
+            if dist <= ESPSettings.MaxDistance and not (ESPSettings.TeamCheck and p.Team == lp.Team) then
+                local pos, onScreen = camera:WorldToViewportPoint(root.Position)
+                if onScreen then
+                    if ESPSettings.ShowInfo then
+                        local headPos = camera:WorldToViewportPoint(root.CFrame * CFrame.new(0, 1.5 + 0.5, 0).Position)
+                        esp.Text.Text = string.format("%s\n[%dm] [%s]\nHP: %d", p.Name, math.floor(dist), GetPlayerWeapon(char), char.Humanoid.Health)
+                        esp.Text.Position = Vector2.new(headPos.X, headPos.Y - 40); esp.Text.Color = tColor; esp.Text.Visible = true
+                    else esp.Text.Visible = false end
+                    if ESPSettings.Draw3DBox then
+                        local cf = root.CFrame; local size = Vector3.new(2, 3, 1.5)
+                        local corners = { cf*CFrame.new(size.X/2,size.Y/2,size.Z/2).Position, cf*CFrame.new(-size.X/2,size.Y/2,size.Z/2).Position, cf*CFrame.new(-size.X/2,-size.Y/2,size.Z/2).Position, cf*CFrame.new(size.X/2,-size.Y/2,size.Z/2).Position, cf*CFrame.new(size.X/2,size.Y/2,-size.Z/2).Position, cf*CFrame.new(-size.X/2,size.Y/2,-size.Z/2).Position, cf*CFrame.new(-size.X/2,-size.Y/2,-size.Z/2).Position, cf*CFrame.new(size.X/2,-size.Y/2,-size.Z/2).Position }
+                        local pts = {}
+                        for i, cPos in ipairs(corners) do local pt, _ = camera:WorldToViewportPoint(cPos); pts[i] = Vector2.new(pt.X, pt.Y) end
+                        local connections = {{1,2},{2,3},{3,4},{4,1},{5,6},{6,7},{7,8},{8,5},{1,5},{2,6},{3,7},{4,8}}
+                        for i, c in ipairs(connections) do esp.Lines[i].From = pts[c[1]]; esp.Lines[i].To = pts[c[2]]; esp.Lines[i].Color = tColor; esp.Lines[i].Visible = true end
+                    else for _, l in pairs(esp.Lines) do l.Visible = false end end
+                    if ESPSettings.Chams then esp.Hl.Adornee = char; esp.Hl.FillColor = tColor; esp.Hl.Enabled = true else esp.Hl.Enabled = false end
+                else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+            else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+        else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+    end
+
+    if ESPSettings.StreetESPEnabled then
+        local streetFolder = workspace:FindFirstChild("StreetNames")
+        if streetFolder then
+            for _, street in pairs(streetFolder:GetChildren()) do
+                if street:IsA("BasePart") then
+                    if not Street_Cache[street] then
+                        Street_Cache[street] = { Text = Drawing.new("Text"), Line = Drawing.new("Line") }
+                        Street_Cache[street].Text.Size = 15; Street_Cache[street].Text.Center = true; Street_Cache[street].Text.Outline = true; Street_Cache[street].Text.Color = Color3.fromRGB(0, 255, 204)
+                        Street_Cache[street].Line.Thickness = 1.2; Street_Cache[street].Line.Color = Color3.fromRGB(0, 255, 204)
+                    end
+                    local esp = Street_Cache[street]; local distToPlayer = GetDistanceToOBB(street, camera.CFrame.Position)
+                    local skyPosition = street.Position + Vector3.new(0, ESPSettings.SkyOffset, 0)
+                    local pos, onScreen = camera:WorldToViewportPoint(skyPosition)
+                    if onScreen and distToPlayer <= ESPSettings.MaxDistance then
+                        if ESPSettings.StreetShowNames then
+                            esp.Text.Text = string.format("📍 %s [%dm]", street.Name, math.floor(distToPlayer))
+                            esp.Text.Position = Vector2.new(pos.X, pos.Y); esp.Text.Visible = true
+                        else esp.Text.Visible = false end
+                        if ESPSettings.StreetShowTracers then
+                            esp.Line.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y); esp.Line.To = Vector2.new(pos.X, pos.Y); esp.Line.Visible = true
+                        else esp.Line.Visible = false end
+                    else esp.Text.Visible = false; esp.Line.Visible = false end
+                end
+            end
+        end
+    else for _, esp in pairs(Street_Cache) do esp.Text.Visible = false; esp.Line.Visible = false end end
+
+    PursuitLabel.Visible = ESPSettings.ShowPursuitHUD
+    RadioBtn.Visible = ESPSettings.ShowPursuitHUD
+    if ESPSettings.ShowPursuitHUD and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
+        local myPos = lp.Character.HumanoidRootPart.Position; local closestStreet = "UNKNOWN"; local shortestDist = math.huge
+        local streetFolder = workspace:FindFirstChild("StreetNames")
+        if streetFolder then for _, street in pairs(streetFolder:GetChildren()) do if street:IsA("BasePart") then local dist = GetDistanceToOBB(street, myPos); if dist < shortestDist then shortestDist = dist; closestStreet = street.Name end end end end
+        if shortestDist < 2000 then
+            currentCalloutMsg = "1O-8O " .. GetCompassDirection() .. " " .. GetAcronym(closestStreet)
+            PursuitLabel.Text = "🚔 " .. currentCalloutMsg; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0)
+        else
+            currentCalloutMsg = "1O-8O Out of city"
+            PursuitLabel.Text = "📡 DISPATCH: OUT OF CITY"; PursuitLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+        end
+    end
+
+    if RoleplaySettings.RadarEnabled then
+        local radarClosest = 300; local radarDriver, radarCar = nil, nil
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local seat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
+                if seat and seat:IsA("VehicleSeat") then
+                    local pos, onScreen = camera:WorldToViewportPoint(seat.Position)
+                    if onScreen then
+                        local distToCenter = (Vector2.new(pos.X, pos.Y) - Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)).Magnitude
+                        if distToCenter < radarClosest then radarClosest = distToCenter; radarDriver = p; radarCar = seat end
+                    end
+                end
+            end
+        end
+        if radarDriver and radarCar then
+            local speedRaw = radarCar.AssemblyLinearVelocity.Magnitude; local multiplier = 1.0
+            if RoleplaySettings.RadarUnit == "MPH" then multiplier = 0.6 end
+            local finalSpeed = math.floor(speedRaw * multiplier)
+            RadarLabel.Text = string.format("📡 ALPR | SPD: %d %s | DRV: %s", finalSpeed, RoleplaySettings.RadarUnit, radarDriver.Name)
+            if RoleplaySettings.RadarUnit == "MPH" and finalSpeed > 80 then RadarLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+            elseif RoleplaySettings.RadarUnit == "KMH" and finalSpeed > 130 then RadarLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+            else RadarLabel.TextColor3 = Color3.fromRGB(50, 255, 50) end
+            RadarLabel.Visible = true
+        else RadarLabel.Visible = false end
+    else RadarLabel.Visible = false end
+
+    if SuspectSettings.Enabled and SuspectSettings.Target then
+        local tPlayer = Players:FindFirstChild(SuspectSettings.Target)
+        if tPlayer and tPlayer.Character and tPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            local pos, onScreen = camera:WorldToViewportPoint(tPlayer.Character.HumanoidRootPart.Position)
+            if onScreen then SuspectTracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y); SuspectTracer.To = Vector2.new(pos.X, pos.Y); SuspectTracer.Visible = true else SuspectTracer.Visible = false end
+        else SuspectTracer.Visible = false end
+    else SuspectTracer.Visible = false end
+
+    if ModSettings.AntiRagdoll and lp.Character then
+        local humanoid = lp.Character:FindFirstChildOfClass("Humanoid")
+        if humanoid then humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false); humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false) end
+    end
+end)
+
+Players.PlayerRemoving:Connect(function(p)
+    if ESP_Cache[p] then
+        ESP_Cache[p].Text:Remove(); ESP_Cache[p].Hl:Destroy()
+        for _, l in pairs(ESP_Cache[p].Lines) do l:Remove() end
+        ESP_Cache[p] = nil
+    end
+end)
+
+RunService.Heartbeat:Connect(function()
+    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+    if not vSeat or not vSeat:IsA("VehicleSeat") then return end
+
+    if vehSettings.ServerAntiFling then
+        if vSeat.AssemblyLinearVelocity.Magnitude > 400 then vSeat.AssemblyLinearVelocity = vSeat.AssemblyLinearVelocity.Unit * 400 end
+        if vSeat.AssemblyAngularVelocity.Magnitude > 50 then vSeat.AssemblyAngularVelocity = vSeat.AssemblyAngularVelocity.Unit * 50 end
+    end
+    
+    if isBraking then vSeat.AssemblyLinearVelocity = Vector3.zero; vSeat.AssemblyAngularVelocity = Vector3.zero end
+    if vehSettings.DriveByDesync and currentTarget then vSeat.AssemblyAngularVelocity = Vector3.new(0, vSeat.AssemblyAngularVelocity.Y, 0) end
+    if vehSettings.DesyncControl then vSeat.AssemblyAngularVelocity = Vector3.new(0, vSeat.AssemblyAngularVelocity.Y, 0) end
+    if vehSettings.HoverMode then vSeat.AssemblyLinearVelocity = Vector3.new(vSeat.AssemblyLinearVelocity.X, 0, vSeat.AssemblyLinearVelocity.Z) end
+    if vehSettings.GravitySpoof and vSeat.AssemblyLinearVelocity.Magnitude > 50 then vSeat.AssemblyLinearVelocity = vSeat.AssemblyLinearVelocity + Vector3.new(0, -vehSettings.DownforceMass, 0) end
+
+    if vehSettings.PitDesyncHelper then
+        local mySpeed = vSeat.AssemblyLinearVelocity.Magnitude
+        local dynamicRange = 18 + (mySpeed / 8) 
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local eSeat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
+                if eSeat and eSeat:IsA("VehicleSeat") and eSeat ~= vSeat then
+                    local dist = (vSeat.Position - eSeat.Position).Magnitude
+                    if dist < dynamicRange and not hitDebounce[p.UserId] then
+                        local dotProd = vSeat.CFrame.LookVector:Dot(eSeat.CFrame.LookVector)
+                        if dotProd > 0.4 then 
+                            hitDebounce[p.UserId] = true
+                            SkidSound:Play()
+                            local pushForce = vSeat.CFrame.LookVector * (100 + (mySpeed / 2))
+                            eSeat.AssemblyLinearVelocity = Vector3.new(eSeat.AssemblyLinearVelocity.X + pushForce.X, eSeat.AssemblyLinearVelocity.Y, eSeat.AssemblyLinearVelocity.Z + pushForce.Z)
+                            eSeat.AssemblyAngularVelocity = Vector3.new(0, 180, 0)
+                            task.delay(0.8, function() hitDebounce[p.UserId] = nil end)
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    if ModSettings.SpikeStrips then
+        local rearPos = vSeat.CFrame * CFrame.new(0, 0, 15).Position
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local eSeat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
+                if eSeat and eSeat:IsA("VehicleSeat") and eSeat ~= vSeat then
+                    if (rearPos - eSeat.Position).Magnitude < 10 then eSeat.AssemblyLinearVelocity = eSeat.AssemblyLinearVelocity * 0.1; eSeat.AssemblyAngularVelocity = Vector3.new(0, 50, 0); SkidSound:Play() end
+                end
+            end
+        end
+    end
+
+    if vehSettings.RamAura then
+        local frontPos = vSeat.CFrame * CFrame.new(0, 0, -10).Position
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local pushPart = p.Character:FindFirstChild("HumanoidRootPart")
+                if pushPart and (frontPos - pushPart.Position).Magnitude < 15 then pushPart.AssemblyLinearVelocity = (pushPart.Position - frontPos).Unit * 200 end
+            end
+        end
+    end
+end)
+
+local Window = Rayfield:CreateWindow({ Name = T.Title, LoadingTitle = "Đang nạp...", Theme = "Ocean", ConfigurationSaving = { Enabled = false } })
+
+local RPTab = Window:CreateTab(T.RP)
+local TrackTab = Window:CreateTab(T.Track)
+local ModTab = Window:CreateTab(T.Mod)
+local ControlTab = Window:CreateTab(T.Traf)
+local CTab = Window:CreateTab(T.Cmb)
+local PTab = Window:CreateTab(T.Veh)
+local VTab = Window:CreateTab(T.Vis)
+
+RPTab:CreateToggle({Name = T.Radar, CurrentValue = false, Callback = function(v) RoleplaySettings.RadarEnabled = v end})
+RPTab:CreateDropdown({Name = T.SpdUnit, Options = {"MPH", "KMH"}, CurrentOption = {"MPH"}, MultipleOptions = false, Callback = function(opt) RoleplaySettings.RadarUnit = opt[1] end})
+RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER") end})
+RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
+RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BACKUP") end})
+RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
+
+local pNames = {}
+for _, p in pairs(Players:GetPlayers()) do if p ~= lp then table.insert(pNames, p.Name) end end
+TrackTab:CreateDropdown({Name = T.SelT, Options = pNames, CurrentOption = {""}, MultipleOptions = false, Callback = function(opt) SuspectSettings.Target = opt[1] end})
+TrackTab:CreateToggle({Name = T.DrawL, CurrentValue = false, Callback = function(v) SuspectSettings.Enabled = v end})
+
+ModTab:CreateSlider({Name = T.Nitro, Range = {100, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ModSettings.NitroPower = v end})
+ModTab:CreateToggle({Name = T.ARag, CurrentValue = false, Callback = function(v) ModSettings.AntiRagdoll = v end})
+ModTab:CreateButton({Name = T.Bail, Callback = function() if lp.Character then lp.Character:BreakJoints() end end})
+ModTab:CreateButton({Name = T.EMP, Callback = function()
+    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+    if vSeat then
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local eSeat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
+                if eSeat and (eSeat.Position - vSeat.Position).Magnitude <= ModSettings.EMPRadius then
+                    eSeat.AssemblyLinearVelocity = Vector3.zero
+                    eSeat.AssemblyAngularVelocity = Vector3.new(0, 10, 0)
+                end
+            end
+        end
+    end
+end})
+
+ControlTab:CreateToggle({Name = T.Spike, CurrentValue = false, Callback = function(v) ModSettings.SpikeStrips = v end})
+ControlTab:CreateButton({Name = T.XP, Callback = function() pcall(function() local args = {"GetNextRank", "HTPD"}; ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("XPSystem"):WaitForChild("GET"):InvokeServer(unpack(args)) end) end})
+ControlTab:CreateToggle({Name = T.AutoXP, CurrentValue = false, Callback = function(v)
+    FarmSettings.AutoXP = v
+    if FarmSettings.AutoXP then
+        task.spawn(function()
+            while FarmSettings.AutoXP do
+                pcall(function() local args = {"GetNextRank", "HTPD"}; ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("XPSystem"):WaitForChild("GET"):InvokeServer(unpack(args)) end)
+                task.wait(1.5)
+            end
+        end)
+    end
+end})
+
+CTab:CreateToggle({Name = T.Aim, CurrentValue = false, Callback = function(v) AimSettings.Enabled = v end})
+CTab:CreateToggle({Name = T.TBot, CurrentValue = false, Callback = function(v) AimSettings.Triggerbot = v end})
+CTab:CreateToggle({Name = T.HExp, CurrentValue = false, Callback = function(v) AimSettings.HitboxExpander = v end})
+CTab:CreateSlider({Name = T.HSize, Range = {2, 20}, Increment = 1, CurrentValue = 5, Callback = function(v) AimSettings.HitboxSize = v end})
+CTab:CreateToggle({Name = T.SFov, CurrentValue = false, Callback = function(v) AimSettings.ShowFOV = v end})
+CTab:CreateSlider({Name = T.FSize, Range = {50, 500}, Increment = 10, CurrentValue = 150, Callback = function(v) AimSettings.FOVSize = v end})
+CTab:CreateSlider({Name = T.ASm, Range = {0.01, 1}, Increment = 0.01, CurrentValue = 1, Callback = function(v) AimSettings.Smoothness = v end})
+CTab:CreateDropdown({Name = T.APart, Options = {"Head", "Torso", "Arms", "Legs"}, CurrentOption = {"Head"}, MultipleOptions = false, Callback = function(opt) AimSettings.AimPart = opt[1] end})
+CTab:CreateSlider({Name = T.BPred, Range = {0, 0.5}, Increment = 0.01, CurrentValue = 0.165, Callback = function(v) AimSettings.Prediction = v end})
+CTab:CreateSlider({Name = T.DMult, Range = {0, 5}, Increment = 0.1, CurrentValue = 0.5, Callback = function(v) AimSettings.DistMultiplier = v end})
+CTab:CreateSlider({Name = T.HChan, Range = {1, 100}, Increment = 1, CurrentValue = 100, Callback = function(v) AimSettings.HitChance = v end})
+CTab:CreateToggle({Name = T.RDel, CurrentValue = false, Callback = function(v) AimSettings.UseRetargetDelay = v end})
+CTab:CreateSlider({Name = T.RMs, Range = {1, 500}, Increment = 10, CurrentValue = 100, Callback = function(v) AimSettings.RetargetDelay = v end})
+CTab:CreateToggle({Name = T.DChk, CurrentValue = true, Callback = function(v) AimSettings.DeadCheck = v end})
+CTab:CreateToggle({Name = T.WChk, CurrentValue = false, Callback = function(v) AimSettings.WallCheck = v end})
+CTab:CreateToggle({Name = T.TChk, CurrentValue = false, Callback = function(v) AimSettings.TeamCheck = v end})
+CTab:CreateDropdown({Name = T.FTeam, Options = teamNames, MultipleOptions = true, Callback = function(opt) AimSettings.FriendlyTeams = opt end})
+
+PTab:CreateToggle({Name = T.GDes, CurrentValue = false, Callback = function(v) vehSettings.DesyncControl = v end})
+PTab:CreateToggle({Name = T.VSpoof, CurrentValue = false, Callback = function(v) vehSettings.GravitySpoof = v end})
+PTab:CreateToggle({Name = T.HMode, CurrentValue = false, Callback = function(v) vehSettings.HoverMode = v end})
+PTab:CreateToggle({Name = T.BRam, CurrentValue = false, Callback = function(v) vehSettings.RamAura = v end})
+PTab:CreateToggle({Name = T.PITH, CurrentValue = false, Callback = function(v) vehSettings.PitDesyncHelper = v end})
+PTab:CreateButton({Name = T.IFlip, Callback = function()
+    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+    if vSeat then
+        local rx, ry, rz = vSeat.CFrame:ToOrientation()
+        vSeat.CFrame = CFrame.new(vSeat.Position + Vector3.new(0, 3, 0)) * CFrame.Angles(0, ry, 0)
+        vSeat.AssemblyLinearVelocity = Vector3.zero; vSeat.AssemblyAngularVelocity = Vector3.zero
+    end
+end})
+
+VTab:CreateToggle({Name = T.HUD, CurrentValue = false, Callback = function(v) ESPSettings.ShowPursuitHUD = v end})
+VTab:CreateToggle({Name = T.EESP, CurrentValue = false, Callback = function(v) ESPSettings.Enabled = v end})
+VTab:CreateToggle({Name = T.EInfo, CurrentValue = false, Callback = function(v) ESPSettings.ShowInfo = v end})
+VTab:CreateToggle({Name = T.EBox, CurrentValue = false, Callback = function(v) ESPSettings.Draw3DBox = v end})
+VTab:CreateToggle({Name = T.Chams, CurrentValue = false, Callback = function(v) ESPSettings.Chams = v end})
+VTab:CreateToggle({Name = T.SBea, CurrentValue = false, Callback = function(v) ESPSettings.StreetESPEnabled = v end})
+VTab:CreateToggle({Name = T.SName, CurrentValue = false, Callback = function(v) ESPSettings.StreetShowNames = v end})
+VTab:CreateToggle({Name = T.STrac, CurrentValue = false, Callback = function(v) ESPSettings.StreetShowTracers = v end})
+VTab:CreateSlider({Name = T.SOff, Range = {50, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ESPSettings.SkyOffset = v end})
+VTab:CreateSlider({Name = T.MDist, Range = {100, 5000}, Increment = 100, CurrentValue = 1000, Callback = function(v) ESPSettings.MaxDistance = v end})
