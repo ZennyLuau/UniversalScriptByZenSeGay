@@ -1,4 +1,4 @@
-getgenv().Language = "VN"
+getgenv().Language = getgenv().Language or "EN"
 
 local L = {
     VN = { Title = "RDM & LEO Universal", RP = "🚓 Cảnh Sát RP", Radar = "Bật ALPR Radar", SpdUnit = "Đơn vị tốc độ", TStop = "📢 Dừng Xe (Traffic Stop)", FStop = "📢 Giơ tay lên (Felony Stop)", Backup = "🚨 1O-78 Hỗ trợ", Shots = "💥 1O-71 Bắn nhau", Track = "🔍 Truy Nã", SelT = "Chọn Nghi Phạm", DrawL = "Vẽ Laser đến Nghi phạm", Mod = "🚀 Độ Xe & Tiện Ích", Nitro = "Lực Nitro (Phím H)", ARag = "Chống Ngã (Anti-Ragdoll)", Bail = "Trốn tù (Bail Out)", EMP = "Bom EMP (Tắt máy diện rộng)", AAFK = "Chống AFK (Treo máy)", Cmb = "🎯 Chiến Đấu", Aim = "Bật AUTO-AIM", NRec = "Giảm Giật (No Recoil)", TBot = "Tự động bắn (Triggerbot)", HExp = "Phóng to đầu (Hitbox)", HSize = "Kích cỡ Hitbox", SFov = "Hiện FOV", FSize = "Kích cỡ FOV", ASm = "Độ mượt Aim", APart = "Vị trí khóa", BPred = "Đoán hướng di chuyển", DMult = "Hệ số khoảng cách", HChan = "Tỷ lệ trúng %", RDel = "Độ trễ chuyển mục tiêu", RMs = "Độ trễ (ms)", DChk = "Bỏ qua xác chết", WChk = "Kiểm tra xuyên tường", TChk = "Không bắn đồng đội", FTeam = "Đội thân thiện", Veh = "🏎️ Xe Cộ", GDes = "Chống Lật (Gravity Desync)", VSpoof = "Ép gầm (Velocity Spoof)", HMode = "Chế độ bay lơ lửng", BRam = "Tường tàng hình hất văng", PITH = "Hỗ trợ Húc (PIT Helper)", IFlip = "Lật Xe Lại", Vis = "👁️ Đồ Họa", HUD = "Hiện HUD Báo Đài 1O-8O", EESP = "Bật ESP", EInfo = "Hiện Thông tin & Vũ khí", EBox = "Vẽ Hộp 3D", Chams = "Glow Xuyên Tường", SBea = "Hiện tên đường trên trời", SName = "Hiện Tên Đường", STrac = "Vẽ tia đến đường", SOff = "Độ cao chữ trên trời", MDist = "Tầm nhìn tối đa" },
@@ -6,7 +6,7 @@ local L = {
     ES = { Title = "RDM & LEO Universal", RP = "🚓 Rol Policial", Radar = "Activar ALPR Radar", SpdUnit = "Unidad de Velocidad", TStop = "📢 Parada de Tráfico", FStop = "📢 Parada de Delito", Backup = "🚨 1O-78 Refuerzos", Shots = "💥 1O-71 Disparos", Track = "🔍 Rastreador", SelT = "Elegir Sospechoso", DrawL = "Dibujar Láser", Mod = "🚀 Mods y Utilidad", Nitro = "Poder Nitro (Tecla H)", ARag = "Anti-Muñeco", Bail = "Escapar", EMP = "Ráfaga EMP", AAFK = "Anti-AFK", Cmb = "🎯 Combate", Aim = "Activar AUTO-AIM", NRec = "Sin Retroceso", TBot = "Disparo Automático", HExp = "Expandir Hitbox", HSize = "Tamaño de Hitbox", SFov = "Mostrar FOV", FSize = "Tamaño de FOV", ASm = "Suavidad de Aim", APart = "Parte de Aimlock", BPred = "Predicción Base", DMult = "Multiplicador de Dist.", HChan = "Probabilidad Golpe %", RDel = "Retraso de Cambio", RMs = "Retraso (ms)", DChk = "Omitir Muertos", WChk = "Verificar Paredes", TChk = "Omitir Equipo", FTeam = "Equipos Aliados", Veh = "🏎️ Vehículo", GDes = "Desincronización Gravedad", VSpoof = "Falsificación de Vel.", HMode = "Modo Flotante", BRam = "Aura de Choque", PITH = "Ayuda de PIT", IFlip = "Volteo Rápido", Vis = "👁️ Visuales", HUD = "Mostrar HUD Persecución", EESP = "Activar ESP Jugador", EInfo = "Mostrar Info y Arma", EBox = "Cajas 3D", Chams = "Activar Chams", SBea = "Balizas en el Cielo", SName = "Mostrar Calles", STrac = "Trazadores de Calle", SOff = "Altura en el Cielo", MDist = "Distancia Máx. Render" }
 }
 
-local lang = getgenv().Language or "EN"
+local lang = getgenv().Language
 local T = L[lang] or L["EN"]
 
 pcall(function()
@@ -250,15 +250,9 @@ RunService.RenderStepped:Connect(function()
                         for i, c in ipairs(connections) do esp.Lines[i].From = pts[c[1]]; esp.Lines[i].To = pts[c[2]]; esp.Lines[i].Color = tColor; esp.Lines[i].Visible = true end
                     else for _, l in pairs(esp.Lines) do l.Visible = false end end
                     if ESPSettings.Chams then esp.Hl.Adornee = char; esp.Hl.FillColor = tColor; esp.Hl.Enabled = true else esp.Hl.Enabled = false end
-                else
-                    esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false
-                end
-            else
-                esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false
-            end
-        else
-            esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false
-        end
+                else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+            else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+        else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
     end
 
     if ESPSettings.StreetESPEnabled then
@@ -346,11 +340,7 @@ RunService.RenderStepped:Connect(function()
 end)
 
 Players.PlayerRemoving:Connect(function(p)
-    if ESP_Cache[p] then
-        ESP_Cache[p].Text:Remove(); ESP_Cache[p].Hl:Destroy()
-        for _, l in pairs(ESP_Cache[p].Lines) do l:Remove() end
-        ESP_Cache[p] = nil
-    end
+    if ESP_Cache[p] then ESP_Cache[p].Text:Remove(); ESP_Cache[p].Hl:Destroy(); for _, l in pairs(ESP_Cache[p].Lines) do l:Remove() end; ESP_Cache[p] = nil end
 end)
 
 RunService.Heartbeat:Connect(function()
@@ -412,7 +402,7 @@ RunService.Heartbeat:Connect(function()
     end
 end)
 
-local Window = Rayfield:CreateWindow({ Name = T.Title, LoadingTitle = "Đang nạp...", Theme = "Ocean", ConfigurationSaving = { Enabled = false } })
+local Window = Rayfield:CreateWindow({ Name = T.Title, LoadingTitle = "Loading...", Theme = "Ocean", ConfigurationSaving = { Enabled = false } })
 
 local RPTab = Window:CreateTab(T.RP)
 local TrackTab = Window:CreateTab(T.Track)
@@ -443,8 +433,7 @@ ModTab:CreateButton({Name = T.EMP, Callback = function()
             if p ~= lp and p.Character then
                 local eSeat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
                 if eSeat and (eSeat.Position - vSeat.Position).Magnitude <= ModSettings.EMPRadius then
-                    eSeat.AssemblyLinearVelocity = Vector3.zero
-                    eSeat.AssemblyAngularVelocity = Vector3.new(0, 10, 0)
+                    eSeat.AssemblyLinearVelocity = Vector3.zero; eSeat.AssemblyAngularVelocity = Vector3.new(0, 10, 0)
                 end
             end
         end
@@ -453,12 +442,13 @@ end})
 ModTab:CreateToggle({Name = T.AAFK, CurrentValue = false, Callback = function(v)
     ModSettings.AntiAFK = v
     if v then
+        pcall(function() for _, c in pairs(getconnections(lp.Idled)) do c:Disable() end end)
         afkConnection = lp.Idled:Connect(function()
-            VirtualUser:CaptureController()
-            VirtualUser:ClickButton2(Vector2.new())
+            pcall(function() VirtualUser:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame); task.wait(1); VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame) end)
         end)
     else
         if afkConnection then afkConnection:Disconnect(); afkConnection = nil end
+        pcall(function() for _, c in pairs(getconnections(lp.Idled)) do c:Enable() end end)
     end
 end})
 
