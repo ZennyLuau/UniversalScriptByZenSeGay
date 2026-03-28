@@ -47,6 +47,7 @@ local SuspectSettings = { Target = nil, Enabled = false }
 local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, EMPRadius = 100, AntiAFK = false, AutoXP = false }
 
 local isShooting, isBraking = false, false
+local startShootPitch = 0 -- Variable for new NoRecoil
 local currentTarget, lastTarget = nil, nil
 local targetLostTime, lastHitChanceCheck = 0, 0
 local isCurrentlyLocking = true
@@ -78,12 +79,18 @@ local function SendToChat(msg)
     pcall(function() setclipboard(cleanMsg) end)
 end
 
+-- FIXED PING COMP MATH
 local function GetPing()
     local success, pingVal = pcall(function() return game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() end)
-    return success and (pingVal / 1000) or 0.05
+    if success then
+        -- Clamps ping to a maximum of 150ms to prevent lag spikes from making the aimbot look miles away
+        return math.clamp(pingVal / 1000, 0, 0.15) 
+    end
+    return 0.05
 end
 
 local function GetAcronym(str)
+    if str == "UNKNOWN" or str == "Out of city" then return str end
     local acronym = ""
     for word in string.gmatch(str, "%w+") do acronym = acronym .. string.upper(string.sub(word, 1, 1)) end
     return acronym
@@ -119,10 +126,10 @@ local function GetPlayerWeapon(char)
 end
 
 -- ==========================================================
--- FIXED RADIO UI INJECTION (Constant Loop)
+-- RADIO UI INJECTION
 -- ==========================================================
 task.spawn(function()
-    while task.wait(1) do -- Constantly checks if the GUI exists, fixing respawn/equip issues
+    while task.wait(1) do 
         pcall(function()
             local pGui = lp:FindFirstChild("PlayerGui")
             if pGui then
@@ -148,7 +155,7 @@ task.spawn(function()
                             if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg) end
                         end)
 
-                        -- 2. PIN BUTTON
+                        -- 2. PIN BUTTON (FORMAT FIXED)
                         local PinBtnRadio = Instance.new("TextButton")
                         PinBtnRadio.Name = "AutoPinBtn"
                         PinBtnRadio.Parent = mainFrame
@@ -162,11 +169,11 @@ task.spawn(function()
                         local pinCorner = Instance.new("UICorner", PinBtnRadio); pinCorner.CornerRadius = UDim.new(0, 6)
 
                         PinBtnRadio.MouseButton1Click:Connect(function() 
-                            local locMsg = "📍 " .. currentDirection .. " on " .. currentStreetName
+                            local locMsg = string.format("We at %s In pursuit On %s at %s", currentStreetName, GetAcronym(currentStreetName), currentDirection)
                             SendToChat(locMsg)
                         end)
 
-                        -- 3. PANIC BUTTON
+                        -- 3. PANIC BUTTON (FORMAT FIXED)
                         local PanicBtnRadio = Instance.new("TextButton")
                         PanicBtnRadio.Name = "AutoPanicBtn"
                         PanicBtnRadio.Parent = mainFrame
@@ -181,7 +188,7 @@ task.spawn(function()
 
                         PanicBtnRadio.MouseButton1Click:Connect(function() 
                             PanicSound:Play()
-                            local panicMsg = "🚨 PANIC: WE NEED HEAVY BACKUP AT " .. string.upper(currentDirection) .. " ON " .. string.upper(currentStreetName)
+                            local panicMsg = string.format("⚠️ OFFICER NEED HELP BACKUP AT %s On %s At %s ⚠️⚠️", currentStreetName, GetAcronym(currentStreetName), currentDirection)
                             SendToChat(panicMsg)
                         end)
                     end
@@ -214,14 +221,20 @@ BrakeBtn.InputBegan:Connect(function() isBraking = true; BtnFx(BrakeBtn, true) e
 
 UserInputService.InputBegan:Connect(function(i, g)
     if not g then
-        if i.UserInputType == Enum.UserInputType.MouseButton1 then isShooting = true
-        elseif i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = true
+        if i.UserInputType == Enum.UserInputType.MouseButton1 then 
+            isShooting = true
+            -- Capture initial pitch for new No Recoil function
+            local cx, cy, cz = camera.CFrame:ToEulerAnglesYXZ()
+            startShootPitch = cx
+        elseif i.KeyCode == Enum.KeyCode.LeftAlt then 
+            isBraking = true
         elseif i.KeyCode == ModSettings.NitroKey then
             local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
             if vSeat and vSeat:IsA("VehicleSeat") then vSeat.AssemblyLinearVelocity = vSeat.CFrame.LookVector * ModSettings.NitroPower end
         end
     end
 end)
+
 UserInputService.InputEnded:Connect(function(i, g) 
     if not g then 
         if i.UserInputType == Enum.UserInputType.MouseButton1 then 
@@ -242,6 +255,34 @@ PursuitLabel.AnchorPoint = Vector2.new(0.5, 1); PursuitLabel.Position = UDim2.ne
 PursuitLabel.Font = Enum.Font.GothamBlack; PursuitLabel.Text = "🚔 SCANNING"; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0); PursuitLabel.TextSize = 16; PursuitLabel.Visible = false
 local PursuitCorner = Instance.new("UICorner", PursuitLabel); PursuitCorner.CornerRadius = UDim.new(0, 8)
 local PursuitStroke = Instance.new("UIStroke", PursuitLabel); PursuitStroke.Thickness = 2; PursuitStroke.Color = Color3.fromRGB(0, 0, 0)
+
+local RadioBtn = Instance.new("TextButton")
+RadioBtn.Parent = PursuitHUDGui; RadioBtn.BackgroundColor3 = Color3.fromRGB(30, 100, 200); RadioBtn.BackgroundTransparency = 0.2
+RadioBtn.AnchorPoint = Vector2.new(0.5, 1); RadioBtn.Position = UDim2.new(0.5, -110, 1, -15); RadioBtn.Size = UDim2.new(0, 100, 0, 35)
+RadioBtn.Font = Enum.Font.GothamBold; RadioBtn.Text = "📢 CALLOUT"; RadioBtn.TextColor3 = Color3.fromRGB(255, 255, 255); RadioBtn.TextSize = 13; RadioBtn.Visible = false
+local RadioCorner = Instance.new("UICorner", RadioBtn); RadioCorner.CornerRadius = UDim.new(0, 6)
+RadioBtn.MouseButton1Click:Connect(function() if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg); BtnFx(RadioBtn, true); task.wait(0.2); BtnFx(RadioBtn, false) end end)
+
+local PinBtn = Instance.new("TextButton")
+PinBtn.Parent = PursuitHUDGui; PinBtn.BackgroundColor3 = Color3.fromRGB(40, 150, 40); PinBtn.BackgroundTransparency = 0.2
+PinBtn.AnchorPoint = Vector2.new(0.5, 1); PinBtn.Position = UDim2.new(0.5, 0, 1, -15); PinBtn.Size = UDim2.new(0, 100, 0, 35)
+PinBtn.Font = Enum.Font.GothamBold; PinBtn.Text = "📍 PIN"; PinBtn.TextColor3 = Color3.fromRGB(255, 255, 255); PinBtn.TextSize = 13; PinBtn.Visible = false
+local PinCorner = Instance.new("UICorner", PinBtn); PinCorner.CornerRadius = UDim.new(0, 6)
+PinBtn.MouseButton1Click:Connect(function() 
+    local locMsg = string.format("We at %s In pursuit On %s at %s", currentStreetName, GetAcronym(currentStreetName), currentDirection)
+    SendToChat(locMsg); BtnFx(PinBtn, true); task.wait(0.2); BtnFx(PinBtn, false) 
+end)
+
+local PanicBtnUI = Instance.new("TextButton")
+PanicBtnUI.Parent = PursuitHUDGui; PanicBtnUI.BackgroundColor3 = Color3.fromRGB(200, 30, 30); PanicBtnUI.BackgroundTransparency = 0.2
+PanicBtnUI.AnchorPoint = Vector2.new(0.5, 1); PanicBtnUI.Position = UDim2.new(0.5, 110, 1, -15); PanicBtnUI.Size = UDim2.new(0, 100, 0, 35)
+PanicBtnUI.Font = Enum.Font.GothamBold; PanicBtnUI.Text = "🚨 PANIC"; PanicBtnUI.TextColor3 = Color3.fromRGB(255, 255, 255); PanicBtnUI.TextSize = 13; PanicBtnUI.Visible = false
+local PanicCorner = Instance.new("UICorner", PanicBtnUI); PanicCorner.CornerRadius = UDim.new(0, 6)
+PanicBtnUI.MouseButton1Click:Connect(function() 
+    PanicSound:Play()
+    local panicMsg = string.format("⚠️ OFFICER NEED HELP BACKUP AT %s On %s At %s ⚠️⚠️", currentStreetName, GetAcronym(currentStreetName), currentDirection)
+    SendToChat(panicMsg); BtnFx(PanicBtnUI, true); task.wait(0.2); BtnFx(PanicBtnUI, false) 
+end)
 
 local RadarLabel = Instance.new("TextLabel")
 RadarLabel.Parent = PursuitHUDGui; RadarLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 15); RadarLabel.BackgroundTransparency = 0.3
@@ -308,9 +349,14 @@ local function GetTeamColor(p) if p.Team then return p.Team.TeamColor.Color else
 local function DrawLine() local l = Drawing.new("Line"); l.Thickness = 1.5; l.Visible = false; return l end
 
 RunService.RenderStepped:Connect(function()
+    
+    -- FIXED & AGGRESSIVE NO RECOIL
     if AimSettings.NoRecoil and isShooting then
-        local pitch = camera.CFrame:ToEulerAnglesYXZ()
-        if pitch > 0.1 then camera.CFrame = camera.CFrame * CFrame.Angles(-0.01, 0, 0) end
+        local cx, cy, cz = camera.CFrame:ToEulerAnglesYXZ()
+        -- Hard-locks the camera pitch from traveling higher than when you clicked
+        if cx > startShootPitch then
+            camera.CFrame = CFrame.new(camera.CFrame.Position) * CFrame.fromEulerAnglesYXZ(startShootPitch, cy, cz)
+        end
     end
     
     FOVCircle.Position = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
@@ -350,8 +396,10 @@ RunService.RenderStepped:Connect(function()
         
         if target and isCurrentlyLocking then
             local distToTarget = (target.Position - camera.CFrame.Position).Magnitude
+            
+            -- APPLIED FIXED PING COMPENSATION 
             local pingAdd = 0
-            if AimSettings.PingComp then pingAdd = GetPing() * 1.5 end 
+            if AimSettings.PingComp then pingAdd = GetPing() end 
             
             local dynamicPrediction = AimSettings.Prediction + pingAdd + ((distToTarget / 100) * (AimSettings.DistMultiplier * 0.05))
             local fPos = target.Position + (target.AssemblyLinearVelocity * dynamicPrediction)
@@ -511,6 +559,7 @@ RunService.Heartbeat:Connect(function()
         local upVector = vSeat.CFrame.UpVector
         if upVector.Y < 0.5 then
             local rx, ry, rz = vSeat.CFrame:ToOrientation()
+            vSeat.CFrame:ToOrientation()
             vSeat.CFrame = CFrame.new(vSeat.Position) * CFrame.Angles(0, ry, 0)
             vSeat.AssemblyAngularVelocity = Vector3.zero
         end
@@ -567,12 +616,11 @@ RPTab:CreateToggle({Name = T.Radar, CurrentValue = false, Callback = function(v)
 RPTab:CreateDropdown({Name = T.SpdUnit, Options = {"MPH", "KMH"}, CurrentOption = {"MPH"}, MultipleOptions = false, Callback = function(opt) RoleplaySettings.RadarUnit = opt[1] end})
 RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER") end})
 RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
-RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
 RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BACKUP") end})
 RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
-RPTab:CreateButton({Name = "🚨 Panic Button", Callback = function() 
+RPTab:CreateButton({Name = "⚠️ Panic Button", Callback = function() 
     PanicSound:Play()
-    local panicMsg = "🚨 PANIC: WE NEED HEAVY BACKUP AT " .. string.upper(currentDirection) .. " ON " .. string.upper(currentStreetName)
+    local panicMsg = string.format("⚠️ OFFICER NEED HELP BACKUP AT %s On %s At %s ⚠️⚠️", currentStreetName, GetAcronym(currentStreetName), currentDirection)
     SendToChat(panicMsg)
 end})
 
@@ -584,7 +632,6 @@ TrackTab:CreateToggle({Name = T.DrawL, CurrentValue = false, Callback = function
 ModTab:CreateSlider({Name = T.Nitro, Range = {100, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ModSettings.NitroPower = v end})
 ModTab:CreateToggle({Name = T.ARag, CurrentValue = false, Callback = function(v) ModSettings.AntiRagdoll = v end})
 
--- AUTO XP FARM
 ModTab:CreateToggle({Name = T.AutoXP, CurrentValue = false, Callback = function(v) 
     ModSettings.AutoXP = v
     if v then
@@ -607,7 +654,6 @@ ModTab:CreateToggle({Name = T.AutoXP, CurrentValue = false, Callback = function(
     end
 end})
 
--- FIXED ANTI-LAG (NO MORE ICE ROADS)
 ModTab:CreateButton({Name = T.ALag, Callback = function()
     local Lighting = game:GetService("Lighting")
     Lighting.GlobalShadows = false
@@ -619,7 +665,6 @@ ModTab:CreateButton({Name = T.ALag, Callback = function()
         elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
             v.Lifetime = NumberRange.new(0)
         end
-        -- We no longer change v.Material to Plastic so cars keep their friction!
     end
 end})
 
