@@ -118,7 +118,9 @@ local function GetPlayerWeapon(char)
     if tool then return tool.Name else return "Unarmed" end
 end
 
--- GAME NATIVE RADIO INJECTION
+-- ==========================================================
+-- GAME NATIVE RADIO INJECTION (TOP RIGHT ALIGNMENT)
+-- ==========================================================
 task.spawn(function()
     local pGui = lp:WaitForChild("PlayerGui", 10)
     if pGui then
@@ -126,16 +128,35 @@ task.spawn(function()
         if radioUI then
             local mainFrame = radioUI:WaitForChild("Main", 10)
             if mainFrame then
+                
+                -- 1. CALLOUT BUTTON (TOP)
+                local CalloutBtnRadio = Instance.new("TextButton")
+                CalloutBtnRadio.Name = "AutoCalloutBtn"
+                CalloutBtnRadio.Parent = mainFrame
+                CalloutBtnRadio.BackgroundColor3 = Color3.fromRGB(30, 100, 200)
+                CalloutBtnRadio.Position = UDim2.new(1, 5, 0, 0) -- Right edge, Top alignment
+                CalloutBtnRadio.Size = UDim2.new(0, 80, 0, 30)
+                CalloutBtnRadio.Font = Enum.Font.GothamBold
+                CalloutBtnRadio.Text = "📢 CALLOUT"
+                CalloutBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
+                CalloutBtnRadio.TextSize = 11
+                local calloutCorner = Instance.new("UICorner", CalloutBtnRadio); calloutCorner.CornerRadius = UDim.new(0, 6)
+
+                CalloutBtnRadio.MouseButton1Click:Connect(function() 
+                    if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg) end
+                end)
+
+                -- 2. PIN BUTTON (MIDDLE)
                 local PinBtnRadio = Instance.new("TextButton")
                 PinBtnRadio.Name = "AutoPinBtn"
                 PinBtnRadio.Parent = mainFrame
                 PinBtnRadio.BackgroundColor3 = Color3.fromRGB(40, 150, 40)
-                PinBtnRadio.Position = UDim2.new(1, 5, 0, 0)
-                PinBtnRadio.Size = UDim2.new(0, 70, 0, 30)
+                PinBtnRadio.Position = UDim2.new(1, 5, 0, 35) -- Stacked below Callout
+                PinBtnRadio.Size = UDim2.new(0, 80, 0, 30)
                 PinBtnRadio.Font = Enum.Font.GothamBold
                 PinBtnRadio.Text = "📍 PIN"
                 PinBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
-                PinBtnRadio.TextSize = 12
+                PinBtnRadio.TextSize = 11
                 local pinCorner = Instance.new("UICorner", PinBtnRadio); pinCorner.CornerRadius = UDim.new(0, 6)
 
                 PinBtnRadio.MouseButton1Click:Connect(function() 
@@ -143,22 +164,30 @@ task.spawn(function()
                     SendToChat(locMsg)
                 end)
 
+                -- 3. PANIC BUTTON (BOTTOM)
                 local PanicBtnRadio = Instance.new("TextButton")
                 PanicBtnRadio.Name = "AutoPanicBtn"
                 PanicBtnRadio.Parent = mainFrame
                 PanicBtnRadio.BackgroundColor3 = Color3.fromRGB(200, 30, 30)
-                PanicBtnRadio.Position = UDim2.new(1, 5, 0, 35)
-                PanicBtnRadio.Size = UDim2.new(0, 70, 0, 30)
+                PanicBtnRadio.Position = UDim2.new(1, 5, 0, 70) -- Stacked below Pin
+                PanicBtnRadio.Size = UDim2.new(0, 80, 0, 30)
                 PanicBtnRadio.Font = Enum.Font.GothamBold
                 PanicBtnRadio.Text = "🚨 PANIC"
                 PanicBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
-                PanicBtnRadio.TextSize = 12
+                PanicBtnRadio.TextSize = 11
                 local panicCorner = Instance.new("UICorner", PanicBtnRadio); panicCorner.CornerRadius = UDim.new(0, 6)
 
                 PanicBtnRadio.MouseButton1Click:Connect(function() 
                     PanicSound:Play()
                     local panicMsg = "🚨 PANIC: WE NEED HEAVY BACKUP AT " .. string.upper(currentDirection) .. " ON " .. string.upper(currentStreetName)
                     SendToChat(panicMsg)
+                end)
+
+                -- Sync button visibility with the Pursuit HUD toggle
+                RunService.RenderStepped:Connect(function()
+                    CalloutBtnRadio.Visible = ESPSettings.ShowPursuitHUD
+                    PinBtnRadio.Visible = ESPSettings.ShowPursuitHUD
+                    PanicBtnRadio.Visible = ESPSettings.ShowPursuitHUD
                 end)
             end
         end
@@ -216,34 +245,6 @@ PursuitLabel.AnchorPoint = Vector2.new(0.5, 1); PursuitLabel.Position = UDim2.ne
 PursuitLabel.Font = Enum.Font.GothamBlack; PursuitLabel.Text = "🚔 SCANNING"; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0); PursuitLabel.TextSize = 16; PursuitLabel.Visible = false
 local PursuitCorner = Instance.new("UICorner", PursuitLabel); PursuitCorner.CornerRadius = UDim.new(0, 8)
 local PursuitStroke = Instance.new("UIStroke", PursuitLabel); PursuitStroke.Thickness = 2; PursuitStroke.Color = Color3.fromRGB(0, 0, 0)
-
-local RadioBtn = Instance.new("TextButton")
-RadioBtn.Parent = PursuitHUDGui; RadioBtn.BackgroundColor3 = Color3.fromRGB(30, 100, 200); RadioBtn.BackgroundTransparency = 0.2
-RadioBtn.AnchorPoint = Vector2.new(0.5, 1); RadioBtn.Position = UDim2.new(0.5, -110, 1, -15); RadioBtn.Size = UDim2.new(0, 100, 0, 35)
-RadioBtn.Font = Enum.Font.GothamBold; RadioBtn.Text = "📢 CALLOUT"; RadioBtn.TextColor3 = Color3.fromRGB(255, 255, 255); RadioBtn.TextSize = 13; RadioBtn.Visible = false
-local RadioCorner = Instance.new("UICorner", RadioBtn); RadioCorner.CornerRadius = UDim.new(0, 6)
-RadioBtn.MouseButton1Click:Connect(function() if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg); BtnFx(RadioBtn, true); task.wait(0.2); BtnFx(RadioBtn, false) end end)
-
-local PinBtn = Instance.new("TextButton")
-PinBtn.Parent = PursuitHUDGui; PinBtn.BackgroundColor3 = Color3.fromRGB(40, 150, 40); PinBtn.BackgroundTransparency = 0.2
-PinBtn.AnchorPoint = Vector2.new(0.5, 1); PinBtn.Position = UDim2.new(0.5, 0, 1, -15); PinBtn.Size = UDim2.new(0, 100, 0, 35)
-PinBtn.Font = Enum.Font.GothamBold; PinBtn.Text = "📍 PIN"; PinBtn.TextColor3 = Color3.fromRGB(255, 255, 255); PinBtn.TextSize = 13; PinBtn.Visible = false
-local PinCorner = Instance.new("UICorner", PinBtn); PinCorner.CornerRadius = UDim.new(0, 6)
-PinBtn.MouseButton1Click:Connect(function() 
-    local locMsg = "📍 " .. currentDirection .. " on " .. currentStreetName
-    SendToChat(locMsg); BtnFx(PinBtn, true); task.wait(0.2); BtnFx(PinBtn, false) 
-end)
-
-local PanicBtnUI = Instance.new("TextButton")
-PanicBtnUI.Parent = PursuitHUDGui; PanicBtnUI.BackgroundColor3 = Color3.fromRGB(200, 30, 30); PanicBtnUI.BackgroundTransparency = 0.2
-PanicBtnUI.AnchorPoint = Vector2.new(0.5, 1); PanicBtnUI.Position = UDim2.new(0.5, 110, 1, -15); PanicBtnUI.Size = UDim2.new(0, 100, 0, 35)
-PanicBtnUI.Font = Enum.Font.GothamBold; PanicBtnUI.Text = "🚨 PANIC"; PanicBtnUI.TextColor3 = Color3.fromRGB(255, 255, 255); PanicBtnUI.TextSize = 13; PanicBtnUI.Visible = false
-local PanicCorner = Instance.new("UICorner", PanicBtnUI); PanicCorner.CornerRadius = UDim.new(0, 6)
-PanicBtnUI.MouseButton1Click:Connect(function() 
-    PanicSound:Play()
-    local panicMsg = "🚨 PANIC: WE NEED HEAVY BACKUP AT " .. string.upper(currentDirection) .. " ON " .. string.upper(currentStreetName)
-    SendToChat(panicMsg); BtnFx(PanicBtnUI, true); task.wait(0.2); BtnFx(PanicBtnUI, false) 
-end)
 
 local RadarLabel = Instance.new("TextLabel")
 RadarLabel.Parent = PursuitHUDGui; RadarLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 15); RadarLabel.BackgroundTransparency = 0.3
@@ -435,9 +436,6 @@ RunService.RenderStepped:Connect(function()
     end
 
     PursuitLabel.Visible = ESPSettings.ShowPursuitHUD
-    RadioBtn.Visible = ESPSettings.ShowPursuitHUD
-    PinBtn.Visible = ESPSettings.ShowPursuitHUD
-    PanicBtnUI.Visible = ESPSettings.ShowPursuitHUD
     
     if lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
         local myPos = lp.Character.HumanoidRootPart.Position; local closestStreet = "UNKNOWN"; local shortestDist = math.huge
@@ -574,6 +572,11 @@ RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER"
 RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
 RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BACKUP") end})
 RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
+RPTab:CreateButton({Name = "🚨 Panic Button", Callback = function() 
+    PanicSound:Play()
+    local panicMsg = "🚨 PANIC: WE NEED HEAVY BACKUP AT " .. string.upper(currentDirection) .. " ON " .. string.upper(currentStreetName)
+    SendToChat(panicMsg)
+end})
 
 local pNames = {}
 for _, p in pairs(Players:GetPlayers()) do if p ~= lp then table.insert(pNames, p.Name) end end
