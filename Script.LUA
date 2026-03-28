@@ -53,7 +53,7 @@ local isCurrentlyLocking = true
 local hitDebounce = {}
 local currentCalloutMsg = ""
 local afkConnection = nil
-local lockedTarget = nil -- Used for Sticky Aim
+local lockedTarget = nil
 
 local SkidSound = Instance.new("Sound")
 SkidSound.SoundId = "rbxassetid://461019670"; SkidSound.Volume = 2; SkidSound.Parent = game:GetService("SoundService")
@@ -72,9 +72,7 @@ local function SendToChat(msg)
 end
 
 local function GetPing()
-    local success, pingVal = pcall(function()
-        return game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue()
-    end)
+    local success, pingVal = pcall(function() return game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() end)
     return success and (pingVal / 1000) or 0.05
 end
 
@@ -148,7 +146,7 @@ UserInputService.InputEnded:Connect(function(i, g)
     if not g then 
         if i.UserInputType == Enum.UserInputType.MouseButton1 then 
             isShooting = false 
-            if AimSettings.StickyAim then lockedTarget = nil end -- Release hard lock when mouse is let go
+            if AimSettings.StickyAim then lockedTarget = nil end 
         elseif i.KeyCode == Enum.KeyCode.LeftAlt then 
             isBraking = false 
         end 
@@ -192,11 +190,14 @@ bcInfoText.Parent = BodycamGui; bcInfoText.BackgroundTransparency = 1; bcInfoTex
 bcInfoText.Size = UDim2.new(0, 300, 0, 50); bcInfoText.Font = Enum.Font.Code; bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD"
 bcInfoText.TextColor3 = Color3.fromRGB(255, 255, 255); bcInfoText.TextSize = 16; bcInfoText.TextXAlignment = Enum.TextXAlignment.Left
 
--- FIXED AXON LOGO (Using rbxthumb to bypass Decal ID restriction)
+-- FIXED AND RESIZED AXON LOGO
 local bcLogo = Instance.new("ImageLabel")
-bcLogo.Parent = BodycamGui; bcLogo.BackgroundTransparency = 1; bcLogo.Position = UDim2.new(0.85, 0, 0.05, 0)
-bcLogo.Size = UDim2.new(0, 120, 0, 120)
-bcLogo.Image = "rbxthumb://type=Asset&id=1000010483&w=150&h=150" 
+bcLogo.Parent = BodycamGui
+bcLogo.BackgroundTransparency = 1
+bcLogo.AnchorPoint = Vector2.new(1, 0) -- Anchors it strictly to the top right corner
+bcLogo.Position = UDim2.new(0.98, 0, 0.03, 0) -- Pushes it to the right with a tiny bit of padding
+bcLogo.Size = UDim2.new(0, 75, 0, 75) -- Resized to be perfectly visible but not massive
+bcLogo.Image = "rbxassetid://1000010483" -- Using standard asset ID so it doesn't pull a place icon
 bcLogo.ScaleType = Enum.ScaleType.Fit
 
 local lastBeepTime = tick()
@@ -247,15 +248,13 @@ RunService.RenderStepped:Connect(function()
     local target = nil; local shortest = AimSettings.FOVSize; local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
     
     if AimSettings.Enabled then
-        -- Sticky Aim Logic
         if AimSettings.StickyAim and isShooting and lockedTarget and lockedTarget.Parent and lockedTarget.Parent:FindFirstChild("Humanoid") and lockedTarget.Parent.Humanoid.Health > 0 then
             target = lockedTarget
         else
-            -- Normal FOV Scan
             for _, p in pairs(Players:GetPlayers()) do
                 if p ~= lp and p.Character and (not AimSettings.DeadCheck or (p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0)) then
                     if AimSettings.TeamCheck and p.Team == lp.Team then continue end
-             local isFriendly = false
+                    local isFriendly = false
                     if p.Team and AimSettings.FriendlyTeams then for _, tName in pairs(AimSettings.FriendlyTeams) do if p.Team.Name == tName then isFriendly = true; break end end end
                     if isFriendly then continue end
                     local aPart = p.Character:FindFirstChild(AimSettings.AimPart) or p.Character:FindFirstChild("Head")
@@ -279,17 +278,14 @@ RunService.RenderStepped:Connect(function()
         
         if target and isCurrentlyLocking then
             local distToTarget = (target.Position - camera.CFrame.Position).Magnitude
-            
-            -- Ping Compensation Calculation
             local pingAdd = 0
-            if AimSettings.PingComp then pingAdd = GetPing() * 1.5 end -- Multiply ping slightly for aggressive lead
+            if AimSettings.PingComp then pingAdd = GetPing() * 1.5 end 
             
             local dynamicPrediction = AimSettings.Prediction + pingAdd + ((distToTarget / 100) * (AimSettings.DistMultiplier * 0.05))
             local fPos = target.Position + (target.AssemblyLinearVelocity * dynamicPrediction)
             
             if AimSettings.LegitShake then local s = AimSettings.ShakePower / 10; fPos = fPos + Vector3.new((math.random() - 0.5) * s, (math.random() - 0.5) * s, (math.random() - 0.5) * s) end
             
-            -- If Sticky Aim is on and shooting, ignore smoothness for absolute aggressive lock
             local currentSmoothness = (AimSettings.StickyAim and isShooting) and 1 or AimSettings.Smoothness
             
             if currentSmoothness >= 1 then 
@@ -506,7 +502,6 @@ TrackTab:CreateToggle({Name = T.DrawL, CurrentValue = false, Callback = function
 ModTab:CreateSlider({Name = T.Nitro, Range = {100, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ModSettings.NitroPower = v end})
 ModTab:CreateToggle({Name = T.ARag, CurrentValue = false, Callback = function(v) ModSettings.AntiRagdoll = v end})
 
--- NEW FPS BOOST / ANTI LAG BUTTON
 ModTab:CreateButton({Name = T.ALag, Callback = function()
     local Lighting = game:GetService("Lighting")
     Lighting.GlobalShadows = false
@@ -555,7 +550,7 @@ CTab:CreateToggle({Name = T.PingComp, CurrentValue = true, Callback = function(v
 CTab:CreateToggle({Name = T.Sticky, CurrentValue = false, Callback = function(v) AimSettings.StickyAim = v end})
 CTab:CreateToggle({Name = T.NRec, CurrentValue = false, Callback = function(v) AimSettings.NoRecoil = v end})
 CTab:CreateToggle({Name = T.TBot, CurrentValue = false, Callback = function(v) AimSettings.Triggerbot = v end})
-CTab:CreateToggle({Name = T.HExp, CurrentValue = false, Callback = function(v) AimSettings.HitboxExpander = v end})
+CTab:CreateToggle({Name = T.HExp,CurrentValue = false, Callback = function(v) AimSettings.HitboxExpander = v end})
 CTab:CreateSlider({Name = T.HSize, Range = {2, 20}, Increment = 1, CurrentValue = 5, Callback = function(v) AimSettings.HitboxSize = v end})
 CTab:CreateToggle({Name = T.SFov, CurrentValue = false, Callback = function(v) AimSettings.ShowFOV = v end})
 CTab:CreateSlider({Name = T.FSize, Range = {50, 500}, Increment = 10, CurrentValue = 150, Callback = function(v) AimSettings.FOVSize = v end})
