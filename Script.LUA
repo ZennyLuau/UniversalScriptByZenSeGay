@@ -57,10 +57,10 @@ local afkConnection = nil
 local SkidSound = Instance.new("Sound")
 SkidSound.SoundId = "rbxassetid://461019670"; SkidSound.Volume = 2; SkidSound.Parent = game:GetService("SoundService")
 
--- NEW: Bodycam Beep Sound
+-- REAL AXON BEEP SOUND
 local BeepSound = Instance.new("Sound")
-BeepSound.SoundId = "rbxassetid://4734563851" -- Radio double-beep sound
-BeepSound.Volume = 1.5; BeepSound.Parent = game:GetService("SoundService")
+BeepSound.SoundId = "rbxassetid://4888078857" 
+BeepSound.Volume = 2; BeepSound.Parent = game:GetService("SoundService")
 
 local function SendToChat(msg)
     local cleanMsg = string.gsub(msg, "0", "O")
@@ -163,7 +163,7 @@ RadarLabel.Font = Enum.Font.Code; RadarLabel.Text = "📡 ALPR STANDBY"; RadarLa
 local RadarCorner = Instance.new("UICorner", RadarLabel); RadarCorner.CornerRadius = UDim.new(0, 6)
 local RadarStroke = Instance.new("UIStroke", RadarLabel); RadarStroke.Thickness = 1.5; RadarStroke.Color = Color3.fromRGB(0, 0, 0)
 
--- NEW: BODYCAM GUI (WORKS IN 3RD PERSON)
+-- BODYCAM GUI WITH LOGO
 if CoreGui:FindFirstChild("AxonBodycamGui") then CoreGui.AxonBodycamGui:Destroy() end
 local BodycamGui = Instance.new("ScreenGui"); BodycamGui.Name = "AxonBodycamGui"; BodycamGui.Parent = CoreGui; BodycamGui.Enabled = false
 
@@ -176,6 +176,11 @@ local bcInfoText = Instance.new("TextLabel")
 bcInfoText.Parent = BodycamGui; bcInfoText.BackgroundTransparency = 1; bcInfoText.Position = UDim2.new(0.02, 0, 0.1, 0)
 bcInfoText.Size = UDim2.new(0, 300, 0, 50); bcInfoText.Font = Enum.Font.Code; bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD"
 bcInfoText.TextColor3 = Color3.fromRGB(255, 255, 255); bcInfoText.TextSize = 16; bcInfoText.TextXAlignment = Enum.TextXAlignment.Left
+
+-- NEW: AXON LOGO IMAGE
+local bcLogo = Instance.new("ImageLabel")
+bcLogo.Parent = BodycamGui; bcLogo.BackgroundTransparency = 1; bcLogo.Position = UDim2.new(0.85, 0, 0.05, 0)
+bcLogo.Size = UDim2.new(0, 120, 0, 120); bcLogo.Image = "rbxassetid://1000010483"; bcLogo.ScaleType = Enum.ScaleType.Fit
 
 local lastBeepTime = tick()
 task.spawn(function()
@@ -529,9 +534,9 @@ VTab:CreateToggle({Name = T.SName, CurrentValue = false, Callback = function(v) 
 VTab:CreateToggle({Name = T.STrac, CurrentValue = false, Callback = function(v) ESPSettings.StreetShowTracers = v end})
 VTab:CreateSlider({Name = T.SOff, Range = {50, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ESPSettings.SkyOffset = v end})
 VTab:CreateSlider({Name = T.MDist, Range = {100, 5000}, Increment = 100, CurrentValue = 1000, Callback = function(v) ESPSettings.MaxDistance = v end})
--- NEW TOGGLE: Bodycam in Visuals Tab
+
 VTab:CreateToggle({Name = T.BCam, CurrentValue = false, Callback = function(v) 
     RoleplaySettings.Bodycam = v 
     BodycamGui.Enabled = v
-    if v then lastBeepTime = tick() end -- Resets the 5-minute timer every time you turn it on
+    if v then lastBeepTime = tick() end 
 end})
