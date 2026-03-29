@@ -559,7 +559,7 @@ RunService.Heartbeat:Connect(function()
         for _, p in pairs(Players:GetPlayers()) do
             if p ~= lp and p.Character then
                 local eSeat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
-                if eSeatand (eSeat.Position - vSeat.Position).Magnitude <= ModSettings.EMPRadius then
+                if eSeat and (eSeat.Position - vSeat.Position).Magnitude <= ModSettings.EMPRadius then
                     eSeat.AssemblyLinearVelocity = Vector3.zero; eSeat.AssemblyAngularVelocity = Vector3.new(0, 10, 0)
                 end
             end
