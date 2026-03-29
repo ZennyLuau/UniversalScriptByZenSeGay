@@ -1,1 +1,632 @@
---[[ v1.0.0 https://wearedevs.net/obfuscator ]] return(function(...)local F={"\047\101\118\076\102\111\098\065\067\117\089\116\102\112\061\061","\075\101\085\070\047\101\099\061";"\075\056\068\112\078\056\098\051","\102\088\086\069\047\050\090\061","\102\054\109\112\098\065\102\052\067\117\120\065\099\103\068\109","\049\106\102\053\055\117\083\108\047\103\089\054\067\065\055\114\075\111\067\061","\072\052\048\054\099\104\102\090\098\099\079\079\055\121\106\048","\106\101\085\084\067\101\106\069\090\054\055\089\075\101\106\104\075\101\106\109\090\081\061\061";"\067\117\106\084\047\050\102\089";"\057\085\102\101\102\052\054\069\099\052\109\069\099\054\085\079\106\101\077\061";"\099\082\068\118\089\112\061\061";"\047\101\106\116","\067\117\085\116\102\101\118\084";"\057\106\048\055\081\103\106\048\078\043\076\097\100\099\085\102\114\099\099\061","\047\054\083\115\055\101\085\086\049\121\078\069\057\109\072\079\099\099\105\061";"\047\052\054\061","\072\103\053\057\098\056\055\088\081\065\120\097\049\121\085\056";"\114\105\061\061";"\099\099\099\043\057\050\086\070\113\106\089\088\056\099\053\065\067\105\061\061","\049\085\055\116\049\081\061\061","\067\050\055\069\100\056\068\121","\047\056\085\065\100\066\061\061";"\113\111\055\065\067\054\075\089\075\066\061\061","\088\053\118\115\102\056\079\061";"\102\050\098\053\078\105\061\061";"\075\101\118\043\075\111\086\120\047\117\067\061";"\088\053\118\120\047\117\055\089\049\066\061\061";"\078\103\076\076\067\105\061\061";"\078\121\089\065\102\081\061\061";"\067\101\098\076\047\101\112\061";"\102\117\083\087\047\050\090\061";"\088\053\118\121\078\112\061\061";"\047\052\090\061";"\106\056\112\053\098\085\081\065\067\109\098\054\106\085\081\103";"\088\053\118\084\102\088\055\076\075\101\085\070\047\101\099\061","\067\103\106\065\047\056\106\065\078\088\055\076\078\117\083\089";"\102\103\053\076\075\101\098\077","\075\101\118\116\075\056\053\070\102\088\090\061";"\102\085\076\120\106\101\068\102\055\054\068\056\075\117\081\112\067\066\061\061";"\078\103\118\116\078\103\085\065","\102\103\085\084\102\081\061\061","","\099\085\098\052\081\065\053\103\081\057\086\083\099\056\098\111\106\066\061\061","\099\088\089\043\072\088\102\078";"\099\117\075\099\047\089\120\115\049\085\086\115\057\117\102\077","\106\053\120\115\099\052\105\068\102\103\120\116\049\085\075\077";"\114\070\105\089\102\122\077\120\114\105\061\061","\078\103\079\112\113\106\067\053\056\099\090\103\056\111\085\113"}for Z,k in ipairs({{-349200+349201,955957+-955909},{-769925-(-769926);807558+-807557};{-108237-(-108239),-1041628-(-1041676)}})do while k[166661-166660]<k[441361-441359]do F[k[308766-308765]],F[k[154466-154464]],k[-897412+897413],k[32747+-32745]=F[k[623764+-623762]],F[k[-679191+679192]],k[-976884-(-976885)]+(-23218-(-23219)),k[991096+-991094]-(-86887-(-86888))end end local function Z(Z)return F[Z+(671774-617573)]end do local Z=string.sub local k=type local a=table.insert local r=F local w=table.concat local C={k=-786287+786298,b=-849434+849447;V=227020+-227011;H=-807473-(-807485);f=721504-721479,["\053"]=-449300-(-449353);O=356774+-356718;Y=169384+-169347,["\054"]=-708820-(-708824);q=-735842-(-735860);["\050"]=-722219-(-722274);c=445989-445969,W=367318+-367271,["\055"]=-701615-(-701632);["\049"]=358474+-358444,T=11213-11168;t=1045769+-1045723;Q=293467+-293451,h=-437387-(-437422),n=257960+-257950;P=140013+-139950,J=4794+-4734,r=619346+-619332,["\043"]=-237038+237089,p=747262-747214;["\051"]=98354+-98311,I=430871-430840,Z=660436+-660428,v=796782+-796721;j=353885+-353864,["\056"]=599215-599193,o=-216075+216082;E=-712507-(-712557);["\047"]=969499-969472;g=106086-106032;m=-932168-(-932204),a=173112+-173054,X=725421+-725398;R=-420816+420858,w=-510405-(-510464),["\057"]=777534+-777515,y=348185-348146;G=-910638+910700,l=528390-528375;["\048"]=480277+-480276;["\052"]=560732+-560729;S=137144-137095,d=552491-552465;C=-967699-(-967727),i=-839731-(-839763);s=932960-932916,U=758665-758660,K=62672+-62643;z=903559-903557,A=-197849-(-197901);B=67601-67601;u=-146234-(-146272);L=-515885-(-515918);F=856244+-856210,x=-113557-(-113598),M=-232075+232115,D=86069-86012,N=-275111+275135,e=912223+-912217}local J=string.char local W=math.floor local B=string.len for F=971693-971692,#r,710423+-710422 do local I=r[F]if k(I)=="\115\116\114\105\110\103"then local k=B(I)local s={}local m=-658162+658163 local u=635889-635889 local L=-435108+435108 while m<=k do local F=Z(I,m,m)local r=C[F]if r then u=u+r*(-331700+331764)^((-683985-(-683988))-L)L=L+(-252426+252427)if L==-935966+935970 then L=-251467-(-251467)local F=W(u/(560932+-495396))local Z=W((u%(365162-299626))/(-450633-(-450889)))local k=u%(752510-752254)a(s,J(F,Z,k))u=-64311+64311 end elseif F=="\061"then a(s,J(W(u/(-728673+794209))))if m>=k or Z(I,m+(-539316+539317),m+(581461-581460))~="\061"then a(s,J(W((u%(127569+-62033))/(747278+-747022))))end break end m=m+(-982984+982985)end r[F]=w(s)end end end return(function(F,a,r,w,C,J,W,z,A,I,X,U,B,k,v,m,s,D,q,u,L)U,u,s,B,X,v,I,k,L,D,z,m,A,q=function(F,Z)local a=u(Z)local r=function(r,w,C,J,W,B)return k(F,{r,w,C,J;W;B},Z,a)end return r end,function(F)for Z=59686+-59685,#F,284567-284566 do I[F[Z]]=I[F[Z]]+(-919384+919385)end if r then local k=r(true)local a=C(k)a[Z(-606102+551929)],a[Z(690919-745087)],a[Z(166228-220404)]=F,L,function()return-569070+1531901 end return k else return w({},{[Z(-387149+332981)]=L;[Z(638702-692875)]=F,[Z(-623775-(-569599))]=function()return 734026-(-228805)end})end end,function()m=m+(-1036549-(-1036550))I[m]=728487-728486 return m end,{},function(F,Z)local a=u(Z)local r=function(...)return k(F,{...},Z,a)end return r end,function(F)I[F]=I[F]-(758959+-758958)if I[F]==251550+-251550 then I[F],B[F]=nil,nil end end,{},function(k,r,w,C)local GO,Q,aO,R,BO,N,x,dO,K,n,DO,m,I,nO,G,l,ZO,jO,AO,vO,iO,YO,b,SO,i,H,E,WO,u,c,mO,lO,o,y,EO,fO,RO,t,V,qO,PO,O,rO,S,d,JO,sO,QO,MO,hO,j,FO,T,e,L,OO,uO,tO,wO,bO,XO,W,kO,cO,HO,P,oO,g,UO,zO,IO,X,KO,NO,CO,p,Y,M,VO,h,f,xO,LO,TO,yO while k do if k<8213936-(-892996)then if k<4398314-(-539738)then if k<-172009+2235123 then if k<217151-(-822389)then if k<617882+270278 then if k<1764888-1047035 then if k<-603624+1234607 then m=B[w[-374675+374678]]u=-663982-(-663983)I=m~=u k=I and 887812+5005531 or 16848616-630462 else f=Y==V c=f k=12970532-(-471869)end else k={}X=573548+35184371515284 h=479650+-479395 B[w[-198522+198524]]=k W=B[w[2876-2873]]L=W W=m%X B[w[447512+-447508]]=W P=Z(274475+-328654)l=m%h h=130939-130937 X=l+h B[w[-293172-(-293177)]]=X h=F[P]P=Z(911163-965351)l=h[P]h=l(I)l=Z(478252+-532410)u[m]=l k=-561531+14637894 P=599149+-599148 l=908-765 x=-36743-(-36744)Y=x x=277548+-277548 n=h V=Y<x x=P-Y end else if k<-348554+1319918 then k=B[w[289984+-289974]]m=B[w[422447+-422436]]I[k]=m k=B[w[-483704+483716]]m={k(I)}W={a(m)}k=F[Z(-98311+44125)]else u=Z(-530778+476580)m=F[u]u=Z(841594+-895785)k=F[Z(-341623-(-287428))]I=m[u]u=B[w[779565+-779564]]m={I(u)}W={a(m)}end end else if k<-1005737+2694713 then if k<1590071-176428 then if k<2286465-948378 then x=Z(220846-275043)n=F[x]W=n k=3674143-(-186688)else W={}k=F[Z(-103304+49123)]end else k=F[Z(-624504-(-570310))]W={}end else if k<817588+1070679 then u=u+X W=u<=L h=not l W=h and W h=u>=L h=l and h W=h or W h=98988+8387697 k=W and h W=17369175-605146 k=k or W else k=14056053-333133 Q=-564002-(-564004)R=M[Q]Q=B[H]G=R==Q g=G end end end else if k<4480985-698281 then if k<3330110-161746 then if k<319135+2746438 then if k<-1040878+3676325 then W=Z(-689740-(-635578))L=Z(747146-801320)k=F[W]I=B[w[-341161+341165]]n=q(1033652+8834434,{})P=Z(1003885+-1058055)u=F[L]h=F[P]P={h(n)}h=191482-191480 l={a(P)}X=l[h]L=u(X)u=Z(9468-63621)m=I(L,u)I={m()}W=k(a(I))I=W m=B[w[900871+-900866]]W=m k=m and-141099+5165420 or-262116+3998968 else f=B[m]k=f and 1636619-954063 or 14291578-849177 c=f end else l=W h=Z(-654067+599889)W=F[h]P=Z(-559479-(-505281))h=Z(710563+-764750)k=W[h]h=s()B[h]=k W=F[P]P=Z(90170+-144330)V=Z(988183+-1042381)k=W[P]x=k P=k Y=F[V]k=Y and 124900+12161072 or 850041+7100887 n=Y end else if k<3500661-122602 then I=B[w[207038+-207037]]W=#I I=193559-193559 k=W==I k=k and 15594424-36696 or 1277467-284306 else k=548318+7357998 B[w[869729-869724]]=W I=nil end end else if k<395527+3601721 then if k<4033108-169544 then n=s()B[n]=W Y=-628219+628284 x=-716663+716666 k=B[h]W=k(x,Y)b=A(7200268-985225,{})y=Z(-889111-(-834941))k=293527-293527 i=Z(730822-784996)x=s()B[x]=W Y=k k=-1586-(-1586)V=k W=F[y]y={W(b)}W=-817114-(-817116)k={a(y)}y=k k=y[W]b=k W=Z(305489+-359651)k=F[W]K=B[u]f=F[i]i=f(b)f=Z(268886+-323039)c=K(i,f)K={c()}W=k(a(K))K=s()B[K]=W W=-78684+78685 c=B[x]f=c c=-984099-(-984100)i=c c=-823603-(-823603)j=i<c c=W-i k=610685+10263259 else j=-580435+580435 k=14986842-411455 K=#y b=K==j end else if k<603874+4124786 then k=true k=k and-203536+5103717 or 2429020-887453 else k=B[h]i=-190639+190640 j=-942188-(-942194)f=k(i,j)k=Z(-1021671+967504)j=Z(-577207+523040)F[k]=f i=F[j]j=-119876-(-119878)k=i>j k=k and 12786642-416490 or 8386581-(-433322)end end end end else if k<315083+7571465 then if k<255166+6330418 then if k<6633618-928436 then if k<5050634-(-329799)then if k<4970256-(-333272)then u=B[w[992360+-992354]]m=u==I W=m k=-965783+4702635 else k=true k=k and-982745+10223294 or 14584328-(-229794)end else d=B[m]k=d and 16199644-863269 or 699312+6301936 g=d end else if k<5304337-(-846500)then m=B[w[-641088+641091]]u=202010-201978 I=m%u L=B[w[-984967-(-984971)]]Y=57263+-57250 h=B[w[-434358+434360]]n=-207166-(-207168)b=B[w[-310880-(-310883)]]y=b-I b=-639018+639050 V=y/b x=Y-V Y=-574842+575098 P=n^x n=-894411-(-894667)l=h/P X=L(l)L=4294564807-(-402489)u=X%L X=949756-949754 L=X^I P=-149556+149557 m=u/L L=B[w[-343076-(-343080)]]h=m%P P=4295399429-432133 l=h*P X=L(l)L=B[w[590484-590480]]l=L(m)u=X+l X=94876+-29340 L=u%X h=-488082-(-553618)I=nil k=254604+738557 l=u-L X=l/h m=nil h=458837-458581 l=L%h P=L-l h=P/n L=nil n=1001818-1001562 P=X%n x=X-P n=x/Y X=nil x={l,h,P,n}l=nil P=nil B[w[-260840+260841]]=x u=nil h=nil n=nil else W=961839+10296249 u=559667+897983 m=Z(657628-711784)I=m^u k=W-I W=Z(-374082+319921)I=k k=W/I W={k}k=F[Z(183119+-237312)]end end else if k<6983313-(-307326)then if k<-987793+8181781 then if k<5914311-(-995966)then u=-161294-(-161294)I=Z(-757451-(-703255))k=F[I]m=B[w[-185045+185053]]I=k(m,u)k=942557+13940686 else B[m]=g Q=B[O]S=13980+-13979 R=Q+S G=M[R]d=Y+G G=-492568+492824 k=d%G R=B[o]Y=k G=V+R R=-356662+356918 d=G%R V=d k=15449609-(-669233)end else K=K+E o=not N b=K<=j b=o and b o=K>=j o=N and o b=o or b o=15876033-(-662737)k=b and o b=-386454+4250841 k=k or b end else if k<6599082-(-880028)then W={}k=true B[w[-242828-(-242829)]]=k k=F[Z(896256+-950441)]else k=943988+7500732 end end end else if k<-642609+8769629 then if k<8220753-202726 then if k<7773645-(-212161)then if k<8652402-735629 then k=B[w[126165+-126158]]k=k and 190720+6667353 or 14066836-(-816407)else W=n k=x k=n and 3249085-(-611746)or 1318069-27447 end else P=x i=Z(-95350+41171)f=F[i]i=Z(818702+-872873)c=f[i]f=c(I,P)c=B[w[-538532+538538]]i=c()K=f+i b=K+l P=nil i=-361550+361551 K=-209049+209305 y=b%K K=u[m]l=y f=l+i k=-768538+14844901 c=L[f]b=K..c u[m]=b end else if k<7861960-(-225994)then k=-535362+14394683 else W=Z(218619-272815)k=F[W]I=Z(972133+-1026325)W=k(I)W={}k=F[Z(-209237-(-155071))]end end else if k<8016669-(-505379)then if k<-970472+9441196 then k=true k=k and 275802+16165517 or-1044226+2438540 else n=Z(330860+-385039)h=u y=Z(163774-217963)b=8090331787799-(-760992)P=F[n]x=B[w[75671-75670]]Y=B[w[-535995-(-535997)]]V=Y(y,b)n=x[V]W=P[n]n=I[h]h=nil P=W(n)k=m..P m=k k=1814566-(-53870)end else if k<617011+8075640 then m=B[w[-490498-(-490499)]]X=-20777+20779 L=16350+-16349 u=m(L,X)m=1024997+-1024996 I=u==m k=I and 814172+14687909 or-354012+12477617 W=I else j=Z(490795-544962)k=F[j]j=Z(-865586+811402)F[j]=k k=756016+13642533 end end end end end else if k<-324496+14130688 then if k<500611+10575210 then if k<9840724-(-169763)then if k<8621739-(-870169)then if k<-785264+10132820 then if k<634050+8644280 then k=4616168-(-99458)else Q=244403+-244402 R=M[Q]Q=false d=k G=R==Q g=G k=G and 209513+1767413 or 557090+13165830 end else l=B[X]W=l k=916751+2249640 end else if k<10330541-462550 then m=r[488955-488953]k=B[w[-405408-(-405409)]]u=k I=r[375510+-375509]k=u[m]k=k and 144436+10875598 or 429180-(-344998)else W=-477775+4882739 m=Z(579919-634073)u=11647759-(-114112)I=m^u k=W-I I=k W=Z(-10595+-43585)k=W/I W={k}k=F[Z(-831166-(-776976))]end end else if k<912661+9969991 then if k<10879288-31677 then if k<875712+9902018 then g=B[m]k=g and 944970+8362935 or 940590+10108918 W=g else l=nil k=14450868-780113 h=nil L=nil end else c=c+i W=c<=f E=not j W=E and W E=c>=f E=j and E W=E or W E=-986594+16137362 k=W and E W=2354181-(-291981)k=k or W end else if k<11591219-564827 then k=969083+12701672 else k=16989740-870898 B[m]=W end end end else if k<12797330-(-175943)then if k<-131593+12421579 then if k<11256989-(-887684)then if k<926404+10537556 then m=u P=-458126+458126 n=-434333+434588 k=B[w[-850062+850063]]h=k(P,n)I[m]=h m=nil k=14494814-1013985 else k=15414694-(-87387)m=B[w[640352-640350]]u=B[w[937231-937228]]I=m==u W=I end else k=7498375-(-452553)y=Z(-66011+11813)V=F[y]y=Z(-921143+866946)Y=V[y]n=Y end else if k<-462940+12942505 then i=Z(-960860+906686)k=F[i]E=Z(762284+-816468)j=F[E]i=k(j)k=Z(-768678-(-714511))F[k]=i k=494441+13904108 else b={}P=nil l=nil K=s()y=nil o={}Y=nil E=s()k=F[Z(812268+-866423)]B[K]=b N=Z(-304867+250703)j=q(3896383-726352,{K,n;x;X})M=Z(-624867-(-570702))X=v(X)b=s()t=Z(-526635+472462)B[b]=j j={}B[E]=j j=F[N]H=B[E]G=nil O={[t]=H,[M]=G}N=j(o,O)W={}B[m]=N j=U(9937706-69865,{E,K,V;n,x;b})K=v(K)n=v(n)B[L]=j V=v(V)u=nil h=nil E=v(E)b=v(b)x=v(x)X=Z(-601641-(-547471))u=F[X]h=A(15450932-(-501007),{m,L})P={u(h)}X=P[475947-475946]L=v(L)l=P[1028757+-1028755]m=v(m)X=nil l=nil end end else if k<571219+12952579 then if k<13638659-163662 then B[m]=c k=B[m]k=k and-356733+8444042 or 13770796-(-392589)else u=u+X h=not l m=u<=L m=h and m h=u>=L h=l and h m=h or m h=257170+11164954 k=m and h m=647820+306980 k=k or m end else if k<-275917+13971032 then W={m}k=F[Z(-812284+758084)]else W=g k=d k=10906961-(-142547)end end end end else if k<-132401+15506736 then if k<14786041-54511 then if k<14224954-(-133989)then if k<14036479-(-105575)then if k<14477932-454272 then b=nil L=v(L)K=v(K)y=nil V=nil k=287305+6953128 X=v(X)l=nil h=v(h)x=v(x)L=s()l=Z(468234+-522412)Y=nil Y={}x=s()P=nil u=v(u)K=461637-461381 m=v(m)m=nil n=v(n)V=s()u=nil B[L]=m y={}m=s()n=Z(998864+-1053043)B[m]=u X=F[l]l=Z(-500708+446539)u=X[l]P=Z(788875-843073)h=Z(-4439-49739)X=s()B[X]=u l=F[h]h=Z(821609+-875796)u=l[h]h=F[P]P=Z(264146+-318337)l=h[P]P=F[n]n=Z(189915-244087)h=P[n]P=839291+-839291 n=s()B[n]=P b=-1038928+1038929 P=-966805+966807 B[x]=P B[V]=Y P={}j=K Y=700823-700823 K=1349+-1348 E=K K=681207-681207 N=E<K K=b-E else y=not V x=x+Y P=x<=n P=y and P y=x>=n y=V and y P=y or P y=704596+7310016 k=P and y P=338036+10443552 k=k or P end else k=true k=14633622-(-180500)end else if k<644797+13909112 then k=4983669-268043 else j=#y K=-341363-(-341364)o=-625933+625934 k=254583+15155893 b=u(K,j)K=l(y,b)b=nil j=B[V]N=K-o E=h(N)j[K]=E K=nil end end else if k<320422+14770193 then if k<-766596+15829589 then if k<-421930+15241680 then k=D(459936+7216327,{L})f={k()}k=F[Z(645754-699937)]W={a(f)}else k={}I=k m=240080-240079 k=14004129-523300 u=B[w[309080+-309071]]L=u u=291525-291524 X=u u=-459507-(-459507)l=X<u u=m-X end else k=true m=s()I=r B[m]=k u=Z(637201+-691380)L=s()W=F[u]u=Z(9407+-63570)k=W[u]u=s()X=s()B[u]=k k=z(8003768-(-86720),{})h=Z(289544-343714)B[L]=k k=false P=D(663111+6752847,{X})B[X]=k l=F[h]h=l(P)W=h k=h and 10126129-661749 or-897782+4064173 end else if k<-441180+15681274 then N=Z(809313-863491)E=s()o=-249531-(-249631)B[E]=c W=F[N]N=Z(268676-322863)G=Z(895301+-949475)O=401272-401017 T=192174-182174 k=W[N]N=-62807+62808 W=k(N,o)N=s()B[N]=W k=B[h]o=726746+-726746 W=k(o,O)o=s()B[o]=W M=-477039+477041 S=-873096+873096 O=65563+-65562 k=B[h]t=B[N]W=k(O,t)O=s()H=-66796-(-66797)B[O]=W W=B[h]t=W(H,M)W=229250-229249 M=Z(371429+-425611)k=t==W W=Z(695991-750144)t=s()B[t]=k d=F[G]R=B[h]Q={R(S,T)}G=d(a(Q))d=Z(-187517+133335)g=G..d k=Z(-223054+168879)H=M..g k=b[k]k=k(b,W,H)H=s()g=z(138264+8546292,{h,E;x,u;m;K,t,H;N,O;o;n})M=Z(242670+-296840)B[H]=k W=F[M]M={W(g)}k={a(M)}M=k k=B[t]k=k and 11314171-700801 or-15563+5415213 else k=-1042433+8043681 G=675111+-675110 d=M[G]g=d end end end else if k<15142832-(-1036711)then if k<16276851-663449 then if k<14787415-(-719772)then if k<14704705-(-768230)then j=-855903-(-855903)K=#y b=K==j k=b and-24847+12559146 or 13921977-(-653410)else k=W and-375935+3009431 or 14173+7892143 end else m=B[w[675326+-675324]]u=-583830-(-584019)I=m*u m=16300798024136-(-803805)W=I+m I=35184371212642-(-876190)k=W%I m=-466753+466754 B[w[232159+-232157]]=k k=-385098+16603252 I=B[w[528805+-528802]]W=I~=m end else if k<-495244+16502645 then JO=-218093-(-218140)MO=516076-515971 l=813417+-813370 yO=1036219-1036118 rO=560656+-560539 Y=1023243-1023197 W=486645+-486541 f=-915367+915465 uO=987246-987132 mO=-314689-(-314790)DO=162089+-161990 qO=429279+-429174 PO=-361075-(-361196)d=5048-4932 FO=863032-862922 SO=-542141+542217 iO=-84238+84359 WO=187856-187771 ZO=116557+-116447 EO=696243+-696138 e=769150-769060 oO=-151832+151879 jO=966592-966495 zO=-666561-(-666644)S=-279005+279114 X=271816-271758 y=522626+-522521 YO=409050-408940 lO=-27254-(-27320)K=919658+-919554 m=442142+-442026 R=149933-149834 IO=376087+-375982 OO=-880304-(-880387)c=-105690-(-105807)TO=473966-473881 fO=-181282+181329 tO=438473-438374 hO=-17600-(-17716)E=1022523-1022422 kO=902987+-902866 G=848721+-848675 x=278074+-277955 LO=-120859-(-120974)NO=-352162+352272 RO=-29537-(-29583)N=89366-89252 O=1001055-1000944 L=-297504+297619 GO=397277+-397165 Q=36653-36542 P=826794-826680 vO=451114-451017 cO=127284-127175 AO=-392981+393095 HO=-772820-(-772934)sO=-644765-(-644883)nO=-693273-(-693356)u=719491-719379 XO=761837-761729 M=146173-146072 p=-738701+738802 xO=-115535+115625 h=-14020-(-14067)i=338476+-338359 QO=-384395-(-384460)dO=-550298+550414 o=952355+-952256 UO=65336+-65224 n=-145900+145997 KO=-1021004-(-1021101)I=-747885-(-748001)aO=960963+-960887 wO=-886391+886488 g=26173-26063 VO=-449882-(-449983)j=388949+-388834 V=29617+-29514 H=863305-863189 CO=940102-939985 BO=556408-556298 T=-59814+59861 t=119011-118901 bO=992002-991931 b=-679206-(-679322)k={W,I;m,u,L;X;l,h,P;n,x,Y,V;y;b,K;c;f;i;j,E,N,o,O;t,H;M,g;d;G,R;Q,S,T,e;p;FO;ZO;kO;aO;rO,wO,CO;JO,WO,BO,IO;sO;mO;uO,LO;vO,XO;zO,DO;AO;qO,UO,hO;lO,PO,xO,VO,YO;nO;yO,bO;KO,iO;fO;cO,jO,EO,NO;oO,OO,tO,HO;MO,GO;dO,RO,SO,TO;QO}I=k X=4372155100311-(-564060)L=Z(-999749-(-945591))W=B[w[360303+-360302]]m=B[w[322739+-322737]]u=m(L,X)k=W[u]m=k W=370886+-370885 u=#I L=u u=816046-816045 X=u k=307223+1561213 u=-113078+113078 l=X<u u=W-X else H=v(H)E=v(E)o=v(o)N=v(N)t=v(t)k=10487071-(-386873)M=nil O=v(O)end end else if k<16965922-509013 then if k<-524315+16951180 then k=559135+-237057 m=B[w[-534887+534890]]u=639609-639392 I=m*u m=578358+-578101 W=I%m B[w[-493237-(-493240)]]=W else I=Z(346197+-400381)W=Z(-1067196-(-1013029))k=F[W]W=F[I]I=Z(823617-877801)F[I]=k I=Z(591699-645866)F[I]=W I=B[w[1016093+-1016092]]m=I()k=9086556-641836 end else if k<-868365+17608337 then b=K k=-896333+8136766 o=b y[b]=o b=nil else X=Z(734626-788803)W=Z(-327925+273726)k=F[W]L=Z(-94107+39948)u=F[L]X=u[X]I=nil L={X(u,m)}W=k(a(L))m=nil k=W()W={}k=F[Z(-544081-(-489924))]end end end end end end end k=#C return a(W)end,function(F)local Z,k=-740490-(-740491),F[595106-595105]while k do I[k],Z=I[k]-(958123-958122),Z+(-348637-(-348638))if I[k]==-517175+517175 then I[k],B[k]=nil,nil end k=F[Z]end end,function(F,Z)local a=u(Z)local r=function(r,w)return k(F,{r;w},Z,a)end return r end,function(F,Z)local a=u(Z)local r=function()return k(F,{},Z,a)end return r end,-483622-(-483622),function(F,Z)local a=u(Z)local r=function(r,w,C,J)return k(F,{r,w,C,J},Z,a)end return r end,function(F,Z)local a=u(Z)local r=function(r)return k(F,{r},Z,a)end return r end return(X(-432986+15497507,{}))(a(W))end)(getfenv and getfenreturn(X(-432986+15497507,{}))(a(W))end)(getfenv and getfenv()or _ENV,unpack or table.unpack,newproxy,setmetatable,getmetatable,select,{...})end)(...)
+getgenv().Language = getgenv().Language or "EN"
+
+local L = {
+    VN = { Title = "RDM & LEO Universal", RP = "🚓 Cảnh Sát RP", Radar = "Bật ALPR Radar", SpdUnit = "Đơn vị tốc độ", TStop = "📢 Dừng Xe (Traffic Stop)", FStop = "📢 Giơ tay lên (Felony Stop)", Backup = "🚨 1O-78 Hỗ trợ", Shots = "💥 1O-71 Bắn nhau", Track = "🔍 Truy Nã", SelT = "Chọn Nghi Phạm", DrawL = "Vẽ Laser đến Nghi phạm", Mod = "🚀 Độ Xe & Tiện Ích", Nitro = "Lực Nitro (Phím H)", ARag = "Chống Ngã (Anti-Ragdoll)", Bail = "Trốn tù (Bail Out)", EMP = "Bom EMP (Tắt máy diện rộng)", AAFK = "Chống AFK (Treo máy)", ALag = "⚡ Giảm Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Chiến Đấu", Aim = "Bật AUTO-AIM", NRec = "Giảm Giật (No Recoil)", TBot = "Tự động bắn (Triggerbot)", HExp = "Phóng to đầu (Hitbox)", HSize = "Kích cỡ Hitbox", SFov = "Hiện FOV", FSize = "Kích cỡ FOV", ASm = "Độ mượt Aim", APart = "Vị trí khóa", BPred = "Đoán hướng di chuyển", PingComp = "🌐 Bù Ping (Chống Lag)", Sticky = "Khóa Cứng (Sticky Aim)", DMult = "Hệ số khoảng cách", HChan = "Tỷ lệ trúng %", RDel = "Độ trễ chuyển mục tiêu", RMs = "Độ trễ (ms)", DChk = "Bỏ qua xác chết", WChk = "Kiểm tra xuyên tường", TChk = "Không bắn đồng đội", FTeam = "Đội thân thiện", Veh = "🏎️ Xe Cộ", GDes = "Chống Lật (Gravity Desync)", VSpoof = "Ép gầm (Velocity Spoof)", HMode = "Chế độ bay lơ lửng", BRam = "Tường tàng hình hất văng", PITH = "Hỗ trợ Húc (PIT Helper)", IFlip = "Lật Xe Lại", Vis = "👁️ Đồ Họa", HUD = "Hiện HUD Báo Đài 1O-8O", BCam = "🎥 Bật Bodycam (Beep 5 Phút)", EESP = "Bật ESP", EInfo = "Hiện Thông tin & Vũ khí", EBox = "Vẽ Hộp 3D", Chams = "Glow Xuyên Tường", SBea = "Hiện tên đường trên trời", SName = "Hiện Tên Đường", STrac = "Vẽ tia đến đường", SOff = "Độ cao chữ trên trời", MDist = "Tầm nhìn tối đa" },
+    EN = { Title = "RDM & LEO Universal", RP = "🚓 Police RP", Radar = "Enable ALPR Radar", SpdUnit = "Speed Unit", TStop = "📢 Traffic Stop", FStop = "📢 Felony Stop", Backup = "🚨 1O-78 Backup", Shots = "💥 1O-71 Shots Fired", Track = "🔍 Suspect Tracker", SelT = "Select Suspect", DrawL = "Draw Laser to Suspect", Mod = "🚀 Mods & Utility", Nitro = "Nitro Power (H)", ARag = "Anti-Ragdoll", Bail = "Bail Out", EMP = "EMP Blast", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combat", Aim = "Enable AUTO-AIM", NRec = "No Recoil", TBot = "Auto-Shoot (Triggerbot)", HExp = "Hitbox Expander", HSize = "Hitbox Size", SFov = "Show FOV", FSize = "FOV Size", ASm = "Aim Smoothness", APart = "Aimlock Part", BPred = "Base Prediction", PingComp = "🌐 Ping Compensation", Sticky = "Sticky Aim (Hard Lock)", DMult = "Distance Multiplier", HChan = "Hit Chance %", RDel = "Enable Retarget Delay", RMs = "Retarget Delay (ms)", DChk = "Dead Check", WChk = "Wall Check", TChk = "Team Check", FTeam = "Friendly Teams", Veh = "🏎️ Vehicle", GDes = "Gravity Desync", VSpoof = "Velocity Spoof", HMode = "Hover Mode", BRam = "Bumper Ram Aura", PITH = "Enable PIT Helper", IFlip = "Insta-Flip", Vis = "👁️ Visuals", HUD = "Show Pursuit HUD", BCam = "🎥 Enable Bodycam (5 Min Beep)", EESP = "Enable Player ESP", EInfo = "Show Info & Weapon", EBox = "Draw 3D Boxes", Chams = "Enable Chams", SBea = "Enable Sky Beacons", SName = "Show Street Names", STrac = "Draw Street Tracers", SOff = "Sky Offset Height", MDist = "Max Render Distance" },
+    ES = { Title = "RDM & LEO Universal", RP = "🚓 Rol Policial", Radar = "Activar ALPR Radar", SpdUnit = "Unidad de Velocidad", TStop = "📢 Parada de Tráfico", FStop = "📢 Parada de Delito", Backup = "🚨 1O-78 Refuerzos", Shots = "💥 1O-71 Disparos", Track = "🔍 Rastreador", SelT = "Elegir Sospechoso", DrawL = "Dibujar Láser", Mod = "🚀 Mods y Utilidad", Nitro = "Poder Nitro (Tecla H)", ARag = "Anti-Muñeco", Bail = "Escapar", EMP = "Ráfaga EMP", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (Boost FPS)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combate", Aim = "Activar AUTO-AIM", NRec = "Sin Retroceso", TBot = "Disparo Automático", HExp = "Expandir Hitbox", HSize = "Tamaño de Hitbox", SFov = "Mostrar FOV", FSize = "Tamaño de FOV", ASm = "Suavidad de Aim", APart = "Parte de Aimlock", BPred = "Predicción Base", PingComp = "🌐 Comp. de Ping", Sticky = "Aim Pegajoso (Hard Lock)", DMult = "Multiplicador de Dist.", HChan = "Probabilidad Golpe %", RDel = "Retraso de Cambio", RMs = "Retraso (ms)", DChk = "Omitir Muertos", WChk = "Verificar Paredes", TChk = "Omitir Equipo", FTeam = "Equipos Aliados", Veh = "🏎️ Vehículo", GDes = "Desincronización Gravedad", VSpoof = "Falsificación de Vel.", HMode = "Modo Flotante", BRam = "Aura de Choque", PITH = "Ayuda de PIT", IFlip = "Volteo Rápido", Vis = "👁️ Visuales", HUD = "Mostrar HUD Persecución", BCam = "🎥 Activar Bodycam (Pito 5 Min)", EESP = "Activar ESP Jugador", EInfo = "Mostrar Info y Arma", EBox = "Cajas 3D", Chams = "Activar Chams", SBea = "Balizas en el Cielo", SName = "Mostrar Calles", STrac = "Trazadores de Calle", SOff = "Altura en el Cielo", MDist = "Distancia Máx. Render" }
+}
+
+local lang = getgenv().Language
+local T = L[lang] or L["EN"]
+
+pcall(function()
+    setfflag("FIntFRMMinGrassDistance", "0")
+    setfflag("FIntFRMMaxGrassDistance", "0")
+    setfflag("FIntRenderShadowmapBias", "75")
+    setfflag("FFlagFastGPULightCulling3", "True")
+    setfflag("DFIntPhysicsSenderMaxBandwidthBps", "2147483647")
+    setfflag("DFIntDataSenderMaxBandwidthBps", "2147483647")
+    setfflag("DFIntPhysicsNetworkFrameRate", "120")
+    setfflag("FFlagOptimizeNetwork", "True")
+    setfflag("FFlagOptimizeNetworkRouting", "True")
+    setfflag("FFlagOptimizeNetworkTransport", "True")
+    setfflag("FFlagEnableSimDesync", "True")
+    setfflag("FFlagEnableCharacterDesync", "True")
+    setfflag("FFlagSimInterpolationClientDesync", "True")
+end)
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+local Teams = game:GetService("Teams")
+local TextChatService = game:GetService("TextChatService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local VirtualUser = game:GetService("VirtualUser")
+
+local lp = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local AimSettings = { Enabled = false, ShowFOV = false, FOVSize = 150, Prediction = 0.165, PingComp = true, StickyAim = false, DistMultiplier = 0.5, TeamCheck = false, WallCheck = false, DeadCheck = true, AimPart = "Head", LegitShake = false, ShakePower = 3, Smoothness = 1, FriendlyTeams = {}, NoRecoil = false, HitChance = 100, UseRetargetDelay = false, RetargetDelay = 100, Triggerbot = false, HitboxExpander = false, HitboxSize = 5 }
+local vehSettings = { DesyncControl = false, GravitySpoof = false, DownforceMass = 8, ServerAntiFling = true, DriveByDesync = false, PitDesyncHelper = false, HoverMode = false, RamAura = false }
+local ESPSettings = { Enabled = false, Draw3DBox = false, ShowInfo = false, TeamCheck = false, MaxDistance = 1000, StreetESPEnabled = false, StreetShowNames = false, StreetShowTracers = false, SkyOffset = 150, ShowPursuitHUD = false, Chams = false }
+local RoleplaySettings = { RadarEnabled = false, RadarUnit = "MPH", Bodycam = false }
+local SuspectSettings = { Target = nil, Enabled = false }
+local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, EMPRadius = 100, AntiAFK = false, AutoXP = false }
+
+local isShooting, isBraking = false, false
+local currentTarget, lastTarget = nil, nil
+local targetLostTime, lastHitChanceCheck = 0, 0
+local isCurrentlyLocking = true
+local hitDebounce = {}
+local afkConnection = nil
+local lockedTarget = nil
+
+local currentCalloutMsg = ""
+local currentStreetName = "UNKNOWN"
+local currentDirection = "UNKNOWN"
+
+local SkidSound = Instance.new("Sound")
+SkidSound.SoundId = "rbxassetid://461019670"; SkidSound.Volume = 2; SkidSound.Parent = game:GetService("SoundService")
+
+local BeepSound = Instance.new("Sound")
+BeepSound.SoundId = "rbxassetid://4888078857" 
+BeepSound.Volume = 2; BeepSound.Parent = game:GetService("SoundService")
+
+local PanicSound = Instance.new("Sound")
+PanicSound.SoundId = "rbxassetid://2831166360"
+PanicSound.Volume = 2.5; PanicSound.Parent = game:GetService("SoundService")
+
+local function SendToChat(msg)
+    local cleanMsg = string.gsub(msg, "0", "O")
+    pcall(function()
+        if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then TextChatService.TextChannels.RBXGeneral:SendAsync(cleanMsg)
+        else ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(cleanMsg, "All") end
+    end)
+    pcall(function() setclipboard(cleanMsg) end)
+end
+
+local function GetPing()
+    local success, pingVal = pcall(function() return game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() end)
+    return success and (pingVal / 1000) or 0.05
+end
+
+local function GetAcronym(str)
+    local acronym = ""
+    for word in string.gmatch(str, "%w+") do acronym = acronym .. string.upper(string.sub(word, 1, 1)) end
+    return acronym
+end
+
+local function GetCompassDirection()
+    local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return "UNKNOWN" end
+    local dir = root.CFrame.LookVector
+    local angle = math.deg(math.atan2(dir.X, -dir.Z))
+    if angle < 0 then angle = angle + 360 end
+    if angle >= 337.5 or angle < 22.5 then return "Northbound"
+    elseif angle >= 22.5 and angle < 67.5 then return "Northeast bound"
+    elseif angle >= 67.5 and angle < 112.5 then return "Eastbound"
+    elseif angle >= 112.5 and angle < 157.5 then return "Southeast bound"
+    elseif angle >= 157.5 and angle < 202.5 then return "Southbound"
+    elseif angle >= 202.5 and angle < 247.5 then return "Southwest bound"
+    elseif angle >= 247.5 and angle < 292.5 then return "Westbound"
+    elseif angle >= 292.5 and angle < 337.5 then return "Northwest bound" end
+    return "UNKNOWN"
+end
+
+local function GetDistanceToOBB(part, pos)
+    local relPos = part.CFrame:PointToObjectSpace(pos)
+    local halfSize = part.Size / 2
+    local closest = Vector3.new(math.clamp(relPos.X, -halfSize.X, halfSize.X), math.clamp(relPos.Y, -halfSize.Y, halfSize.Y), math.clamp(relPos.Z, -halfSize.Z, halfSize.Z))
+    return (pos - part.CFrame:PointToWorldSpace(closest)).Magnitude
+end
+
+local function GetPlayerWeapon(char)
+    local tool = char:FindFirstChildOfClass("Tool")
+    if tool then return tool.Name else return "Unarmed" end
+end
+
+-- ==========================================================
+-- FIXED MESSAGE FUNCTIONS
+-- ==========================================================
+local function TriggerPin()
+    -- Format: We at (Roads name acronym) In pursuit On at (direction)
+    local msg = "We at " .. GetAcronym(currentStreetName) .. " In pursuit On at " .. currentDirection
+    SendToChat(msg)
+end
+
+local function TriggerPanic()
+    -- Format: ⚠️ OFFICER NEED HELP BACKUP AT (street name acronym) At (Direction) ⚠️⚠️
+    PanicSound:Play()
+    local msg = "⚠️ OFFICER NEED HELP BACKUP AT " .. GetAcronym(currentStreetName) .. " At " .. currentDirection .. " ⚠️⚠️"
+    SendToChat(msg)
+end
+
+-- ==========================================================
+-- RADIO UI INJECTION (Constant Loop)
+-- ==========================================================
+task.spawn(function()
+    while task.wait(1) do
+        pcall(function()
+            local pGui = lp:FindFirstChild("PlayerGui")
+            if pGui then
+                local radioUI = pGui:FindFirstChild("Radio")
+                if radioUI then
+                    local mainFrame = radioUI:FindFirstChild("Main")
+                    if mainFrame and not mainFrame:FindFirstChild("AutoCalloutBtn") then
+                        
+                        local CalloutBtnRadio = Instance.new("TextButton")
+                        CalloutBtnRadio.Name = "AutoCalloutBtn"
+                        CalloutBtnRadio.Parent = mainFrame
+                        CalloutBtnRadio.BackgroundColor3 = Color3.fromRGB(30, 100, 200)
+                        CalloutBtnRadio.Position = UDim2.new(1, 5, 0, 0)
+                        CalloutBtnRadio.Size = UDim2.new(0, 80, 0, 30)
+                        CalloutBtnRadio.Font = Enum.Font.GothamBold
+                        CalloutBtnRadio.Text = "📢 CALLOUT"
+                        CalloutBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        CalloutBtnRadio.TextSize = 11
+                        local calloutCorner = Instance.new("UICorner", CalloutBtnRadio); calloutCorner.CornerRadius = UDim.new(0, 6)
+
+                        CalloutBtnRadio.MouseButton1Click:Connect(function() 
+                            if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg) end
+                        end)
+
+                        local PinBtnRadio = Instance.new("TextButton")
+                        PinBtnRadio.Name = "AutoPinBtn"
+                        PinBtnRadio.Parent = mainFrame
+                        PinBtnRadio.BackgroundColor3 = Color3.fromRGB(40, 150, 40)
+                        PinBtnRadio.Position = UDim2.new(1, 5, 0, 35)
+                        PinBtnRadio.Size = UDim2.new(0, 80, 0, 30)
+                        PinBtnRadio.Font = Enum.Font.GothamBold
+                        PinBtnRadio.Text = "📍 PIN"
+                        PinBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        PinBtnRadio.TextSize = 11
+                        local pinCorner = Instance.new("UICorner", PinBtnRadio); pinCorner.CornerRadius = UDim.new(0, 6)
+
+                        PinBtnRadio.MouseButton1Click:Connect(TriggerPin)
+
+                        local PanicBtnRadio = Instance.new("TextButton")
+                        PanicBtnRadio.Name = "AutoPanicBtn"
+                        PanicBtnRadio.Parent = mainFrame
+                        PanicBtnRadio.BackgroundColor3 = Color3.fromRGB(200, 30, 30)
+                        PanicBtnRadio.Position = UDim2.new(1, 5, 0, 70)
+                        PanicBtnRadio.Size = UDim2.new(0, 80, 0, 30)
+                        PanicBtnRadio.Font = Enum.Font.GothamBold
+                        PanicBtnRadio.Text = "🚨 PANIC"
+                        PanicBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        PanicBtnRadio.TextSize = 11
+                        local panicCorner = Instance.new("UICorner", PanicBtnRadio); panicCorner.CornerRadius = UDim.new(0, 6)
+
+                        PanicBtnRadio.MouseButton1Click:Connect(TriggerPanic)
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+if CoreGui:FindFirstChild("GeminiMobileUI") then CoreGui.GeminiMobileUI:Destroy() end
+local MobileGui = Instance.new("ScreenGui"); MobileGui.Name = "GeminiMobileUI"; MobileGui.Parent = CoreGui
+
+local function CreateMobileButton(name, text, color, pos)
+    local btn = Instance.new("TextButton")
+    btn.Name = name; btn.Parent = MobileGui; btn.BackgroundColor3 = color; btn.BackgroundTransparency = 0.5
+    btn.Position = pos; btn.Size = UDim2.new(0, 110, 0, 50); btn.Font = Enum.Font.GothamBold
+    btn.Text = text; btn.TextColor3 = Color3.fromRGB(255, 255, 255); btn.TextSize = 14
+    local corner = Instance.new("UICorner", btn); corner.CornerRadius = UDim.new(0, 8)
+    local dragging, dragInput, dragStart, startPos
+    btn.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = true; dragStart = input.Position; startPos = btn.Position end end)
+    btn.InputChanged:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement then dragInput = input end end)
+    UserInputService.InputChanged:Connect(function(input) if input == dragInput and dragging then local delta = input.Position - dragStart; btn.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y) end end)
+    btn.InputEnded:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end end)
+    return btn
+end
+
+local BrakeBtn = CreateMobileButton("BrakeBtn", "🛑 BRAKE", Color3.fromRGB(180, 20, 20), UDim2.new(1, -130, 0.5, 10))
+local function BtnFx(btn, state) TweenService:Create(btn, TweenInfo.new(0.1), {BackgroundTransparency = state and 0.2 or 0.5}):Play() end
+BrakeBtn.InputBegan:Connect(function() isBraking = true; BtnFx(BrakeBtn, true) end); BrakeBtn.InputEnded:Connect(function() isBraking = false; BtnFx(BrakeBtn, false) end)
+
+UserInputService.InputBegan:Connect(function(i, g)
+    if not g then
+        if i.UserInputType == Enum.UserInputType.MouseButton1 then isShooting = true
+        elseif i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = true
+        elseif i.KeyCode == ModSettings.NitroKey then
+            local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+            if vSeat and vSeat:IsA("VehicleSeat") then vSeat.AssemblyLinearVelocity = vSeat.CFrame.LookVector * ModSettings.NitroPower end
+        end
+    end
+end)
+UserInputService.InputEnded:Connect(function(i, g) 
+    if not g then 
+        if i.UserInputType == Enum.UserInputType.MouseButton1 then 
+            isShooting = false 
+            if AimSettings.StickyAim then lockedTarget = nil end 
+        elseif i.KeyCode == Enum.KeyCode.LeftAlt then 
+            isBraking = false 
+        end 
+    end 
+end)
+
+if CoreGui:FindFirstChild("PursuitHUDGui") then CoreGui.PursuitHUDGui:Destroy() end
+local PursuitHUDGui = Instance.new("ScreenGui"); PursuitHUDGui.Name = "PursuitHUDGui"; PursuitHUDGui.Parent = CoreGui
+
+local PursuitLabel = Instance.new("TextLabel")
+PursuitLabel.Parent = PursuitHUDGui; PursuitLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 20); PursuitLabel.BackgroundTransparency = 0.4
+PursuitLabel.AnchorPoint = Vector2.new(0.5, 1); PursuitLabel.Position = UDim2.new(0.5, 0, 1, -60); PursuitLabel.Size = UDim2.new(0, 400, 0, 40)
+PursuitLabel.Font = Enum.Font.GothamBlack; PursuitLabel.Text = "🚔 SCANNING"; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0); PursuitLabel.TextSize = 16; PursuitLabel.Visible = false
+local PursuitCorner = Instance.new("UICorner", PursuitLabel); PursuitCorner.CornerRadius = UDim.new(0, 8)
+local PursuitStroke = Instance.new("UIStroke", PursuitLabel); PursuitStroke.Thickness = 2; PursuitStroke.Color = Color3.fromRGB(0, 0, 0)
+
+local RadioBtn = Instance.new("TextButton")
+RadioBtn.Parent = PursuitHUDGui; RadioBtn.BackgroundColor3 = Color3.fromRGB(30, 100, 200); RadioBtn.BackgroundTransparency = 0.2
+RadioBtn.AnchorPoint = Vector2.new(0.5, 1); RadioBtn.Position = UDim2.new(0.5, -110, 1, -15); RadioBtn.Size = UDim2.new(0, 100, 0, 35)
+RadioBtn.Font = Enum.Font.GothamBold; RadioBtn.Text = "📢 CALLOUT"; RadioBtn.TextColor3 = Color3.fromRGB(255, 255, 255); RadioBtn.TextSize = 13; RadioBtn.Visible = false
+local RadioCorner = Instance.new("UICorner", RadioBtn); RadioCorner.CornerRadius = UDim.new(0, 6)
+RadioBtn.MouseButton1Click:Connect(function() if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg); BtnFx(RadioBtn, true); task.wait(0.2); BtnFx(RadioBtn, false) end end)
+
+local PinBtn = Instance.new("TextButton")
+PinBtn.Parent = PursuitHUDGui; PinBtn.BackgroundColor3 = Color3.fromRGB(40, 150, 40); PinBtn.BackgroundTransparency = 0.2
+PinBtn.AnchorPoint = Vector2.new(0.5, 1); PinBtn.Position = UDim2.new(0.5, 0, 1, -15); PinBtn.Size = UDim2.new(0, 100, 0, 35)
+PinBtn.Font = Enum.Font.GothamBold; PinBtn.Text = "📍 PIN"; PinBtn.TextColor3 = Color3.fromRGB(255, 255, 255); PinBtn.TextSize = 13; PinBtn.Visible = false
+local PinCorner = Instance.new("UICorner", PinBtn); PinCorner.CornerRadius = UDim.new(0, 6)
+PinBtn.MouseButton1Click:Connect(function() TriggerPin(); BtnFx(PinBtn, true); task.wait(0.2); BtnFx(PinBtn, false) end)
+
+local PanicBtnUI = Instance.new("TextButton")
+PanicBtnUI.Parent = PursuitHUDGui; PanicBtnUI.BackgroundColor3 = Color3.fromRGB(200, 30, 30); PanicBtnUI.BackgroundTransparency = 0.2
+PanicBtnUI.AnchorPoint = Vector2.new(0.5, 1); PanicBtnUI.Position = UDim2.new(0.5, 110, 1, -15); PanicBtnUI.Size = UDim2.new(0, 100, 0, 35)
+PanicBtnUI.Font = Enum.Font.GothamBold; PanicBtnUI.Text = "🚨 PANIC"; PanicBtnUI.TextColor3 = Color3.fromRGB(255, 255, 255); PanicBtnUI.TextSize = 13; PanicBtnUI.Visible = false
+local PanicCorner = Instance.new("UICorner", PanicBtnUI); PanicCorner.CornerRadius = UDim.new(0, 6)
+PanicBtnUI.MouseButton1Click:Connect(function() TriggerPanic(); BtnFx(PanicBtnUI, true); task.wait(0.2); BtnFx(PanicBtnUI, false) end)
+
+local RadarLabel = Instance.new("TextLabel")
+RadarLabel.Parent = PursuitHUDGui; RadarLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 15); RadarLabel.BackgroundTransparency = 0.3
+RadarLabel.AnchorPoint = Vector2.new(0.5, 0); RadarLabel.Position = UDim2.new(0.5, 0, 0, 20); RadarLabel.Size = UDim2.new(0, 350, 0, 35)
+RadarLabel.Font = Enum.Font.Code; RadarLabel.Text = "📡 ALPR STANDBY"; RadarLabel.TextColor3 = Color3.fromRGB(0, 255, 0); RadarLabel.TextSize = 18; RadarLabel.Visible = false
+local RadarCorner = Instance.new("UICorner", RadarLabel); RadarCorner.CornerRadius = UDim.new(0, 6)
+local RadarStroke = Instance.new("UIStroke", RadarLabel); RadarStroke.Thickness = 1.5; RadarStroke.Color = Color3.fromRGB(0, 0, 0)
+
+if CoreGui:FindFirstChild("AxonBodycamGui") then CoreGui.AxonBodycamGui:Destroy() end
+local BodycamGui = Instance.new("ScreenGui"); BodycamGui.Name = "AxonBodycamGui"; BodycamGui.Parent = CoreGui; BodycamGui.Enabled = false
+
+local recText = Instance.new("TextLabel")
+recText.Parent = BodycamGui; recText.BackgroundTransparency = 1; recText.Position = UDim2.new(0.02, 0, 0.05, 0)
+recText.Size = UDim2.new(0, 100, 0, 50); recText.Font = Enum.Font.Code; recText.Text = "🔴 REC"
+recText.TextColor3 = Color3.fromRGB(255, 0, 0); recText.TextSize = 24; recText.TextXAlignment = Enum.TextXAlignment.Left
+
+local bcInfoText = Instance.new("TextLabel")
+bcInfoText.Parent = BodycamGui; bcInfoText.BackgroundTransparency = 1; bcInfoText.Position = UDim2.new(0.02, 0, 0.1, 0)
+bcInfoText.Size = UDim2.new(0, 300, 0, 50); bcInfoText.Font = Enum.Font.Code; bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD"
+bcInfoText.TextColor3 = Color3.fromRGB(255, 255, 255); bcInfoText.TextSize = 16; bcInfoText.TextXAlignment = Enum.TextXAlignment.Left
+
+local bcLogo = Instance.new("ImageLabel")
+bcLogo.Parent = BodycamGui
+bcLogo.BackgroundTransparency = 1
+bcLogo.AnchorPoint = Vector2.new(1, 0)
+bcLogo.Position = UDim2.new(0.98, 0, 0.03, 0)
+bcLogo.Size = UDim2.new(0, 75, 0, 75)
+bcLogo.Image = "rbxassetid://1000010483"
+bcLogo.ScaleType = Enum.ScaleType.Fit
+
+local lastBeepTime = tick()
+task.spawn(function()
+    while task.wait(0.8) do
+        if RoleplaySettings.Bodycam then
+            recText.Visible = not recText.Visible
+            bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD\n" .. os.date("%Y-%m-%d %H:%M:%S")
+            if tick() - lastBeepTime >= 300 then
+                BeepSound:Play()
+                lastBeepTime = tick()
+            end
+        end
+    end
+end)
+
+local SuspectTracer = Drawing.new("Line"); SuspectTracer.Visible = false; SuspectTracer.Color = Color3.fromRGB(255, 0, 0); SuspectTracer.Thickness = 2
+local FOVCircle = Drawing.new("Circle"); FOVCircle.Visible = false; FOVCircle.Thickness = 1.5; FOVCircle.Color = Color3.fromRGB(255, 255, 255); FOVCircle.Filled = false
+
+local function IsVisible(tPart)
+    if not AimSettings.WallCheck then return true end
+    local ray = RaycastParams.new()
+    ray.FilterDescendantsInstances = {lp.Character, camera}; ray.FilterType = Enum.RaycastFilterType.Exclude
+    local hit = workspace:Raycast(camera.CFrame.Position, tPart.Position - camera.CFrame.Position, ray)
+    if hit and hit.Instance then if not hit.Instance:IsDescendantOf(tPart.Parent) then return false end end
+    return true
+end
+
+local teamNames = {}
+for _, team in pairs(Teams:GetTeams()) do table.insert(teamNames, team.Name) end
+if #teamNames == 0 then table.insert(teamNames, "No Teams Detected") end
+
+local ESP_Cache = {}
+local Street_Cache = {}
+local function GetTeamColor(p) if p.Team then return p.Team.TeamColor.Color else return Color3.fromRGB(255, 255, 255) end end
+local function DrawLine() local l = Drawing.new("Line"); l.Thickness = 1.5; l.Visible = false; return l end
+
+RunService.RenderStepped:Connect(function()
+    -- FIXED NO RECOIL LOGIC
+    if AimSettings.NoRecoil and isShooting then
+        -- This aggressively pulls the camera down to counteract standard Roblox spring recoil
+        camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-0.5), 0, 0)
+    end
+    
+    FOVCircle.Position = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+    FOVCircle.Radius = AimSettings.FOVSize
+    FOVCircle.Visible = AimSettings.ShowFOV and AimSettings.Enabled
+    
+    local target = nil; local shortest = AimSettings.FOVSize; local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+    
+    if AimSettings.Enabled then
+        if AimSettings.StickyAim and isShooting and lockedTarget and lockedTarget.Parent and lockedTarget.Parent:FindFirstChild("Humanoid") and lockedTarget.Parent.Humanoid.Health > 0 then
+            target = lockedTarget
+        else
+            for _, p in pairs(Players:GetPlayers()) do
+                if p ~= lp and p.Character and (not AimSettings.DeadCheck or (p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0)) then
+                    if AimSettings.TeamCheck and p.Team == lp.Team then continue end
+                    local isFriendly = false
+                    if p.Team and AimSettings.FriendlyTeams then for _, tName in pairs(AimSettings.FriendlyTeams) do if p.Team.Name == tName then isFriendly = true; break end end end
+                    if isFriendly then continue end
+                    local aPart = p.Character:FindFirstChild(AimSettings.AimPart) or p.Character:FindFirstChild("Head")
+                    if AimSettings.HitboxExpander and aPart then aPart.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize); aPart.Transparency = 0.5; aPart.CanCollide = false end
+                    if aPart and IsVisible(aPart) then
+                        local pos, onScreen = camera:WorldToViewportPoint(aPart.Position)
+                        if onScreen then
+                            local dist = (Vector2.new(pos.X, pos.Y) - center).Magnitude
+                            if dist < shortest then shortest = dist; target = aPart end
+                        end
+                    end
+                end
+            end
+        end
+
+        if AimSettings.StickyAim and isShooting and target then lockedTarget = target end
+
+        if AimSettings.UseRetargetDelay then if target ~= lastTarget then if lastTarget ~= nil then targetLostTime = tick() end; if target ~= nil and tick() - targetLostTime < (AimSettings.RetargetDelay / 1000) then target = nil end end end
+        lastTarget = target; currentTarget = target
+        if tick() - lastHitChanceCheck > 0.2 then lastHitChanceCheck = tick(); if math.random(1, 100) <= AimSettings.HitChance then isCurrentlyLocking = true else isCurrentlyLocking = false end end
+        
+        -- FIXED SMARTER AIMBOT & PING CLAMP
+        if target and isCurrentlyLocking then
+            local distToTarget = (target.Position - camera.CFrame.Position).Magnitude
+            
+            local pingAdd = 0
+            if AimSettings.PingComp then 
+                pingAdd = math.clamp(GetPing(), 0, 0.15) -- Clamped so high ping doesn't ruin aim
+            end 
+            
+            local timeToHit = (distToTarget / 1000) * AimSettings.DistMultiplier
+            local totalPrediction = AimSettings.Prediction + pingAdd + timeToHit
+            local fPos = target.Position + (target.AssemblyLinearVelocity * totalPrediction)
+            
+            if AimSettings.LegitShake then local s = AimSettings.ShakePower / 10; fPos = fPos + Vector3.new((math.random() - 0.5) * s, (math.random() - 0.5) * s, (math.random() - 0.5) * s) end
+            
+            local lookCFrame = CFrame.new(camera.CFrame.Position, fPos)
+            local currentSmoothness = (AimSettings.StickyAim and isShooting) and 1 or AimSettings.Smoothness
+            
+            if currentSmoothness >= 1 then 
+                camera.CFrame = lookCFrame 
+            else 
+                camera.CFrame = camera.CFrame:Lerp(lookCFrame, currentSmoothness) 
+            end
+            
+            if AimSettings.Triggerbot then mouse1click() end
+        end
+    end
+
+    for _, p in pairs(Players:GetPlayers()) do
+        if p == lp then continue end
+        if not ESP_Cache[p] then 
+            ESP_Cache[p] = { Text = Drawing.new("Text"), Hl = Instance.new("Highlight"), Lines = {} }
+            ESP_Cache[p].Text.Size = 13; ESP_Cache[p].Text.Center = true; ESP_Cache[p].Text.Outline = true
+            ESP_Cache[p].Hl.Parent = CoreGui; ESP_Cache[p].Hl.FillTransparency = 0.5; ESP_Cache[p].Hl.OutlineTransparency = 0
+            for i = 1, 12 do table.insert(ESP_Cache[p].Lines, DrawLine()) end
+        end
+        local esp = ESP_Cache[p]; local char = p.Character; local root = char and char:FindFirstChild("HumanoidRootPart")
+        if root and ESPSettings.Enabled and char:FindFirstChild("Humanoid") and char.Humanoid.Health > 0 then
+            local tColor = GetTeamColor(p); local dist = (root.Position - camera.CFrame.Position).Magnitude
+            if dist <= ESPSettings.MaxDistance and not (ESPSettings.TeamCheck and p.Team == lp.Team) then
+                local pos, onScreen = camera:WorldToViewportPoint(root.Position)
+                if onScreen then
+                    if ESPSettings.ShowInfo then
+                        local headPos = camera:WorldToViewportPoint(root.CFrame * CFrame.new(0, 1.5 + 0.5, 0).Position)
+                        esp.Text.Text = string.format("%s\n[%d studs] [%s]\nHP: %d", p.Name, math.floor(dist), GetPlayerWeapon(char), char.Humanoid.Health)
+                        esp.Text.Position = Vector2.new(headPos.X, headPos.Y - 40); esp.Text.Color = tColor; esp.Text.Visible = true
+                    else esp.Text.Visible = false end
+                    if ESPSettings.Draw3DBox then
+                        local cf = root.CFrame; local size = Vector3.new(2, 3, 1.5)
+                        local corners = { cf*CFrame.new(size.X/2,size.Y/2,size.Z/2).Position, cf*CFrame.new(-size.X/2,size.Y/2,size.Z/2).Position, cf*CFrame.new(-size.X/2,-size.Y/2,size.Z/2).Position, cf*CFrame.new(size.X/2,-size.Y/2,size.Z/2).Position, cf*CFrame.new(size.X/2,size.Y/2,-size.Z/2).Position, cf*CFrame.new(-size.X/2,size.Y/2,-size.Z/2).Position, cf*CFrame.new(-size.X/2,-size.Y/2,-size.Z/2).Position, cf*CFrame.new(size.X/2,-size.Y/2,-size.Z/2).Position }
+                        local pts = {}
+                        for i, cPos in ipairs(corners) do local pt, _ = camera:WorldToViewportPoint(cPos); pts[i] = Vector2.new(pt.X, pt.Y) end
+                        local connections = {{1,2},{2,3},{3,4},{4,1},{5,6},{6,7},{7,8},{8,5},{1,5},{2,6},{3,7},{4,8}}
+                        for i, c in ipairs(connections) do esp.Lines[i].From = pts[c[1]]; esp.Lines[i].To = pts[c[2]]; esp.Lines[i].Color = tColor; esp.Lines[i].Visible = true end
+                    else for _, l in pairs(esp.Lines) do l.Visible = false end end
+                    if ESPSettings.Chams then esp.Hl.Adornee = char; esp.Hl.FillColor = tColor; esp.Hl.Enabled = true else esp.Hl.Enabled = false end
+                else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+            else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+        else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+    end
+
+    if ESPSettings.StreetESPEnabled then
+        local streetFolder = workspace:FindFirstChild("StreetNames")
+        if streetFolder then
+            for _, street in pairs(streetFolder:GetChildren()) do
+                if street:IsA("BasePart") then
+                    if not Street_Cache[street] then
+                        Street_Cache[street] = { Text = Drawing.new("Text"), Line = Drawing.new("Line") }
+                        Street_Cache[street].Text.Size = 15; Street_Cache[street].Text.Center = true; Street_Cache[street].Text.Outline = true; Street_Cache[street].Text.Color = Color3.fromRGB(0, 255, 204)
+                        Street_Cache[street].Line.Thickness = 1.2; Street_Cache[street].Line.Color = Color3.fromRGB(0, 255, 204)
+                    end
+                    local esp = Street_Cache[street]; local distToPlayer = GetDistanceToOBB(street, camera.CFrame.Position)
+                    local skyPosition = street.Position + Vector3.new(0, ESPSettings.SkyOffset, 0)
+                    local pos, onScreen = camera:WorldToViewportPoint(skyPosition)
+                    if onScreen and distToPlayer <= ESPSettings.MaxDistance then
+                        if ESPSettings.StreetShowNames then
+                            esp.Text.Text = string.format("📍 %s [%d studs]", street.Name, math.floor(distToPlayer))
+                            esp.Text.Position = Vector2.new(pos.X, pos.Y); esp.Text.Visible = true
+                        else esp.Text.Visible = false end
+                        if ESPSettings.StreetShowTracers then
+                            esp.Line.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y); esp.Line.To = Vector2.new(pos.X, pos.Y); esp.Line.Visible = true
+                        else esp.Line.Visible = false end
+                    else esp.Text.Visible = false; esp.Line.Visible = false end
+                end
+            end
+        end
+    else
+        for _, esp in pairs(Street_Cache) do esp.Text.Visible = false; esp.Line.Visible = false end
+    end
+
+    PursuitLabel.Visible = ESPSettings.ShowPursuitHUD
+    
+    if lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
+        local myPos = lp.Character.HumanoidRootPart.Position; local closestStreet = "UNKNOWN"; local shortestDist = math.huge
+        local streetFolder = workspace:FindFirstChild("StreetNames")
+        if streetFolder then for _, street in pairs(streetFolder:GetChildren()) do if street:IsA("BasePart") then local dist = GetDistanceToOBB(street, myPos); if dist < shortestDist then shortestDist = dist; closestStreet = street.Name end end end end
+        
+        currentDirection = GetCompassDirection()
+        if shortestDist < 2000 then
+            currentStreetName = closestStreet
+            currentCalloutMsg = "1O-8O " .. currentDirection .. " " .. GetAcronym(closestStreet)
+            PursuitLabel.Text = "🚔 " .. currentCalloutMsg; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0)
+        else
+            currentStreetName = "Out of city"
+            currentCalloutMsg = "1O-8O Out of city"
+            PursuitLabel.Text = "📡 DISPATCH: OUT OF CITY"; PursuitLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+        end
+    end
+
+    if RoleplaySettings.RadarEnabled then
+        local radarClosest = 300; local radarDriver, radarCar = nil, nil
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local seat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
+                if seat and seat:IsA("VehicleSeat") then
+                    local pos, onScreen = camera:WorldToViewportPoint(seat.Position)
+                    if onScreen then
+                        local distToCenter = (Vector2.new(pos.X, pos.Y) - Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)).Magnitude
+                        if distToCenter < radarClosest then radarClosest = distToCenter; radarDriver = p; radarCar = seat end
+                    end
+                end
+            end
+        end
+        if radarDriver and radarCar then
+            local speedRaw = radarCar.AssemblyLinearVelocity.Magnitude; local multiplier = 1.0
+            if RoleplaySettings.RadarUnit == "MPH" then multiplier = 0.6 end
+            local finalSpeed = math.floor(speedRaw * multiplier)
+            RadarLabel.Text = string.format("📡 ALPR | SPD: %d %s | DRV: %s", finalSpeed, RoleplaySettings.RadarUnit, radarDriver.Name)
+            if RoleplaySettings.RadarUnit == "MPH" and finalSpeed > 80 then RadarLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+            elseif RoleplaySettings.RadarUnit == "KMH" and finalSpeed > 130 then RadarLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+            else RadarLabel.TextColor3 = Color3.fromRGB(50, 255, 50) end
+            RadarLabel.Visible = true
+        else RadarLabel.Visible = false end
+    else RadarLabel.Visible = false end
+
+    if SuspectSettings.Enabled and SuspectSettings.Target then
+        local tPlayer = Players:FindFirstChild(SuspectSettings.Target)
+        if tPlayer and tPlayer.Character and tPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            local pos, onScreen = camera:WorldToViewportPoint(tPlayer.Character.HumanoidRootPart.Position)
+            if onScreen then SuspectTracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y); SuspectTracer.To = Vector2.new(pos.X, pos.Y); SuspectTracer.Visible = true else SuspectTracer.Visible = false end
+        else SuspectTracer.Visible = false end
+    else SuspectTracer.Visible = false end
+
+    if ModSettings.AntiRagdoll and lp.Character then
+        local humanoid = lp.Character:FindFirstChildOfClass("Humanoid")
+        if humanoid then humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false); humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false) end
+    end
+end)
+
+Players.PlayerRemoving:Connect(function(p)
+    if ESP_Cache[p] then ESP_Cache[p].Text:Remove(); ESP_Cache[p].Hl:Destroy(); for _, l in pairs(ESP_Cache[p].Lines) do l:Remove() end; ESP_Cache[p] = nil end
+end)
+
+RunService.Heartbeat:Connect(function()
+    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+    if not vSeat or not vSeat:IsA("VehicleSeat") then return end
+
+    if vehSettings.ServerAntiFling then
+        if vSeat.AssemblyLinearVelocity.Magnitude > 400 then vSeat.AssemblyLinearVelocity = vSeat.AssemblyLinearVelocity.Unit * 400 end
+        if vSeat.AssemblyAngularVelocity.Magnitude > 50 then vSeat.AssemblyAngularVelocity = vSeat.AssemblyAngularVelocity.Unit * 50 end
+    end
+    
+    if isBraking then vSeat.AssemblyLinearVelocity = Vector3.zero; vSeat.AssemblyAngularVelocity = Vector3.zero end
+    if vehSettings.DriveByDesync and currentTarget then vSeat.AssemblyAngularVelocity = Vector3.new(0, vSeat.AssemblyAngularVelocity.Y, 0) end
+    
+    if vehSettings.DesyncControl then
+        local upVector = vSeat.CFrame.UpVector
+        if upVector.Y < 0.5 then
+            local rx, ry, rz = vSeat.CFrame:ToOrientation()
+            vSeat.CFrame = CFrame.new(vSeat.Position) * CFrame.Angles(0, ry, 0)
+            vSeat.AssemblyAngularVelocity = Vector3.zero
+        end
+    end
+    
+    if vehSettings.HoverMode then vSeat.AssemblyLinearVelocity = Vector3.new(vSeat.AssemblyLinearVelocity.X, 0, vSeat.AssemblyLinearVelocity.Z) end
+    if vehSettings.GravitySpoof and vSeat.AssemblyLinearVelocity.Magnitude > 50 then vSeat.AssemblyLinearVelocity = vSeat.AssemblyLinearVelocity + Vector3.new(0, -vehSettings.DownforceMass, 0) end
+
+    if vehSettings.PitDesyncHelper then
+        local mySpeed = vSeat.AssemblyLinearVelocity.Magnitude
+        local dynamicRange = 18 + (mySpeed / 8) 
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local eSeat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
+                if eSeatand (eSeat.Position - vSeat.Position).Magnitude <= ModSettings.EMPRadius then
+                    eSeat.AssemblyLinearVelocity = Vector3.zero; eSeat.AssemblyAngularVelocity = Vector3.new(0, 10, 0)
+                end
+            end
+        end
+    end
+end})
+ModTab:CreateToggle({Name = T.AAFK, CurrentValue = false, Callback = function(v)
+    ModSettings.AntiAFK = v
+    if v then
+        pcall(function() for _, c in pairs(getconnections(lp.Idled)) do c:Disable() end end)
+        afkConnection = lp.Idled:Connect(function()
+            pcall(function() VirtualUser:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame); task.wait(1); VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame) end)
+        end)
+    else
+        if afkConnection then afkConnection:Disconnect(); afkConnection = nil end
+        pcall(function() for _, c in pairs(getconnections(lp.Idled)) do c:Enable() end end)
+    end
+end})
+
+CTab:CreateToggle({Name = T.Aim, CurrentValue = false, Callback = function(v) AimSettings.Enabled = v end})
+CTab:CreateToggle({Name = T.PingComp, CurrentValue = true, Callback = function(v) AimSettings.PingComp = v end})
+CTab:CreateToggle({Name = T.Sticky, CurrentValue = false, Callback = function(v) AimSettings.StickyAim = v end})
+CTab:CreateToggle({Name = T.NRec, CurrentValue = false, Callback = function(v) AimSettings.NoRecoil = v end})
+CTab:CreateToggle({Name = T.TBot, CurrentValue = false, Callback = function(v) AimSettings.Triggerbot = v end})
+CTab:CreateToggle({Name = T.HExp, CurrentValue = false, Callback = function(v) AimSettings.HitboxExpander = v end})
+CTab:CreateSlider({Name = T.HSize, Range = {2, 20}, Increment = 1, CurrentValue = 5, Callback = function(v) AimSettings.HitboxSize = v end})
+CTab:CreateToggle({Name = T.SFov, CurrentValue = false, Callback = function(v) AimSettings.ShowFOV = v end})
+CTab:CreateSlider({Name = T.FSize, Range = {50, 500}, Increment = 10, CurrentValue = 150, Callback = function(v) AimSettings.FOVSize = v end})
+CTab:CreateSlider({Name = T.ASm, Range = {0.01, 1}, Increment = 0.01, CurrentValue = 1, Callback = function(v) AimSettings.Smoothness = v end})
+CTab:CreateDropdown({Name = T.APart, Options = {"Head", "Torso", "Arms", "Legs"}, CurrentOption = {"Head"}, MultipleOptions = false, Callback = function(opt) AimSettings.AimPart = opt[1] end})
+CTab:CreateSlider({Name = T.BPred, Range = {0, 0.5}, Increment = 0.01, CurrentValue = 0.165, Callback = function(v) AimSettings.Prediction = v end})
+CTab:CreateSlider({Name = T.DMult, Range = {0, 5}, Increment = 0.1, CurrentValue = 0.5, Callback = function(v) AimSettings.DistMultiplier = v end})
+CTab:CreateSlider({Name = T.HChan, Range = {1, 100}, Increment = 1, CurrentValue = 100, Callback = function(v) AimSettings.HitChance = v end})
+CTab:CreateToggle({Name = T.RDel, CurrentValue = false, Callback = function(v) AimSettings.UseRetargetDelay = v end})
+CTab:CreateSlider({Name = T.RMs, Range = {1, 500}, Increment = 10, CurrentValue = 100, Callback = function(v) AimSettings.RetargetDelay = v end})
+CTab:CreateToggle({Name = T.DChk, CurrentValue = true, Callback = function(v) AimSettings.DeadCheck = v end})
+CTab:CreateToggle({Name = T.WChk, CurrentValue = false, Callback = function(v) AimSettings.WallCheck = v end})
+CTab:CreateToggle({Name = T.TChk, CurrentValue = false, Callback = function(v) AimSettings.TeamCheck = v end})
+CTab:CreateDropdown({Name = T.FTeam, Options = teamNames, MultipleOptions = true, Callback = function(opt) AimSettings.FriendlyTeams = opt end})
+
+PTab:CreateToggle({Name = T.GDes, CurrentValue = false, Callback = function(v) vehSettings.DesyncControl = v end})
+PTab:CreateToggle({Name = T.VSpoof, CurrentValue = false, Callback = function(v) vehSettings.GravitySpoof = v end})
+PTab:CreateToggle({Name = T.HMode, CurrentValue = false, Callback = function(v) vehSettings.HoverMode = v end})
+PTab:CreateToggle({Name = T.BRam, CurrentValue = false, Callback = function(v) vehSettings.RamAura = v end})
+PTab:CreateToggle({Name = T.PITH, CurrentValue = false, Callback = function(v) vehSettings.PitDesyncHelper = v end})
+PTab:CreateButton({Name = T.IFlip, Callback = function()
+    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+    if vSeat then
+        local rx, ry, rz = vSeat.CFrame:ToOrientation()
+        vSeat.CFrame = CFrame.new(vSeat.Position + Vector3.new(0, 3, 0)) * CFrame.Angles(0, ry, 0)
+        vSeat.AssemblyLinearVelocity = Vector3.zero; vSeat.AssemblyAngularVelocity = Vector3.zero
+    end
+end})
+
+VTab:CreateToggle({Name = T.HUD, CurrentValue = false, Callback = function(v) ESPSettings.ShowPursuitHUD = v end})
+VTab:CreateToggle({Name = T.EESP, CurrentValue = false, Callback = function(v) ESPSettings.Enabled = v end})
+VTab:CreateToggle({Name = T.EInfo, CurrentValue = false, Callback = function(v) ESPSettings.ShowInfo = v end})
+VTab:CreateToggle({Name = T.EBox, CurrentValue = false, Callback = function(v) ESPSettings.Draw3DBox = v end})
+VTab:CreateToggle({Name = T.Chams, CurrentValue = false, Callback = function(v) ESPSettings.Chams = v end})
+VTab:CreateToggle({Name = T.SBea, CurrentValue = false, Callback = function(v) ESPSettings.StreetESPEnabled = v end})
+VTab:CreateToggle({Name = T.SName, CurrentValue = false, Callback = function(v) ESPSettings.StreetShowNames = v end})
+VTab:CreateToggle({Name = T.STrac, CurrentValue = false, Callback = function(v) ESPSettings.StreetShowTracers = v end})
+VTab:CreateSlider({Name = T.SOff, Range = {50, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ESPSettings.SkyOffset = v end})
+VTab:CreateSlider({Name = T.MDist, Range = {100, 5000}, Increment = 100, CurrentValue = 1000, Callback = function(v) ESPSettings.MaxDistance = v end})
+
+VTab:CreateToggle({Name = T.BCam, CurrentValue = false, Callback = function(v) 
+    RoleplaySettings.Bodycam = v 
+    BodycamGui.Enabled = v
+    if v then lastBeepTime = tick() end 
+end})
