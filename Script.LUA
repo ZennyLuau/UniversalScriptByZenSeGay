@@ -40,11 +40,11 @@ local camera = workspace.CurrentCamera
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local AimSettings = { Enabled = false, ShowFOV = false, FOVSize = 150, Prediction = 0.165, PingComp = true, StickyAim = false, DistMultiplier = 0.5, TeamCheck = false, WallCheck = false, DeadCheck = true, AimPart = "Head", LegitShake = false, ShakePower = 3, Smoothness = 1, FriendlyTeams = {}, NoRecoil = false, HitChance = 100, UseRetargetDelay = false, RetargetDelay = 100, Triggerbot = false, HitboxExpander = false, HitboxSize = 5 }
-local vehSettings = { DesyncControl = false, GravitySpoof = false, DownforceMass = 8, ServerAntiFling = true, DriveByDesync = false, PitDesyncHelper = false, HoverMode = false, RamAura = false }
+local vehSettings = { DesyncControl = false, GravitySpoof = false, DownforceMass = 8, ServerAntiFling = true, DriveByDesync = false, PitDesyncHelper = false, HoverMode = false, RamAura = false, RamBar = false }
 local ESPSettings = { Enabled = false, Draw3DBox = false, ShowInfo = false, TeamCheck = false, MaxDistance = 1000, StreetESPEnabled = false, StreetShowNames = false, StreetShowTracers = false, SkyOffset = 150, ShowPursuitHUD = false, Chams = false }
 local RoleplaySettings = { RadarEnabled = false, RadarUnit = "MPH", Bodycam = false }
 local SuspectSettings = { Target = nil, Enabled = false }
-local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, EMPRadius = 100, AntiAFK = false, AutoXP = false }
+local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, EMPRadius = 100, AntiAFK = false, AutoXP = false, AutoAmmo = false }
 
 local isShooting, isBraking = false, false
 local currentTarget, lastTarget = nil, nil
@@ -506,6 +506,24 @@ RunService.Heartbeat:Connect(function()
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
     if not vSeat or not vSeat:IsA("VehicleSeat") then return end
 
+    -- CUSTOM RAM BAR (PIT)
+    if vehSettings.RamBar then
+        local body = vSeat.Parent:FindFirstChild("Body")
+        if body and body:FindFirstChild("RamBarPit") then
+            local rb = body.RamBarPit
+            rb.Size = Vector3.new(12, 4, 6)
+            rb.Transparency = 0.5
+            rb.Massless = false
+        end
+    else
+        local body = vSeat.Parent:FindFirstChild("Body")
+        if body and body:FindFirstChild("RamBarPit") then
+            local rb = body.RamBarPit
+            rb.Size = Vector3.new(1, 1, 1)
+            rb.Transparency = 1
+        end
+    end
+
     if vehSettings.ServerAntiFling then
         if vSeat.AssemblyLinearVelocity.Magnitude > 400 then vSeat.AssemblyLinearVelocity = vSeat.AssemblyLinearVelocity.Unit * 400 end
         if vSeat.AssemblyAngularVelocity.Magnitude > 50 then vSeat.AssemblyAngularVelocity = vSeat.AssemblyAngularVelocity.Unit * 50 end
@@ -583,18 +601,21 @@ local Window = Rayfield:CreateWindow({
         FileName = "ZenithRPKey", 
         SaveKey = true,
         GrabKeyFromSite = false, 
-        
         Key = {"ZenithViking2026"} 
     }
 })
 
 local RPTab = Window:CreateTab(T.RP)
+local CrimTab = Window:CreateTab("🦹 Criminal")
 local TrackTab = Window:CreateTab(T.Track)
 local ModTab = Window:CreateTab(T.Mod)
 local CTab = Window:CreateTab(T.Cmb)
 local PTab = Window:CreateTab(T.Veh)
 local VTab = Window:CreateTab(T.Vis)
 
+-- =======================
+-- POLICE TAB
+-- =======================
 RPTab:CreateToggle({Name = T.Radar, CurrentValue = false, Callback = function(v) RoleplaySettings.RadarEnabled = v end})
 RPTab:CreateDropdown({Name = T.SpdUnit, Options = {"MPH", "KMH"}, CurrentOption = {"MPH"}, MultipleOptions = false, Callback = function(opt) RoleplaySettings.RadarUnit = opt[1] end})
 RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER") end})
@@ -603,11 +624,80 @@ RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BAC
 RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
 RPTab:CreateButton({Name = "⚠️ Panic Button", Callback = TriggerPanic})
 
+-- =======================
+-- CRIMINAL TAB
+-- =======================
+CrimTab:CreateButton({Name = "🔫 Buy AS Val", Callback = function()
+    pcall(function()
+        local dealer = workspace:FindFirstChild("IllegalDealer")
+        if dealer and dealer:FindFirstChild("AS Val") then
+            local gun = dealer["AS Val"]
+            local prompt = gun:FindFirstChildOfClass("ProximityPrompt", true)
+            if prompt then fireproximityprompt(prompt) end
+            local click = gun:FindFirstChildOfClass("ClickDetector", true)
+            if click then fireclickdetector(click) end
+        end
+    end)
+    SendToChat("Bought AS Val from the dealer.")
+end})
+
+CrimTab:CreateToggle({Name = "♾️ Auto-Refill Ammo Loop", CurrentValue = false, Callback = function(v)
+    ModSettings.AutoAmmo = v
+    if v then
+        task.spawn(function()
+            while ModSettings.AutoAmmo do
+                pcall(function()
+                    local givers = workspace:FindFirstChild("Systems") and workspace.Systems:FindFirstChild("Givers") and workspace.Systems.Givers:FindFirstChild("AmmoGivers")
+                    if givers then
+                        for _, giver in pairs(givers:GetChildren()) do
+                            local prompt = giver:FindFirstChildOfClass("ProximityPrompt", true)
+                            if prompt then fireproximityprompt(prompt) end
+                            local click = giver:FindFirstChildOfClass("ClickDetector", true)
+                            if click then fireclickdetector(click) end
+                            if giver:IsA("BasePart") and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
+                                firetouchinterest(lp.Character.HumanoidRootPart, giver, 0)
+                                firetouchinterest(lp.Character.HumanoidRootPart, giver, 1)
+                            end
+                        end
+                    end
+                    local ui = lp.PlayerGui:FindFirstChild("MainGui")
+                    if ui and ui.GameGui.AmmoFrame.Frame:FindFirstChild("Gun_Mags") then
+                        ui.GameGui.AmmoFrame.Frame.Gun_Mags.Text = "999"
+                    end
+                end)
+                task.wait(2)
+            end
+        end)
+    end
+end})
+
+CrimTab:CreateToggle({Name = "📻 Radio Spy (See Cop Calls)", CurrentValue = false, Callback = function(v)
+    pcall(function()
+        local radio = lp.PlayerGui:FindFirstChild("Radio")
+        if radio then
+            radio.Enabled = v
+            if radio:FindFirstChild("Main") then
+                radio.Main.Visible = v
+            end
+        end
+    end)
+end})
+
+CrimTab:CreateToggle({Name = "🛡️ Heavy PIT Ram Bar", CurrentValue = false, Callback = function(v)
+    vehSettings.RamBar = v
+end})
+
+-- =======================
+-- TRACKER TAB
+-- =======================
 local pNames = {}
 for _, p in pairs(Players:GetPlayers()) do if p ~= lp then table.insert(pNames, p.Name) end end
 TrackTab:CreateDropdown({Name = T.SelT, Options = pNames, CurrentOption = {""}, MultipleOptions = false, Callback = function(opt) SuspectSettings.Target = opt[1] end})
 TrackTab:CreateToggle({Name = T.DrawL, CurrentValue = false, Callback = function(v) SuspectSettings.Enabled = v end})
 
+-- =======================
+-- MODS TAB
+-- =======================
 ModTab:CreateSlider({Name = T.Nitro, Range = {100, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ModSettings.NitroPower = v end})
 ModTab:CreateToggle({Name = T.ARag, CurrentValue = false, Callback = function(v) ModSettings.AntiRagdoll = v end})
 
@@ -674,6 +764,9 @@ ModTab:CreateToggle({Name = T.AAFK, CurrentValue = false, Callback = function(v)
     end
 end})
 
+-- =======================
+-- COMBAT TAB
+-- =======================
 CTab:CreateToggle({Name = T.Aim, CurrentValue = false, Callback = function(v) AimSettings.Enabled = v end})
 CTab:CreateToggle({Name = T.PingComp, CurrentValue = true, Callback = function(v) AimSettings.PingComp = v end})
 CTab:CreateToggle({Name = T.Sticky, CurrentValue = false, Callback = function(v) AimSettings.StickyAim = v end})
@@ -695,11 +788,30 @@ CTab:CreateToggle({Name = T.WChk, CurrentValue = false, Callback = function(v) A
 CTab:CreateToggle({Name = T.TChk, CurrentValue = false, Callback = function(v) AimSettings.TeamCheck = v end})
 CTab:CreateDropdown({Name = T.FTeam, Options = teamNames, MultipleOptions = true, Callback = function(opt) AimSettings.FriendlyTeams = opt end})
 
+-- =======================
+-- VEHICLE TAB
+-- =======================
 PTab:CreateToggle({Name = T.GDes, CurrentValue = false, Callback = function(v) vehSettings.DesyncControl = v end})
 PTab:CreateToggle({Name = T.VSpoof, CurrentValue = false, Callback = function(v) vehSettings.GravitySpoof = v end})
 PTab:CreateToggle({Name = T.HMode, CurrentValue = false, Callback = function(v) vehSettings.HoverMode = v end})
 PTab:CreateToggle({Name = T.BRam, CurrentValue = false, Callback = function(v) vehSettings.RamAura = v end})
 PTab:CreateToggle({Name = T.PITH, CurrentValue = false, Callback = function(v) vehSettings.PitDesyncHelper = v end})
+
+PTab:CreateToggle({Name = "🏎️ Drift Mode (Slippery Tires)", CurrentValue = false, Callback = function(v)
+    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+    if vSeat and vSeat.Parent then
+        for _, part in pairs(vSeat.Parent:GetDescendants()) do
+            if part:IsA("BasePart") and (part.Name:lower():match("wheel") or part.Name:lower():match("tire")) then
+                if v then
+                    part.CustomPhysicalProperties = PhysicalProperties.new(0.01, 0.3, 0.5)
+                else
+                    part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5) 
+                end
+            end
+        end
+    end
+end})
+
 PTab:CreateButton({Name = T.IFlip, Callback = function()
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
     if vSeat then
@@ -709,6 +821,9 @@ PTab:CreateButton({Name = T.IFlip, Callback = function()
     end
 end})
 
+-- =======================
+-- VISUALS TAB
+-- =======================
 VTab:CreateToggle({Name = T.HUD, CurrentValue = false, Callback = function(v) ESPSettings.ShowPursuitHUD = v end})
 VTab:CreateToggle({Name = T.EESP, CurrentValue = false, Callback = function(v) ESPSettings.Enabled = v end})
 VTab:CreateToggle({Name = T.EInfo, CurrentValue = false, Callback = function(v) ESPSettings.ShowInfo = v end})
