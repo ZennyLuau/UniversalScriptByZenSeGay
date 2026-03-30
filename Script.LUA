@@ -617,75 +617,140 @@ local VTab = Window:CreateTab(T.Vis)
 -- POLICE TAB
 -- =======================
 RPTab:CreateToggle({Name = T.Radar, CurrentValue = false, Callback = function(v) RoleplaySettings.RadarEnabled = v end})
-RPTab:CreateDropdown({Name = T.SpdUnit, Options = {"MPH", "KMH"}, CurrentOption = {"MPH"}, MultipleOptions = false, Callback = function(opt) RoleplaySettings.RadarUnit = opt[1] end})
-RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER") end})
-RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
-RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BACKUP") end})
-RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
-RPTab:CreateButton({Name = "⚠️ Panic Button", Callback = TriggerPanic})
-
--- =======================
+RPTab:CreateDropdown({Name = T.SpdUnit, Options = {"MPH", "KMH"}, CurrentOption = {"MPH"}, MultipleOptions = false, Callback = function(opt) RoleplaySettings.RadarUni-- =======================
 -- CRIMINAL TAB
 -- =======================
+
+-- 🔫 AUTO BUY AS VAL (Blink TP)
 CrimTab:CreateButton({Name = "🔫 Buy AS Val", Callback = function()
     pcall(function()
+        local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
         local dealer = workspace:FindFirstChild("IllegalDealer")
-        if dealer and dealer:FindFirstChild("AS Val") then
+        if root and dealer and dealer:FindFirstChild("AS Val") then
             local gun = dealer["AS Val"]
+            local oldPos = root.CFrame -- Save your current location
+            
+            root.CFrame = gun.CFrame -- Blink to the dealer
+            task.wait(0.2) -- Give the server a split second to register you are there
+            
             local prompt = gun:FindFirstChildOfClass("ProximityPrompt", true)
             if prompt then fireproximityprompt(prompt) end
             local click = gun:FindFirstChildOfClass("ClickDetector", true)
             if click then fireclickdetector(click) end
+            
+            task.wait(0.1)
+            root.CFrame = oldPos -- Blink back to where you were
+            SendToChat("Blinked to dealer and bought AS Val.")
         end
     end)
-    SendToChat("Bought AS Val from the dealer.")
 end})
 
+-- ♾️ AUTO-REFILL AMMO (Blink TP Loop)
 CrimTab:CreateToggle({Name = "♾️ Auto-Refill Ammo Loop", CurrentValue = false, Callback = function(v)
     ModSettings.AutoAmmo = v
     if v then
         task.spawn(function()
             while ModSettings.AutoAmmo do
                 pcall(function()
+                    local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
                     local givers = workspace:FindFirstChild("Systems") and workspace.Systems:FindFirstChild("Givers") and workspace.Systems.Givers:FindFirstChild("AmmoGivers")
-                    if givers then
+                    
+                    if root and givers then
+                        local oldPos = root.CFrame
                         for _, giver in pairs(givers:GetChildren()) do
-                            local prompt = giver:FindFirstChildOfClass("ProximityPrompt", true)
-                            if prompt then fireproximityprompt(prompt) end
-                            local click = giver:FindFirstChildOfClass("ClickDetector", true)
-                            if click then fireclickdetector(click) end
-                            if giver:IsA("BasePart") and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
-                                firetouchinterest(lp.Character.HumanoidRootPart, giver, 0)
-                                firetouchinterest(lp.Character.HumanoidRootPart, giver, 1)
+                            if giver:IsA("BasePart") or giver:IsA("Model") then
+                                local targetPart = giver:IsA("BasePart") and giver or giver.PrimaryPart or giver:FindFirstChildWhichIsA("BasePart")
+                                if targetPart then
+                                    root.CFrame = targetPart.CFrame -- Blink to ammo
+                                    task.wait(0.1)
+                                    
+                                    local prompt = giver:FindFirstChildOfClass("ProximityPrompt", true)
+                                    if prompt then fireproximityprompt(prompt) end
+                                    local click = giver:FindFirstChildOfClass("ClickDetector", true)
+                                    if click then fireclickdetector(click) end
+                                    firetouchinterest(root, targetPart, 0)
+                                    firetouchinterest(root, targetPart, 1)
+                                end
                             end
                         end
+                        root.CFrame = oldPos -- Blink back
                     end
+                    
+                    -- Visual update for the UI
                     local ui = lp.PlayerGui:FindFirstChild("MainGui")
                     if ui and ui.GameGui.AmmoFrame.Frame:FindFirstChild("Gun_Mags") then
                         ui.GameGui.AmmoFrame.Frame.Gun_Mags.Text = "999"
                     end
                 end)
-                task.wait(2)
+                task.wait(4) -- Waits 4 seconds between ammo runs so you don't glitch out
             end
         end)
     end
 end})
 
+-- 📻 RADIO SPY (Aggressive Loop)
 CrimTab:CreateToggle({Name = "📻 Radio Spy (See Cop Calls)", CurrentValue = false, Callback = function(v)
-    pcall(function()
-        local radio = lp.PlayerGui:FindFirstChild("Radio")
-        if radio then
-            radio.Enabled = v
-            if radio:FindFirstChild("Main") then
-                radio.Main.Visible = v
+    ModSettings.RadioSpy = v
+    if v then
+        task.spawn(function()
+            while ModSettings.RadioSpy do
+                pcall(function()
+                    local radio = lp.PlayerGui:FindFirstChild("Radio")
+                    if radio and radio:FindFirstChild("Main") then
+                        radio.Enabled = true
+                        radio.Main.Visible = true
+                    end
+                end)
+                task.wait(0.1) -- Forces it open constantly to beat the game's scripts
             end
-        end
-    end)
+        end)
+    end
 end})
 
+-- 🛡️ CUSTOM RAM BAR (Ghost Hitbox)
+local fakeRamBar = nil
 CrimTab:CreateToggle({Name = "🛡️ Heavy PIT Ram Bar", CurrentValue = false, Callback = function(v)
-    vehSettings.RamBar = v
+    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+    if vSeat and vSeat.Parent then
+        local body = vSeat.Parent:FindFirstChild("Body")
+        if body and body:FindFirstChild("RamBarPit") then
+            local rb = body.RamBarPit
+            if v then
+                if not fakeRamBar then
+                    -- Spawns a massive ghost hitbox and welds it to the front of the car
+                    fakeRamBar = Instance.new("Part")
+                    fakeRamBar.Name = "GhostHitbox"
+                    fakeRamBar.Size = Vector3.new(12, 4, 6)
+                    fakeRamBar.Transparency = 0.6
+                    fakeRamBar.Color = Color3.fromRGB(255, 0, 0)
+                    fakeRamBar.CanCollide = true
+                    fakeRamBar.Massless = false
+                    fakeRamBar.Parent = body
+                    
+                    local weld = Instance.new("WeldConstraint")
+                    weld.Part0 = rb
+                    weld.Part1 = fakeRamBar
+                    weld.Parent = fakeRamBar
+                    
+                    fakeRamBar.CFrame = rb.CFrame * CFrame.new(0, 0, -2) -- Pushes it forward slightly
+                end
+            else
+                if fakeRamBar then
+                    fakeRamBar:Destroy()
+                    fakeRamBar = nil
+                end
+            end
+        end
+    end
 end})
+
+t = opt[1] end})
+RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER") end})
+RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
+RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BACKUP") end})
+RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
+RPTab:CreateButton({Name = "⚠️ Panic Button", Callback = TriggerPanic})
+
 
 -- =======================
 -- TRACKER TAB
@@ -803,7 +868,8 @@ PTab:CreateToggle({Name = "🏎️ Drift Mode (Slippery Tires)", CurrentValue = 
         for _, part in pairs(vSeat.Parent:GetDescendants()) do
             if part:IsA("BasePart") and (part.Name:lower():match("wheel") or part.Name:lower():match("tire")) then
                 if v then
-                    part.CustomPhysicalProperties = PhysicalProperties.new(0.01, 0.3, 0.5)
+                    -- 0.3 friction gives a controlled, smooth slide without bugging out
+                    part.CustomPhysicalProperties = PhysicalProperties.new(0.3, 0.3, 0.5)
                 else
                     part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5) 
                 end
@@ -811,6 +877,7 @@ PTab:CreateToggle({Name = "🏎️ Drift Mode (Slippery Tires)", CurrentValue = 
         end
     end
 end})
+
 
 PTab:CreateButton({Name = T.IFlip, Callback = function()
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
