@@ -2,8 +2,7 @@ getgenv().Language = getgenv().Language or "EN"
 
 local L = {
     VN = { Title = "RDM & LEO Universal", RP = "🚓 Cảnh Sát RP", Radar = "Bật ALPR Radar", SpdUnit = "Đơn vị tốc độ", TStop = "📢 Dừng Xe (Traffic Stop)", FStop = "📢 Giơ tay lên (Felony Stop)", Backup = "🚨 1O-78 Hỗ trợ", Shots = "💥 1O-71 Bắn nhau", Track = "🔍 Truy Nã", SelT = "Chọn Nghi Phạm", DrawL = "Vẽ Laser đến Nghi phạm", Mod = "🚀 Độ Xe & Tiện Ích", Nitro = "Lực Nitro (Phím H)", ARag = "Chống Ngã (Anti-Ragdoll)", Bail = "Trốn tù (Bail Out)", EMP = "Bom EMP (Tắt máy diện rộng)", AAFK = "Chống AFK (Treo máy)", ALag = "⚡ Giảm Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Chiến Đấu", Aim = "Bật AUTO-AIM", NRec = "Giảm Giật (No Recoil)", TBot = "Tự động bắn (Triggerbot)", HExp = "Phóng to đầu (Hitbox)", HSize = "Kích cỡ Hitbox", SFov = "Hiện FOV", FSize = "Kích cỡ FOV", ASm = "Độ mượt Aim", APart = "Vị trí khóa", BPred = "Đoán hướng di chuyển", PingComp = "🌐 Bù Ping (Chống Lag)", Sticky = "Khóa Cứng (Sticky Aim)", DMult = "Hệ số khoảng cách", HChan = "Tỷ lệ trúng %", RDel = "Độ trễ chuyển mục tiêu", RMs = "Độ trễ (ms)", DChk = "Bỏ qua xác chết", WChk = "Kiểm tra xuyên tường", TChk = "Không bắn đồng đội", FTeam = "Đội thân thiện", Veh = "🏎️ Xe Cộ", GDes = "Chống Lật (Gravity Desync)", VSpoof = "Ép gầm (Velocity Spoof)", HMode = "Chế độ bay lơ lửng", BRam = "Tường tàng hình hất văng", PITH = "Hỗ trợ Húc (PIT Helper)", IFlip = "Lật Xe Lại", Vis = "👁️ Đồ Họa", HUD = "Hiện HUD Báo Đài 1O-8O", BCam = "🎥 Bật Bodycam (Beep 5 Phút)", EESP = "Bật ESP", EInfo = "Hiện Thông tin & Vũ khí", EBox = "Vẽ Hộp 3D", Chams = "Glow Xuyên Tường", SBea = "Hiện tên đường trên trời", SName = "Hiện Tên Đường", STrac = "Vẽ tia đến đường", SOff = "Độ cao chữ trên trời", MDist = "Tầm nhìn tối đa" },
-    EN = { Title = "RDM & LEO Universal", RP = "🚓 Police RP", Radar = "Enable ALPR Radar", SpdUnit = "Speed Unit", TStop = "📢 Traffic Stop", FStop = "📢 Felony Stop", Backup = "🚨 1O-78 Backup", Shots = "💥 1O-71 Shots Fired", Track = "🔍 Suspect Tracker", SelT = "Select Suspect", DrawL = "Draw Laser to Suspect", Mod = "🚀 Mods & Utility", Nitro = "Nitro Power (H)", ARag = "Anti-Ragdoll", Bail = "Bail Out", EMP = "EMP Blast", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combat", Aim = "Enable AUTO-AIM", NRec = "No Recoil", TBot = "Auto-Shoot (Triggerbot)", HExp = "Hitbox Expander", HSize = "Hitbox Size", SFov = "Show FOV", FSize = "FOV Size", ASm = "Aim Smoothness", APart = "Aimlock Part", BPred = "Base Prediction", PingComp = "🌐 Ping Compensation", Sticky = "Sticky Aim (Hard Lock)", DMult = "Distance Multiplier", HChan = "Hit Chance %", RDel = "Enable Retarget Delay", RMs = "Retarget Delay (ms)", DChk = "Dead Check", WChk = "Wall Check", TChk = "Team Check", FTeam = "Friendly Teams", Veh = "🏎️ Vehicle", GDes = "Gravity Desync", VSpoof = "Velocity Spoof", HMode = "Hover Mode", BRam = "Bumper Ram Aura", PITH = "Enable PIT Helper", IFlip = "Insta-Flip", Vis = "👁️ Visuals", HUD = "Show Pursuit HUD", BCam = "🎥 Enable Bodycam (5 Min Beep)", EESP = "Enable Player ESP", EInfo = "Show Info & Weapon", EBox = "Draw 3D Boxes", Chams = "Enable Chams", SBea = "Enable Sky Beacons", SName = "Show Street Names", STrac = "Draw Street Tracers", SOff = "Sky Offset Height", MDist = "Max Render Distance" },
-    ES = { Title = "RDM & LEO Universal", RP = "🚓 Rol Policial", Radar = "Activar ALPR Radar", SpdUnit = "Unidad de Velocidad", TStop = "📢 Parada de Tráfico", FStop = "📢 Parada de Delito", Backup = "🚨 1O-78 Refuerzos", Shots = "💥 1O-71 Disparos", Track = "🔍 Rastreador", SelT = "Elegir Sospechoso", DrawL = "Dibujar Láser", Mod = "🚀 Mods y Utilidad", Nitro = "Poder Nitro (Tecla H)", ARag = "Anti-Muñeco", Bail = "Escapar", EMP = "Ráfaga EMP", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (Boost FPS)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combate", Aim = "Activar AUTO-AIM", NRec = "Sin Retroceso", TBot = "Disparo Automático", HExp = "Expandir Hitbox", HSize = "Tamaño de Hitbox", SFov = "Mostrar FOV", FSize = "Tamaño de FOV", ASm = "Suavidad de Aim", APart = "Parte de Aimlock", BPred = "Predicción Base", PingComp = "🌐 Comp. de Ping", Sticky = "Aim Pegajoso (Hard Lock)", DMult = "Multiplicador de Dist.", HChan = "Probabilidad Golpe %", RDel = "Retraso de Cambio", RMs = "Retraso (ms)", DChk = "Omitir Muertos", WChk = "Verificar Paredes", TChk = "Omitir Equipo", FTeam = "Equipos Aliados", Veh = "🏎️ Vehículo", GDes = "Desincronización Gravedad", VSpoof = "Falsificación de Vel.", HMode = "Modo Flotante", BRam = "Aura de Choque", PITH = "Ayuda de PIT", IFlip = "Volteo Rápido", Vis = "👁️ Visuales", HUD = "Mostrar HUD Persecución", BCam = "🎥 Activar Bodycam (Pito 5 Min)", EESP = "Activar ESP Jugador", EInfo = "Mostrar Info y Arma", EBox = "Cajas 3D", Chams = "Activar Chams", SBea = "Balizas en el Cielo", SName = "Mostrar Calles", STrac = "Trazadores de Calle", SOff = "Altura en el Cielo", MDist = "Distancia Máx. Render" }
+    EN = { Title = "RDM & LEO Universal", RP = "🚓 Police RP", Radar = "Enable ALPR Radar", SpdUnit = "Speed Unit", TStop = "📢 Traffic Stop", FStop = "📢 Felony Stop", Backup = "🚨 1O-78 Backup", Shots = "💥 1O-71 Shots Fired", Track = "🔍 Suspect Tracker", SelT = "Select Suspect", DrawL = "Draw Laser to Suspect", Mod = "🚀 Mods & Utility", Nitro = "Nitro Power (H)", ARag = "Anti-Ragdoll", Bail = "Bail Out", EMP = "EMP Blast", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combat", Aim = "Enable AUTO-AIM", NRec = "No Recoil", TBot = "Auto-Shoot (Triggerbot)", HExp = "Hitbox Expander", HSize = "Hitbox Size", SFov = "Show FOV", FSize = "FOV Size", ASm = "Aim Smoothness", APart = "Aimlock Part", BPred = "Base Prediction", PingComp = "🌐 Ping Compensation", Sticky = "Sticky Aim (Hard Lock)", DMult = "Distance Multiplier", HChan = "Hit Chance %", RDel = "Enable Retarget Delay", RMs = "Retarget Delay (ms)", DChk = "Dead Check", WChk = "Wall Check", TChk = "Team Check", FTeam = "Friendly Teams", Veh = "🏎️ Vehicle", GDes = "Gravity Desync", VSpoof = "Velocity Spoof", HMode = "Hover Mode", BRam = "Bumper Ram Aura", PITH = "Enable PIT Helper", IFlip = "Insta-Flip", Vis = "👁️ Visuals", HUD = "Show Pursuit HUD", BCam = "🎥 Enable Bodycam (5 Min Beep)", EESP = "Enable Player ESP", EInfo = "Show Info & Weapon", EBox = "Draw 3D Boxes", Chams = "Enable Chams", SBea = "Enable Sky Beacons", SName = "Show Street Names", STrac = "Draw Street Tracers", SOff = "Sky Offset Height", MDist = "Max Render Distance" }
 }
 
 local lang = getgenv().Language
@@ -44,7 +43,7 @@ local vehSettings = { DesyncControl = false, GravitySpoof = false, DownforceMass
 local ESPSettings = { Enabled = false, Draw3DBox = false, ShowInfo = false, TeamCheck = false, MaxDistance = 1000, StreetESPEnabled = false, StreetShowNames = false, StreetShowTracers = false, SkyOffset = 150, ShowPursuitHUD = false, Chams = false }
 local RoleplaySettings = { RadarEnabled = false, RadarUnit = "MPH", Bodycam = false }
 local SuspectSettings = { Target = nil, Enabled = false }
-local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, EMPRadius = 100, AntiAFK = false, AutoXP = false, AutoAmmo = false }
+local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, EMPRadius = 100, AntiAFK = false, AutoXP = false, AutoAmmo = false, RadioSpy = false }
 
 local isShooting, isBraking = false, false
 local currentTarget, lastTarget = nil, nil
@@ -60,14 +59,10 @@ local currentDirection = "UNKNOWN"
 
 local SkidSound = Instance.new("Sound")
 SkidSound.SoundId = "rbxassetid://461019670"; SkidSound.Volume = 2; SkidSound.Parent = game:GetService("SoundService")
-
 local BeepSound = Instance.new("Sound")
-BeepSound.SoundId = "rbxassetid://4888078857" 
-BeepSound.Volume = 2; BeepSound.Parent = game:GetService("SoundService")
-
+BeepSound.SoundId = "rbxassetid://4888078857"; BeepSound.Volume = 2; BeepSound.Parent = game:GetService("SoundService")
 local PanicSound = Instance.new("Sound")
-PanicSound.SoundId = "rbxassetid://2831166360"
-PanicSound.Volume = 2.5; PanicSound.Parent = game:GetService("SoundService")
+PanicSound.SoundId = "rbxassetid://2831166360"; PanicSound.Volume = 2.5; PanicSound.Parent = game:GetService("SoundService")
 
 local function SendToChat(msg)
     local cleanMsg = string.gsub(msg, "0", "O")
@@ -118,9 +113,6 @@ local function GetPlayerWeapon(char)
     if tool then return tool.Name else return "Unarmed" end
 end
 
--- ==========================================================
--- FIXED MESSAGE FUNCTIONS
--- ==========================================================
 local function TriggerPin()
     local msg = "We at " .. GetAcronym(currentStreetName) .. " In pursuit On at " .. currentDirection
     SendToChat(msg)
@@ -132,9 +124,6 @@ local function TriggerPanic()
     SendToChat(msg)
 end
 
--- ==========================================================
--- RADIO UI INJECTION (Constant Loop)
--- ==========================================================
 task.spawn(function()
     while task.wait(1) do
         pcall(function()
@@ -144,49 +133,22 @@ task.spawn(function()
                 if radioUI then
                     local mainFrame = radioUI:FindFirstChild("Main")
                     if mainFrame and not mainFrame:FindFirstChild("AutoCalloutBtn") then
-                        
                         local CalloutBtnRadio = Instance.new("TextButton")
-                        CalloutBtnRadio.Name = "AutoCalloutBtn"
-                        CalloutBtnRadio.Parent = mainFrame
-                        CalloutBtnRadio.BackgroundColor3 = Color3.fromRGB(30, 100, 200)
-                        CalloutBtnRadio.Position = UDim2.new(1, 5, 0, 0)
-                        CalloutBtnRadio.Size = UDim2.new(0, 80, 0, 30)
-                        CalloutBtnRadio.Font = Enum.Font.GothamBold
-                        CalloutBtnRadio.Text = "📢 CALLOUT"
-                        CalloutBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
-                        CalloutBtnRadio.TextSize = 11
-                        local calloutCorner = Instance.new("UICorner", CalloutBtnRadio); calloutCorner.CornerRadius = UDim.new(0, 6)
-
-                        CalloutBtnRadio.MouseButton1Click:Connect(function() 
-                            if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg) end
-                        end)
+                        CalloutBtnRadio.Name = "AutoCalloutBtn"; CalloutBtnRadio.Parent = mainFrame; CalloutBtnRadio.BackgroundColor3 = Color3.fromRGB(30, 100, 200)
+                        CalloutBtnRadio.Position = UDim2.new(1, 5, 0, 0); CalloutBtnRadio.Size = UDim2.new(0, 80, 0, 30); CalloutBtnRadio.Font = Enum.Font.GothamBold; CalloutBtnRadio.Text = "📢 CALLOUT"
+                        CalloutBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255); CalloutBtnRadio.TextSize = 11; local calloutCorner = Instance.new("UICorner", CalloutBtnRadio); calloutCorner.CornerRadius = UDim.new(0, 6)
+                        CalloutBtnRadio.MouseButton1Click:Connect(function() if currentCalloutMsg ~= "" then SendToChat(currentCalloutMsg) end end)
 
                         local PinBtnRadio = Instance.new("TextButton")
-                        PinBtnRadio.Name = "AutoPinBtn"
-                        PinBtnRadio.Parent = mainFrame
-                        PinBtnRadio.BackgroundColor3 = Color3.fromRGB(40, 150, 40)
-                        PinBtnRadio.Position = UDim2.new(1, 5, 0, 35)
-                        PinBtnRadio.Size = UDim2.new(0, 80, 0, 30)
-                        PinBtnRadio.Font = Enum.Font.GothamBold
-                        PinBtnRadio.Text = "📍 PIN"
-                        PinBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
-                        PinBtnRadio.TextSize = 11
-                        local pinCorner = Instance.new("UICorner", PinBtnRadio); pinCorner.CornerRadius = UDim.new(0, 6)
-
+                        PinBtnRadio.Name = "AutoPinBtn"; PinBtnRadio.Parent = mainFrame; PinBtnRadio.BackgroundColor3 = Color3.fromRGB(40, 150, 40)
+                        PinBtnRadio.Position = UDim2.new(1, 5, 0, 35); PinBtnRadio.Size = UDim2.new(0, 80, 0, 30); PinBtnRadio.Font = Enum.Font.GothamBold; PinBtnRadio.Text = "📍 PIN"
+                        PinBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255); PinBtnRadio.TextSize = 11; local pinCorner = Instance.new("UICorner", PinBtnRadio); pinCorner.CornerRadius = UDim.new(0, 6)
                         PinBtnRadio.MouseButton1Click:Connect(TriggerPin)
 
                         local PanicBtnRadio = Instance.new("TextButton")
-                        PanicBtnRadio.Name = "AutoPanicBtn"
-                        PanicBtnRadio.Parent = mainFrame
-                        PanicBtnRadio.BackgroundColor3 = Color3.fromRGB(200, 30, 30)
-                        PanicBtnRadio.Position = UDim2.new(1, 5, 0, 70)
-                        PanicBtnRadio.Size = UDim2.new(0, 80, 0, 30)
-                        PanicBtnRadio.Font = Enum.Font.GothamBold
-                        PanicBtnRadio.Text = "🚨 PANIC"
-                        PanicBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255)
-                        PanicBtnRadio.TextSize = 11
-                        local panicCorner = Instance.new("UICorner", PanicBtnRadio); panicCorner.CornerRadius = UDim.new(0, 6)
-
+                        PanicBtnRadio.Name = "AutoPanicBtn"; PanicBtnRadio.Parent = mainFrame; PanicBtnRadio.BackgroundColor3 = Color3.fromRGB(200, 30, 30)
+                        PanicBtnRadio.Position = UDim2.new(1, 5, 0, 70); PanicBtnRadio.Size = UDim2.new(0, 80, 0, 30); PanicBtnRadio.Font = Enum.Font.GothamBold; PanicBtnRadio.Text = "🚨 PANIC"
+                        PanicBtnRadio.TextColor3 = Color3.fromRGB(255, 255, 255); PanicBtnRadio.TextSize = 11; local panicCorner = Instance.new("UICorner", PanicBtnRadio); panicCorner.CornerRadius = UDim.new(0, 6)
                         PanicBtnRadio.MouseButton1Click:Connect(TriggerPanic)
                     end
                 end
@@ -228,12 +190,8 @@ UserInputService.InputBegan:Connect(function(i, g)
 end)
 UserInputService.InputEnded:Connect(function(i, g) 
     if not g then 
-        if i.UserInputType == Enum.UserInputType.MouseButton1 then 
-            isShooting = false 
-            if AimSettings.StickyAim then lockedTarget = nil end 
-        elseif i.KeyCode == Enum.KeyCode.LeftAlt then 
-            isBraking = false 
-        end 
+        if i.UserInputType == Enum.UserInputType.MouseButton1 then isShooting = false; if AimSettings.StickyAim then lockedTarget = nil end 
+        elseif i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = false end 
     end 
 end)
 
@@ -256,25 +214,9 @@ local RadarStroke = Instance.new("UIStroke", RadarLabel); RadarStroke.Thickness 
 
 if CoreGui:FindFirstChild("AxonBodycamGui") then CoreGui.AxonBodycamGui:Destroy() end
 local BodycamGui = Instance.new("ScreenGui"); BodycamGui.Name = "AxonBodycamGui"; BodycamGui.Parent = CoreGui; BodycamGui.Enabled = false
-
-local recText = Instance.new("TextLabel")
-recText.Parent = BodycamGui; recText.BackgroundTransparency = 1; recText.Position = UDim2.new(0.02, 0, 0.05, 0)
-recText.Size = UDim2.new(0, 100, 0, 50); recText.Font = Enum.Font.Code; recText.Text = "🔴 REC"
-recText.TextColor3 = Color3.fromRGB(255, 0, 0); recText.TextSize = 24; recText.TextXAlignment = Enum.TextXAlignment.Left
-
-local bcInfoText = Instance.new("TextLabel")
-bcInfoText.Parent = BodycamGui; bcInfoText.BackgroundTransparency = 1; bcInfoText.Position = UDim2.new(0.02, 0, 0.1, 0)
-bcInfoText.Size = UDim2.new(0, 300, 0, 50); bcInfoText.Font = Enum.Font.Code; bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD"
-bcInfoText.TextColor3 = Color3.fromRGB(255, 255, 255); bcInfoText.TextSize = 16; bcInfoText.TextXAlignment = Enum.TextXAlignment.Left
-
-local bcLogo = Instance.new("ImageLabel")
-bcLogo.Parent = BodycamGui
-bcLogo.BackgroundTransparency = 1
-bcLogo.AnchorPoint = Vector2.new(1, 0)
-bcLogo.Position = UDim2.new(0.98, 0, 0.03, 0)
-bcLogo.Size = UDim2.new(0, 75, 0, 75)
-bcLogo.Image = "rbxassetid://1000010483"
-bcLogo.ScaleType = Enum.ScaleType.Fit
+local recText = Instance.new("TextLabel"); recText.Parent = BodycamGui; recText.BackgroundTransparency = 1; recText.Position = UDim2.new(0.02, 0, 0.05, 0); recText.Size = UDim2.new(0, 100, 0, 50); recText.Font = Enum.Font.Code; recText.Text = "🔴 REC"; recText.TextColor3 = Color3.fromRGB(255, 0, 0); recText.TextSize = 24; recText.TextXAlignment = Enum.TextXAlignment.Left
+local bcInfoText = Instance.new("TextLabel"); bcInfoText.Parent = BodycamGui; bcInfoText.BackgroundTransparency = 1; bcInfoText.Position = UDim2.new(0.02, 0, 0.1, 0); bcInfoText.Size = UDim2.new(0, 300, 0, 50); bcInfoText.Font = Enum.Font.Code; bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD"; bcInfoText.TextColor3 = Color3.fromRGB(255, 255, 255); bcInfoText.TextSize = 16; bcInfoText.TextXAlignment = Enum.TextXAlignment.Left
+local bcLogo = Instance.new("ImageLabel"); bcLogo.Parent = BodycamGui; bcLogo.BackgroundTransparency = 1; bcLogo.AnchorPoint = Vector2.new(1, 0); bcLogo.Position = UDim2.new(0.98, 0, 0.03, 0); bcLogo.Size = UDim2.new(0, 75, 0, 75); bcLogo.Image = "rbxassetid://1000010483"; bcLogo.ScaleType = Enum.ScaleType.Fit
 
 local lastBeepTime = tick()
 task.spawn(function()
@@ -282,10 +224,7 @@ task.spawn(function()
         if RoleplaySettings.Bodycam then
             recText.Visible = not recText.Visible
             bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD\n" .. os.date("%Y-%m-%d %H:%M:%S")
-            if tick() - lastBeepTime >= 300 then
-                BeepSound:Play()
-                lastBeepTime = tick()
-            end
+            if tick() - lastBeepTime >= 300 then BeepSound:Play(); lastBeepTime = tick() end
         end
     end
 end)
@@ -295,8 +234,7 @@ local FOVCircle = Drawing.new("Circle"); FOVCircle.Visible = false; FOVCircle.Th
 
 local function IsVisible(tPart)
     if not AimSettings.WallCheck then return true end
-    local ray = RaycastParams.new()
-    ray.FilterDescendantsInstances = {lp.Character, camera}; ray.FilterType = Enum.RaycastFilterType.Exclude
+    local ray = RaycastParams.new(); ray.FilterDescendantsInstances = {lp.Character, camera}; ray.FilterType = Enum.RaycastFilterType.Exclude
     local hit = workspace:Raycast(camera.CFrame.Position, tPart.Position - camera.CFrame.Position, ray)
     if hit and hit.Instance then if not hit.Instance:IsDescendantOf(tPart.Parent) then return false end end
     return true
@@ -312,20 +250,15 @@ local function GetTeamColor(p) if p.Team then return p.Team.TeamColor.Color else
 local function DrawLine() local l = Drawing.new("Line"); l.Thickness = 1.5; l.Visible = false; return l end
 
 RunService.RenderStepped:Connect(function()
-    if AimSettings.NoRecoil and isShooting then
-        camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-0.5), 0, 0)
-    end
+    if AimSettings.NoRecoil and isShooting then camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-0.5), 0, 0) end
     
     FOVCircle.Position = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
-    FOVCircle.Radius = AimSettings.FOVSize
-    FOVCircle.Visible = AimSettings.ShowFOV and AimSettings.Enabled
+    FOVCircle.Radius = AimSettings.FOVSize; FOVCircle.Visible = AimSettings.ShowFOV and AimSettings.Enabled
     
     local target = nil; local shortest = AimSettings.FOVSize; local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
     
     if AimSettings.Enabled then
-        if AimSettings.StickyAim and isShooting and lockedTarget and lockedTarget.Parent and lockedTarget.Parent:FindFirstChild("Humanoid") and lockedTarget.Parent.Humanoid.Health > 0 then
-            target = lockedTarget
-        else
+        if AimSettings.StickyAim and isShooting and lockedTarget and lockedTarget.Parent and lockedTarget.Parent:FindFirstChild("Humanoid") and lockedTarget.Parent.Humanoid.Health > 0 then target = lockedTarget else
             for _, p in pairs(Players:GetPlayers()) do
                 if p ~= lp and p.Character and (not AimSettings.DeadCheck or (p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0)) then
                     if AimSettings.TeamCheck and p.Team == lp.Team then continue end
@@ -346,7 +279,6 @@ RunService.RenderStepped:Connect(function()
         end
 
         if AimSettings.StickyAim and isShooting and target then lockedTarget = target end
-
         if AimSettings.UseRetargetDelay then if target ~= lastTarget then if lastTarget ~= nil then targetLostTime = tick() end; if target ~= nil and tick() - targetLostTime < (AimSettings.RetargetDelay / 1000) then target = nil end end end
         lastTarget = target; currentTarget = target
         if tick() - lastHitChanceCheck > 0.2 then lastHitChanceCheck = tick(); if math.random(1, 100) <= AimSettings.HitChance then isCurrentlyLocking = true else isCurrentlyLocking = false end end
@@ -354,25 +286,16 @@ RunService.RenderStepped:Connect(function()
         if target and isCurrentlyLocking then
             local distToTarget = (target.Position - camera.CFrame.Position).Magnitude
             local pingAdd = 0
-            if AimSettings.PingComp then 
-                pingAdd = math.clamp(GetPing(), 0, 0.15) 
-            end 
+            if AimSettings.PingComp then pingAdd = math.clamp(GetPing(), 0, 0.15) end 
             
             local timeToHit = (distToTarget / 1000) * AimSettings.DistMultiplier
             local totalPrediction = AimSettings.Prediction + pingAdd + timeToHit
             local fPos = target.Position + (target.AssemblyLinearVelocity * totalPrediction)
-            
             if AimSettings.LegitShake then local s = AimSettings.ShakePower / 10; fPos = fPos + Vector3.new((math.random() - 0.5) * s, (math.random() - 0.5) * s, (math.random() - 0.5) * s) end
             
             local lookCFrame = CFrame.new(camera.CFrame.Position, fPos)
             local currentSmoothness = (AimSettings.StickyAim and isShooting) and 1 or AimSettings.Smoothness
-            
-            if currentSmoothness >= 1 then 
-                camera.CFrame = lookCFrame 
-            else 
-                camera.CFrame = camera.CFrame:Lerp(lookCFrame, currentSmoothness) 
-            end
-            
+            if currentSmoothness >= 1 then camera.CFrame = lookCFrame else camera.CFrame = camera.CFrame:Lerp(lookCFrame, currentSmoothness) end
             if AimSettings.Triggerbot then mouse1click() end
         end
     end
@@ -440,7 +363,6 @@ RunService.RenderStepped:Connect(function()
     end
 
     PursuitLabel.Visible = ESPSettings.ShowPursuitHUD
-    
     if lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
         local myPos = lp.Character.HumanoidRootPart.Position; local closestStreet = "UNKNOWN"; local shortestDist = math.huge
         local streetFolder = workspace:FindFirstChild("StreetNames")
@@ -448,12 +370,10 @@ RunService.RenderStepped:Connect(function()
         
         currentDirection = GetCompassDirection()
         if shortestDist < 2000 then
-            currentStreetName = closestStreet
-            currentCalloutMsg = "1O-8O " .. currentDirection .. " " .. GetAcronym(closestStreet)
+            currentStreetName = closestStreet; currentCalloutMsg = "1O-8O " .. currentDirection .. " " .. GetAcronym(closestStreet)
             PursuitLabel.Text = "🚔 " .. currentCalloutMsg; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0)
         else
-            currentStreetName = "Out of city"
-            currentCalloutMsg = "1O-8O Out of city"
+            currentStreetName = "Out of city"; currentCalloutMsg = "1O-8O Out of city"
             PursuitLabel.Text = "📡 DISPATCH: OUT OF CITY"; PursuitLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
         end
     end
@@ -491,11 +411,6 @@ RunService.RenderStepped:Connect(function()
             if onScreen then SuspectTracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y); SuspectTracer.To = Vector2.new(pos.X, pos.Y); SuspectTracer.Visible = true else SuspectTracer.Visible = false end
         else SuspectTracer.Visible = false end
     else SuspectTracer.Visible = false end
-
-    if ModSettings.AntiRagdoll and lp.Character then
-        local humanoid = lp.Character:FindFirstChildOfClass("Humanoid")
-        if humanoid then humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false); humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false) end
-    end
 end)
 
 Players.PlayerRemoving:Connect(function(p)
@@ -505,24 +420,6 @@ end)
 RunService.Heartbeat:Connect(function()
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
     if not vSeat or not vSeat:IsA("VehicleSeat") then return end
-
-    -- CUSTOM RAM BAR (PIT)
-    if vehSettings.RamBar then
-        local body = vSeat.Parent:FindFirstChild("Body")
-        if body and body:FindFirstChild("RamBarPit") then
-            local rb = body.RamBarPit
-            rb.Size = Vector3.new(12, 4, 6)
-            rb.Transparency = 0.5
-            rb.Massless = false
-        end
-    else
-        local body = vSeat.Parent:FindFirstChild("Body")
-        if body and body:FindFirstChild("RamBarPit") then
-            local rb = body.RamBarPit
-            rb.Size = Vector3.new(1, 1, 1)
-            rb.Transparency = 1
-        end
-    end
 
     if vehSettings.ServerAntiFling then
         if vSeat.AssemblyLinearVelocity.Magnitude > 400 then vSeat.AssemblyLinearVelocity = vSeat.AssemblyLinearVelocity.Unit * 400 end
@@ -582,7 +479,6 @@ end)
 -- ==========================================================
 -- 🔑 RAYFIELD KEY SYSTEM & MENU SETUP
 -- ==========================================================
-
 pcall(function()
     setclipboard("https://link-hub.net/4649544/tJXhoJ5atUsF")
 end)
@@ -592,7 +488,6 @@ local Window = Rayfield:CreateWindow({
     LoadingTitle = "Loading...", 
     Theme = "Ocean", 
     ConfigurationSaving = { Enabled = false },
-    
     KeySystem = true, 
     KeySettings = {
         Title = "RDM & LEO Universal",
@@ -617,35 +512,33 @@ local VTab = Window:CreateTab(T.Vis)
 -- POLICE TAB
 -- =======================
 RPTab:CreateToggle({Name = T.Radar, CurrentValue = false, Callback = function(v) RoleplaySettings.RadarEnabled = v end})
-RPTab:CreateDropdown({Name = T.SpdUnit, Options = {"MPH", "KMH"}, CurrentOption = {"MPH"}, MultipleOptions = false, Callback = function(opt) RoleplaySettings.RadarUni-- =======================
+RPTab:CreateDropdown({Name = T.SpdUnit, Options = {"MPH", "KMH"}, CurrentOption = {"MPH"}, MultipleOptions = false, Callback = function(opt) RoleplaySettings.RadarUnit = opt[1] end})
+RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER") end})
+RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
+RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BACKUP") end})
+RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
+RPTab:CreateButton({Name = "⚠️ Panic Button", Callback = TriggerPanic})
+
+-- =======================
 -- CRIMINAL TAB
 -- =======================
-
--- 🔫 AUTO BUY AS VAL (Blink TP)
 CrimTab:CreateButton({Name = "🔫 Buy AS Val", Callback = function()
     pcall(function()
         local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
         local dealer = workspace:FindFirstChild("IllegalDealer")
         if root and dealer and dealer:FindFirstChild("AS Val") then
-            local gun = dealer["AS Val"]
-            local oldPos = root.CFrame -- Save your current location
-            
-            root.CFrame = gun.CFrame -- Blink to the dealer
-            task.wait(0.2) -- Give the server a split second to register you are there
-            
+            local gun = dealer["AS Val"]; local oldPos = root.CFrame
+            root.CFrame = gun.CFrame; task.wait(0.2) 
             local prompt = gun:FindFirstChildOfClass("ProximityPrompt", true)
             if prompt then fireproximityprompt(prompt) end
             local click = gun:FindFirstChildOfClass("ClickDetector", true)
             if click then fireclickdetector(click) end
-            
-            task.wait(0.1)
-            root.CFrame = oldPos -- Blink back to where you were
+            task.wait(0.1); root.CFrame = oldPos 
             SendToChat("Blinked to dealer and bought AS Val.")
         end
     end)
 end})
 
--- ♾️ AUTO-REFILL AMMO (Blink TP Loop)
 CrimTab:CreateToggle({Name = "♾️ Auto-Refill Ammo Loop", CurrentValue = false, Callback = function(v)
     ModSettings.AutoAmmo = v
     if v then
@@ -654,41 +547,32 @@ CrimTab:CreateToggle({Name = "♾️ Auto-Refill Ammo Loop", CurrentValue = fals
                 pcall(function()
                     local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
                     local givers = workspace:FindFirstChild("Systems") and workspace.Systems:FindFirstChild("Givers") and workspace.Systems.Givers:FindFirstChild("AmmoGivers")
-                    
                     if root and givers then
                         local oldPos = root.CFrame
                         for _, giver in pairs(givers:GetChildren()) do
                             if giver:IsA("BasePart") or giver:IsA("Model") then
                                 local targetPart = giver:IsA("BasePart") and giver or giver.PrimaryPart or giver:FindFirstChildWhichIsA("BasePart")
                                 if targetPart then
-                                    root.CFrame = targetPart.CFrame -- Blink to ammo
-                                    task.wait(0.1)
-                                    
+                                    root.CFrame = targetPart.CFrame; task.wait(0.1)
                                     local prompt = giver:FindFirstChildOfClass("ProximityPrompt", true)
                                     if prompt then fireproximityprompt(prompt) end
                                     local click = giver:FindFirstChildOfClass("ClickDetector", true)
                                     if click then fireclickdetector(click) end
-                                    firetouchinterest(root, targetPart, 0)
-                                    firetouchinterest(root, targetPart, 1)
+                                    firetouchinterest(root, targetPart, 0); firetouchinterest(root, targetPart, 1)
                                 end
                             end
                         end
-                        root.CFrame = oldPos -- Blink back
+                        root.CFrame = oldPos 
                     end
-                    
-                    -- Visual update for the UI
                     local ui = lp.PlayerGui:FindFirstChild("MainGui")
-                    if ui and ui.GameGui.AmmoFrame.Frame:FindFirstChild("Gun_Mags") then
-                        ui.GameGui.AmmoFrame.Frame.Gun_Mags.Text = "999"
-                    end
+                    if ui and ui.GameGui.AmmoFrame.Frame:FindFirstChild("Gun_Mags") then ui.GameGui.AmmoFrame.Frame.Gun_Mags.Text = "999" end
                 end)
-                task.wait(4) -- Waits 4 seconds between ammo runs so you don't glitch out
+                task.wait(4) 
             end
         end)
     end
 end})
 
--- 📻 RADIO SPY (Aggressive Loop)
 CrimTab:CreateToggle({Name = "📻 Radio Spy (See Cop Calls)", CurrentValue = false, Callback = function(v)
     ModSettings.RadioSpy = v
     if v then
@@ -696,18 +580,14 @@ CrimTab:CreateToggle({Name = "📻 Radio Spy (See Cop Calls)", CurrentValue = fa
             while ModSettings.RadioSpy do
                 pcall(function()
                     local radio = lp.PlayerGui:FindFirstChild("Radio")
-                    if radio and radio:FindFirstChild("Main") then
-                        radio.Enabled = true
-                        radio.Main.Visible = true
-                    end
+                    if radio and radio:FindFirstChild("Main") then radio.Enabled = true; radio.Main.Visible = true end
                 end)
-                task.wait(0.1) -- Forces it open constantly to beat the game's scripts
+                task.wait(0.1) 
             end
         end)
     end
 end})
 
--- 🛡️ CUSTOM RAM BAR (Ghost Hitbox)
 local fakeRamBar = nil
 CrimTab:CreateToggle({Name = "🛡️ Heavy PIT Ram Bar", CurrentValue = false, Callback = function(v)
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
@@ -717,40 +597,19 @@ CrimTab:CreateToggle({Name = "🛡️ Heavy PIT Ram Bar", CurrentValue = false, 
             local rb = body.RamBarPit
             if v then
                 if not fakeRamBar then
-                    -- Spawns a massive ghost hitbox and welds it to the front of the car
-                    fakeRamBar = Instance.new("Part")
-                    fakeRamBar.Name = "GhostHitbox"
-                    fakeRamBar.Size = Vector3.new(12, 4, 6)
-                    fakeRamBar.Transparency = 0.6
-                    fakeRamBar.Color = Color3.fromRGB(255, 0, 0)
-                    fakeRamBar.CanCollide = true
-                    fakeRamBar.Massless = false
-                    fakeRamBar.Parent = body
-                    
+                    fakeRamBar = Instance.new("Part"); fakeRamBar.Name = "GhostHitbox"
+                    fakeRamBar.Size = Vector3.new(12, 4, 6); fakeRamBar.Transparency = 0.6; fakeRamBar.Color = Color3.fromRGB(255, 0, 0)
+                    fakeRamBar.CanCollide = true; fakeRamBar.Massless = false; fakeRamBar.Parent = body
                     local weld = Instance.new("WeldConstraint")
-                    weld.Part0 = rb
-                    weld.Part1 = fakeRamBar
-                    weld.Parent = fakeRamBar
-                    
-                    fakeRamBar.CFrame = rb.CFrame * CFrame.new(0, 0, -2) -- Pushes it forward slightly
+                    weld.Part0 = rb; weld.Part1 = fakeRamBar; weld.Parent = fakeRamBar
+                    fakeRamBar.CFrame = rb.CFrame * CFrame.new(0, 0, -2) 
                 end
             else
-                if fakeRamBar then
-                    fakeRamBar:Destroy()
-                    fakeRamBar = nil
-                end
+                if fakeRamBar then fakeRamBar:Destroy(); fakeRamBar = nil end
             end
         end
     end
 end})
-
-t = opt[1] end})
-RPTab:CreateButton({Name = T.TStop, Callback = function() SendToChat("PULL OVER") end})
-RPTab:CreateButton({Name = T.FStop, Callback = function() SendToChat("HANDS UP GET OUT") end})
-RPTab:CreateButton({Name = T.Backup, Callback = function() SendToChat("1O-78 BACKUP") end})
-RPTab:CreateButton({Name = T.Shots, Callback = function() SendToChat("1O-71 SHOTS FIRED") end})
-RPTab:CreateButton({Name = "⚠️ Panic Button", Callback = TriggerPanic})
-
 
 -- =======================
 -- TRACKER TAB
@@ -765,7 +624,6 @@ TrackTab:CreateToggle({Name = T.DrawL, CurrentValue = false, Callback = function
 -- =======================
 ModTab:CreateSlider({Name = T.Nitro, Range = {100, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ModSettings.NitroPower = v end})
 ModTab:CreateToggle({Name = T.ARag, CurrentValue = false, Callback = function(v) ModSettings.AntiRagdoll = v end})
-
 ModTab:CreateToggle({Name = T.AutoXP, CurrentValue = false, Callback = function(v) 
     ModSettings.AutoXP = v
     if v then
@@ -775,11 +633,7 @@ ModTab:CreateToggle({Name = T.AutoXP, CurrentValue = false, Callback = function(
                     local rep = game:GetService("ReplicatedStorage")
                     if rep:FindFirstChild("Remotes") and rep.Remotes:FindFirstChild("XPSystem") and rep.Remotes.XPSystem:FindFirstChild("GET") then
                         local xpRemote = rep.Remotes.XPSystem.GET
-                        if xpRemote:IsA("RemoteEvent") then
-                            xpRemote:FireServer()
-                        elseif xpRemote:IsA("RemoteFunction") then
-                            xpRemote:InvokeServer()
-                        end
+                        if xpRemote:IsA("RemoteEvent") then xpRemote:FireServer() elseif xpRemote:IsA("RemoteFunction") then xpRemote:InvokeServer() end
                     end
                 end)
                 task.wait(1)
@@ -787,21 +641,12 @@ ModTab:CreateToggle({Name = T.AutoXP, CurrentValue = false, Callback = function(
         end)
     end
 end})
-
 ModTab:CreateButton({Name = T.ALag, Callback = function()
-    local Lighting = game:GetService("Lighting")
-    Lighting.GlobalShadows = false
-    Lighting.FogEnd = 9e9
-    settings().Rendering.QualityLevel = 1
+    local Lighting = game:GetService("Lighting"); Lighting.GlobalShadows = false; Lighting.FogEnd = 9e9; settings().Rendering.QualityLevel = 1
     for _, v in pairs(workspace:GetDescendants()) do
-        if v:IsA("Decal") or v:IsA("Texture") then
-            v.Transparency = 1
-        elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-            v.Lifetime = NumberRange.new(0)
-        end
+        if v:IsA("Decal") or v:IsA("Texture") then v.Transparency = 1 elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then v.Lifetime = NumberRange.new(0) end
     end
 end})
-
 ModTab:CreateButton({Name = T.Bail, Callback = function() if lp.Character then lp.Character:BreakJoints() end end})
 ModTab:CreateButton({Name = T.EMP, Callback = function()
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
@@ -861,24 +706,16 @@ PTab:CreateToggle({Name = T.VSpoof, CurrentValue = false, Callback = function(v)
 PTab:CreateToggle({Name = T.HMode, CurrentValue = false, Callback = function(v) vehSettings.HoverMode = v end})
 PTab:CreateToggle({Name = T.BRam, CurrentValue = false, Callback = function(v) vehSettings.RamAura = v end})
 PTab:CreateToggle({Name = T.PITH, CurrentValue = false, Callback = function(v) vehSettings.PitDesyncHelper = v end})
-
 PTab:CreateToggle({Name = "🏎️ Drift Mode (Slippery Tires)", CurrentValue = false, Callback = function(v)
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
     if vSeat and vSeat.Parent then
         for _, part in pairs(vSeat.Parent:GetDescendants()) do
             if part:IsA("BasePart") and (part.Name:lower():match("wheel") or part.Name:lower():match("tire")) then
-                if v then
-                    -- 0.3 friction gives a controlled, smooth slide without bugging out
-                    part.CustomPhysicalProperties = PhysicalProperties.new(0.3, 0.3, 0.5)
-                else
-                    part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5) 
-                end
+                if v then part.CustomPhysicalProperties = PhysicalProperties.new(0.3, 0.3, 0.5) else part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5) end
             end
         end
     end
 end})
-
-
 PTab:CreateButton({Name = T.IFlip, Callback = function()
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
     if vSeat then
@@ -901,9 +738,4 @@ VTab:CreateToggle({Name = T.SName, CurrentValue = false, Callback = function(v) 
 VTab:CreateToggle({Name = T.STrac, CurrentValue = false, Callback = function(v) ESPSettings.StreetShowTracers = v end})
 VTab:CreateSlider({Name = T.SOff, Range = {50, 500}, Increment = 50, CurrentValue = 150, Callback = function(v) ESPSettings.SkyOffset = v end})
 VTab:CreateSlider({Name = T.MDist, Range = {100, 5000}, Increment = 100, CurrentValue = 1000, Callback = function(v) ESPSettings.MaxDistance = v end})
-
-VTab:CreateToggle({Name = T.BCam, CurrentValue = false, Callback = function(v) 
-    RoleplaySettings.Bodycam = v 
-    BodycamGui.Enabled = v
-    if v then lastBeepTime = tick() end 
-end})
+VTab:CreateToggle({Name = T.BCam, CurrentValue = false, Callback = function(v) RoleplaySettings.Bodycam = v; BodycamGui.Enabled = v; if v then lastBeepTime = tick() end end})
