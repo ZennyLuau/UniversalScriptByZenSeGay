@@ -1,8 +1,9 @@
 getgenv().Language = getgenv().Language or "EN"
 
 local L = {
-    VN = { Title = "RDM & LEO Universal", RP = "🚓 Cảnh Sát RP", Radar = "Bật ALPR Radar", SpdUnit = "Đơn vị tốc độ", TStop = "📢 Dừng Xe (Traffic Stop)", FStop = "📢 Giơ tay lên (Felony Stop)", Backup = "🚨 1O-78 Hỗ trợ", Shots = "💥 1O-71 Bắn nhau", Track = "🔍 Truy Nã", SelT = "Chọn Nghi Phạm", DrawL = "Vẽ Laser đến Nghi phạm", Mod = "🚀 Độ Xe & Tiện Ích", Nitro = "Lực Nitro (Phím H)", ARag = "Chống Ngã (Anti-Ragdoll)", Bail = "Trốn tù (Bail Out)", EMP = "Bom EMP (Tắt máy diện rộng)", AAFK = "Chống AFK (Treo máy)", ALag = "⚡ Giảm Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Chiến Đấu", Aim = "Bật AUTO-AIM", NRec = "Giảm Giật (No Recoil)", TBot = "Tự động bắn (Triggerbot)", HExp = "Phóng to đầu (Hitbox)", HSize = "Kích cỡ Hitbox", SFov = "Hiện FOV", FSize = "Kích cỡ FOV", ASm = "Độ mượt Aim", APart = "Vị trí khóa", BPred = "Đoán hướng di chuyển", PingComp = "🌐 Bù Ping (Chống Lag)", Sticky = "Khóa Cứng (Sticky Aim)", DMult = "Hệ số khoảng cách", HChan = "Tỷ lệ trúng %", RDel = "Độ trễ chuyển mục tiêu", RMs = "Độ trễ (ms)", DChk = "Bỏ qua xác chết", WChk = "Kiểm tra xuyên tường", TChk = "Không bắn đồng đội", FTeam = "Đội thân thiện", Veh = "🏎️ Xe Cộ", GDes = "Chống Lật (Gravity Desync)", VSpoof = "Ép gầm (Velocity Spoof)", HMode = "Chế độ bay lơ lửng", BRam = "Tường tàng hình hất văng", PITH = "Hỗ trợ Húc (PIT Helper)", IFlip = "Lật Xe Lại", Vis = "👁️ Đồ Họa", HUD = "Hiện HUD Báo Đài 1O-8O", BCam = "🎥 Bật Bodycam (Beep 5 Phút)", EESP = "Bật ESP", EInfo = "Hiện Thông tin & Vũ khí", EBox = "Vẽ Hộp 3D", Chams = "Glow Xuyên Tường", SBea = "Hiện tên đường trên trời", SName = "Hiện Tên Đường", STrac = "Vẽ tia đến đường", SOff = "Độ cao chữ trên trời", MDist = "Tầm nhìn tối đa" },
-    EN = { Title = "RDM & LEO Universal", RP = "🚓 Police RP", Radar = "Enable ALPR Radar", SpdUnit = "Speed Unit", TStop = "📢 Traffic Stop", FStop = "📢 Felony Stop", Backup = "🚨 1O-78 Backup", Shots = "💥 1O-71 Shots Fired", Track = "🔍 Suspect Tracker", SelT = "Select Suspect", DrawL = "Draw Laser to Suspect", Mod = "🚀 Mods & Utility", Nitro = "Nitro Power (H)", ARag = "Anti-Ragdoll", Bail = "Bail Out", EMP = "EMP Blast", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combat", Aim = "Enable AUTO-AIM", NRec = "No Recoil", TBot = "Auto-Shoot (Triggerbot)", HExp = "Hitbox Expander", HSize = "Hitbox Size", SFov = "Show FOV", FSize = "FOV Size", ASm = "Aim Smoothness", APart = "Aimlock Part", BPred = "Base Prediction", PingComp = "🌐 Ping Compensation", Sticky = "Sticky Aim (Hard Lock)", DMult = "Distance Multiplier", HChan = "Hit Chance %", RDel = "Enable Retarget Delay", RMs = "Retarget Delay (ms)", DChk = "Dead Check", WChk = "Wall Check", TChk = "Team Check", FTeam = "Friendly Teams", Veh = "🏎️ Vehicle", GDes = "Gravity Desync", VSpoof = "Velocity Spoof", HMode = "Hover Mode", BRam = "Bumper Ram Aura", PITH = "Enable PIT Helper", IFlip = "Insta-Flip", Vis = "👁️ Visuals", HUD = "Show Pursuit HUD", BCam = "🎥 Enable Bodycam (5 Min Beep)", EESP = "Enable Player ESP", EInfo = "Show Info & Weapon", EBox = "Draw 3D Boxes", Chams = "Enable Chams", SBea = "Enable Sky Beacons", SName = "Show Street Names", STrac = "Draw Street Tracers", SOff = "Sky Offset Height", MDist = "Max Render Distance" }
+    VN = { Title = "RDM & LEO Universal", RP = "🚓 Cảnh Sát RP", Radar = "Bật ALPR Radar", SpdUnit = "Đơn vị tốc độ", TStop = "📢 Dừng Xe (Traffic Stop)", FStop = "📢 Giơ tay lên (Felony Stop)", Backup = "🚨 1O-78 Hỗ trợ", Shots = "💥 1O-71 Bắn nhau", Track = "🔍 Truy Nã", SelT = "Chọn Nghi Phạm", DrawL = "Vẽ Laser đến Nghi phạm", Mod = "🚀 Độ Xe & Tiện Ích", Nitro = "Lực Nitro (Phím H)", ARag = "Chống Ngã (Anti-Ragdoll)", AAFK = "Chống AFK (Treo máy)", ALag = "⚡ Giảm Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Chiến Đấu", Aim = "Bật AUTO-AIM", NRec = "Giảm Giật (No Recoil)", TBot = "Tự động bắn (Triggerbot)", HExp = "Phóng to RootPart (Hitbox)", HSize = "Kích cỡ Hitbox", SFov = "Hiện FOV", FSize = "Kích cỡ FOV", ASm = "Độ mượt Aim", APart = "Vị trí khóa", BPred = "Đoán hướng di chuyển", PingComp = "🌐 Bù Ping (Chống Lag)", Sticky = "Khóa Cứng (Sticky Aim)", DMult = "Hệ số khoảng cách", HChan = "Tỷ lệ trúng %", RDel = "Độ trễ chuyển mục tiêu", RMs = "Độ trễ (ms)", DChk = "Bỏ qua xác chết", WChk = "Kiểm tra xuyên tường", TChk = "Không bắn đồng đội", FTeam = "Đội thân thiện", Veh = "🏎️ Xe Cộ", GDes = "Chống Lật (Gravity Desync)", VSpoof = "Ép gầm (Velocity Spoof)", HMode = "Chế độ bay lơ lửng", BRam = "Tường tàng hình hất văng", PITH = "Hỗ trợ Húc (PIT Helper)", IFlip = "Lật Xe Lại", Vis = "👁️ Đồ Họa", HUD = "Hiện HUD Báo Đài 1O-8O", BCam = "🎥 Bật Bodycam (Beep 5 Phút)", EESP = "Bật ESP", EInfo = "Hiện Thông tin & Vũ khí", EBox = "Vẽ Hộp 3D", Chams = "Glow Xuyên Tường", SBea = "Hiện tên đường trên trời", SName = "Hiện Tên Đường", STrac = "Vẽ tia đến đường", SOff = "Độ cao chữ trên trời", MDist = "Tầm nhìn tối đa" },
+    EN = { Title = "RDM & LEO Universal", RP = "🚓 Police RP", Radar = "Enable ALPR Radar", SpdUnit = "Speed Unit", TStop = "📢 Traffic Stop", FStop = "📢 Felony Stop", Backup = "🚨 1O-78 Backup", Shots = "💥 1O-71 Shots Fired", Track = "🔍 Suspect Tracker", SelT = "Select Suspect", DrawL = "Draw Laser to Suspect", Mod = "🚀 Mods & Utility", Nitro = "Nitro Power (H)", ARag = "Anti-Ragdoll", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (FPS Boost)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combat", Aim = "Enable AUTO-AIM", NRec = "No Recoil", TBot = "Auto-Shoot (Triggerbot)", HExp = "Hitbox Expander", HSize = "Hitbox Size", SFov = "Show FOV", FSize = "FOV Size", ASm = "Aim Smoothness", APart = "Aimlock Part", BPred = "Base Prediction", PingComp = "🌐 Ping Compensation", Sticky = "Sticky Aim (Hard Lock)", DMult = "Distance Multiplier", HChan = "Hit Chance %", RDel = "Enable Retarget Delay", RMs = "Retarget Delay (ms)", DChk = "Dead Check", WChk = "Wall Check", TChk = "Team Check", FTeam = "Friendly Teams", Veh = "🏎️ Vehicle", GDes = "Gravity Desync", VSpoof = "Velocity Spoof", HMode = "Hover Mode", BRam = "Bumper Ram Aura", PITH = "Enable PIT Helper", IFlip = "Insta-Flip", Vis = "👁️ Visuals", HUD = "Show Pursuit HUD", BCam = "🎥 Enable Bodycam (5 Min Beep)", EESP = "Enable Player ESP", EInfo = "Show Info & Weapon", EBox = "Draw 3D Boxes", Chams = "Enable Chams", SBea = "Enable Sky Beacons", SName = "Show Street Names", STrac = "Draw Street Tracers", SOff = "Sky Offset Height", MDist = "Max Render Distance" },
+    ES = { Title = "RDM & LEO Universal", RP = "🚓 Rol Policial", Radar = "Activar ALPR Radar", SpdUnit = "Unidad de Velocidad", TStop = "📢 Parada de Tráfico", FStop = "📢 Parada de Delito", Backup = "🚨 1O-78 Refuerzos", Shots = "💥 1O-71 Disparos", Track = "🔍 Rastreador", SelT = "Elegir Sospechoso", DrawL = "Dibujar Láser", Mod = "🚀 Mods y Utilidad", Nitro = "Poder Nitro (Tecla H)", ARag = "Anti-Muñeco", AAFK = "Anti-AFK", ALag = "⚡ Anti-Lag (Boost FPS)", AutoXP = "⭐ Auto Farm XP", Cmb = "🎯 Combate", Aim = "Activar AUTO-AIM", NRec = "Sin Retroceso", TBot = "Disparo Automático", HExp = "Expandir Hitbox", HSize = "Tamaño de Hitbox", SFov = "Mostrar FOV", FSize = "Tamaño de FOV", ASm = "Suavidad de Aim", APart = "Parte de Aimlock", BPred = "Predicción Base", PingComp = "🌐 Comp. de Ping", Sticky = "Aim Pegajoso (Hard Lock)", DMult = "Multiplicador de Dist.", HChan = "Probabilidad Golpe %", RDel = "Retraso de Cambio", RMs = "Retraso (ms)", DChk = "Omitir Muertos", WChk = "Verificar Paredes", TChk = "Omitir Equipo", FTeam = "Equipos Aliados", Veh = "🏎️ Vehículo", GDes = "Desincronización Gravedad", VSpoof = "Falsificación de Vel.", HMode = "Modo Flotante", BRam = "Aura de Choque", PITH = "Ayuda de PIT", IFlip = "Volteo Rápido", Vis = "👁️ Visuales", HUD = "Mostrar HUD Persecución", BCam = "🎥 Activar Bodycam (Pito 5 Min)", EESP = "Activar ESP Jugador", EInfo = "Mostrar Info y Arma", EBox = "Cajas 3D", Chams = "Activar Chams", SBea = "Balizas en el Cielo", SName = "Mostrar Calles", STrac = "Trazadores de Calle", SOff = "Altura en el Cielo", MDist = "Distancia Máx. Render" }
 }
 
 local lang = getgenv().Language
@@ -43,7 +44,7 @@ local vehSettings = { DesyncControl = false, GravitySpoof = false, DownforceMass
 local ESPSettings = { Enabled = false, Draw3DBox = false, ShowInfo = false, TeamCheck = false, MaxDistance = 1000, StreetESPEnabled = false, StreetShowNames = false, StreetShowTracers = false, SkyOffset = 150, ShowPursuitHUD = false, Chams = false }
 local RoleplaySettings = { RadarEnabled = false, RadarUnit = "MPH", Bodycam = false }
 local SuspectSettings = { Target = nil, Enabled = false }
-local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, EMPRadius = 100, AntiAFK = false, AutoXP = false, AutoAmmo = false, RadioSpy = false }
+local ModSettings = { NitroPower = 150, NitroKey = Enum.KeyCode.H, AntiRagdoll = false, AntiAFK = false, AutoXP = false, AutoAmmo = false, RadioSpy = false }
 
 local isShooting, isBraking = false, false
 local currentTarget, lastTarget = nil, nil
@@ -249,9 +250,14 @@ local Street_Cache = {}
 local function GetTeamColor(p) if p.Team then return p.Team.TeamColor.Color else return Color3.fromRGB(255, 255, 255) end end
 local function DrawLine() local l = Drawing.new("Line"); l.Thickness = 1.5; l.Visible = false; return l end
 
+-- HIGH PRIORITY NO RECOIL (Bypasses Game Camera Springs)
+RunService:BindToRenderStep("UniversalNoRecoil", 300, function()
+    if AimSettings.NoRecoil and isShooting then
+        camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-1.5), 0, 0)
+    end
+end)
+
 RunService.RenderStepped:Connect(function()
-    if AimSettings.NoRecoil and isShooting then camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-0.5), 0, 0) end
-    
     FOVCircle.Position = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
     FOVCircle.Radius = AimSettings.FOVSize; FOVCircle.Visible = AimSettings.ShowFOV and AimSettings.Enabled
     
@@ -266,7 +272,6 @@ RunService.RenderStepped:Connect(function()
                     if p.Team and AimSettings.FriendlyTeams then for _, tName in pairs(AimSettings.FriendlyTeams) do if p.Team.Name == tName then isFriendly = true; break end end end
                     if isFriendly then continue end
                     local aPart = p.Character:FindFirstChild(AimSettings.AimPart) or p.Character:FindFirstChild("Head")
-                    if AimSettings.HitboxExpander and aPart then aPart.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize); aPart.Transparency = 0.5; aPart.CanCollide = false end
                     if aPart and IsVisible(aPart) then
                         local pos, onScreen = camera:WorldToViewportPoint(aPart.Position)
                         if onScreen then
@@ -417,7 +422,22 @@ Players.PlayerRemoving:Connect(function(p)
     if ESP_Cache[p] then ESP_Cache[p].Text:Remove(); ESP_Cache[p].Hl:Destroy(); for _, l in pairs(ESP_Cache[p].Lines) do l:Remove() end; ESP_Cache[p] = nil end
 end)
 
+-- SEPARATE LOOP: Fixes Hitbox Expander without breaking aiming or animations
 RunService.Heartbeat:Connect(function()
+    for _, p in pairs(Players:GetPlayers()) do
+        if p ~= lp and p.Character and p.Character:FindFirstChild("HumanoidRootPart") then
+            local hrp = p.Character.HumanoidRootPart
+            if AimSettings.HitboxExpander then
+                hrp.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize)
+                hrp.Transparency = 0.5
+                hrp.CanCollide = false
+            else
+                hrp.Size = Vector3.new(2, 2, 1)
+                hrp.Transparency = 1
+            end
+        end
+    end
+
     local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
     if not vSeat or not vSeat:IsA("VehicleSeat") then return end
 
@@ -524,7 +544,7 @@ RPTab:CreateButton({Name = "⚠️ Panic Button", Callback = TriggerPanic})
 -- =======================
 CrimTab:CreateButton({Name = "🔫 Buy AS Val", Callback = function()
     pcall(function()
-        local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+local root = lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
         local dealer = workspace:FindFirstChild("IllegalDealer")
         if root and dealer and dealer:FindFirstChild("AS Val") then
             local gun = dealer["AS Val"]; local oldPos = root.CFrame
@@ -645,20 +665,6 @@ ModTab:CreateButton({Name = T.ALag, Callback = function()
     local Lighting = game:GetService("Lighting"); Lighting.GlobalShadows = false; Lighting.FogEnd = 9e9; settings().Rendering.QualityLevel = 1
     for _, v in pairs(workspace:GetDescendants()) do
         if v:IsA("Decal") or v:IsA("Texture") then v.Transparency = 1 elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then v.Lifetime = NumberRange.new(0) end
-    end
-end})
-ModTab:CreateButton({Name = T.Bail, Callback = function() if lp.Character then lp.Character:BreakJoints() end end})
-ModTab:CreateButton({Name = T.EMP, Callback = function()
-    local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
-    if vSeat then
-        for _, p in pairs(Players:GetPlayers()) do
-            if p ~= lp and p.Character then
-                local eSeat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
-                if eSeat and (eSeat.Position - vSeat.Position).Magnitude <= ModSettings.EMPRadius then
-                    eSeat.AssemblyLinearVelocity = Vector3.zero; eSeat.AssemblyAngularVelocity = Vector3.new(0, 10, 0)
-                end
-            end
-        end
     end
 end})
 ModTab:CreateToggle({Name = T.AAFK, CurrentValue = false, Callback = function(v)
