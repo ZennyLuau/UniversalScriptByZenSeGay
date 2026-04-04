@@ -14,9 +14,6 @@ pcall(function()
     setfflag("FIntFRMMaxGrassDistance", "0")
     setfflag("FIntRenderShadowmapBias", "75")
     setfflag("FFlagFastGPULightCulling3", "True")
-    setfflag("DFIntPhysicsSenderMaxBandwidthBps", "2147483647")
-    setfflag("DFIntDataSenderMaxBandwidthBps", "2147483647")
-    setfflag("DFIntPhysicsNetworkFrameRate", "120")
 end)
 
 local Players = game:GetService("Players")
@@ -33,7 +30,7 @@ local lp = Players.LocalPlayer
 local camera = workspace.CurrentCamera
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local AimSettings = { Enabled = false, ShowFOV = false, FOVSize = 150, Prediction = 0, PingComp = true, StickyAim = false, DistMultiplier = 0.5, TeamCheck = false, WallCheck = false, DeadCheck = true, AimPart = "Head", LegitShake = false, ShakePower = 3, Smoothness = 1, FriendlyTeams = {}, NoRecoil = false, RecoilPower = 5, HitChance = 100, UseRetargetDelay = false, RetargetDelay = 100, Triggerbot = false, HitboxExpander = false, HitboxSize = 5 }
+local AimSettings = { Enabled = false, ShowFOV = false, FOVSize = 150, Prediction = 0, PingComp = true, StickyAim = false, DistMultiplier = 0.5, TeamCheck = false, WallCheck = false, DeadCheck = true, AimPart = "Head", LegitShake = false, ShakePower = 3, Smoothness = 1, FriendlyTeams = {}, NoRecoil = false, RecoilPower = -5, HitChance = 100, UseRetargetDelay = false, RetargetDelay = 100, Triggerbot = false, HitboxExpander = false, HitboxSize = 5 }
 local vehSettings = { DesyncControl = false, GravitySpoof = false, DownforceMass = 8, ServerAntiFling = true, DriveByDesync = false, PitDesyncHelper = false, HoverMode = false, RamAura = false, RamBar = false }
 local ESPSettings = { Enabled = false, Draw3DBox = false, ShowInfo = false, TeamCheck = false, MaxDistance = 1000, StreetESPEnabled = false, StreetShowNames = false, StreetShowTracers = false, SkyOffset = 150, ShowPursuitHUD = false, Chams = false }
 local RoleplaySettings = { RadarEnabled = false, RadarUnit = "MPH", Bodycam = false }
@@ -152,62 +149,105 @@ task.spawn(function()
     end
 end)
 
--- MOBILE UI
-if CoreGui:FindFirstChild("GeminiMobileUI") then CoreGui.GeminiMobileUI:Destroy() end
-local MobileGui = Instance.new("ScreenGui"); MobileGui.Name = "GeminiMobileUI"; MobileGui.Parent = CoreGui
-
-local function CreateMobileButton(name, text, color, pos)
-    local btn = Instance.new("TextButton")
-    btn.Name = name; btn.Parent = MobileGui; btn.BackgroundColor3 = color; btn.BackgroundTransparency = 0.5
-    btn.Position = pos; btn.Size = UDim2.new(0, 110, 0, 50); btn.Font = Enum.Font.GothamBold
-    btn.Text = text; btn.TextColor3 = Color3.fromRGB(255, 255, 255); btn.TextSize = 14
-    local corner = Instance.new("UICorner", btn); corner.CornerRadius = UDim.new(0, 8)
-    local dragging, dragInput, dragStart, startPos
-    btn.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = true; dragStart = input.Position; startPos = btn.Position end end)
-    btn.InputChanged:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseMovement then dragInput = input end end)
-    UserInputService.InputChanged:Connect(function(input) if input == dragInput and dragging then local delta = input.Position - dragStart; btn.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y) end end)
-    btn.InputEnded:Connect(function(input) if input.UserInputType == Enum.UserInputType.Touch or input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end end)
-    return btn
+-- MOBILE UI & SHOOT DETECTION (BUG 6 FIX)
+local function hookTool(tool)
+    if tool:IsA("Tool") then
+        tool.Activated:Connect(function() isShooting = true end)
+        tool.Deactivated:Connect(function() isShooting = false; if AimSettings.StickyAim then lockedTarget = nil end end)
+    end
 end
 
-local BrakeBtn = CreateMobileButton("BrakeBtn", "🛑 BRAKE", Color3.fromRGB(180, 20, 20), UDim2.new(1, -130, 0.5, 10))
-local function BtnFx(btn, state) TweenService:Create(btn, TweenInfo.new(0.1), {BackgroundTransparency = state and 0.2 or 0.5}):Play() end
-BrakeBtn.InputBegan:Connect(function() isBraking = true; BtnFx(BrakeBtn, true) end); BrakeBtn.InputEnded:Connect(function() isBraking = false; BtnFx(BrakeBtn, false) end)
+if lp.Character then
+    for _, child in pairs(lp.Character:GetChildren()) do hookTool(child) end
+    lp.Character.ChildAdded:Connect(hookTool)
+end
+lp.CharacterAdded:Connect(function(char)
+    char.ChildAdded:Connect(hookTool)
+end)
 
 UserInputService.InputBegan:Connect(function(i, g)
-    if not g then
-        if i.UserInputType == Enum.UserInputType.MouseButton1 then isShooting = true
-        elseif i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = true
-        elseif i.KeyCode == ModSettings.NitroKey then
-            local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
-            if vSeat and vSeat:IsA("VehicleSeat") then vSeat.AssemblyLinearVelocity = vSeat.CFrame.LookVector * ModSettings.NitroPower end
+    if not g and (i.UserInputType == Enum.UserInputType.MouseButton1) then isShooting = true end
+    if not g and i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = true end
+    if not g and i.KeyCode == ModSettings.NitroKey then
+        local vSeat = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") and lp.Character.Humanoid.SeatPart
+        if vSeat and vSeat:IsA("VehicleSeat") then vSeat.AssemblyLinearVelocity = vSeat.CFrame.LookVector * ModSettings.NitroPower end
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(i, g) 
+    if not g and (i.UserInputType == Enum.UserInputType.MouseButton1) then isShooting = false; if AimSettings.StickyAim then lockedTarget = nil end end
+    if not g and i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = false end 
+end)
+
+if CoreGui:FindFirstChild("PursuitHUDGui") then CoreGui.PursuitHUDGui:Destroy() end
+local PursuitHUDGui = Instance.new("ScreenGui"); PursuitHUDGui.Name = "PursuitHUDGui"; PursuitHUDGui.Parent = CoreGui
+
+local PursuitLabel = Instance.new("TextLabel")
+PursuitLabel.Parent = PursuitHUDGui; PursuitLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 20); PursuitLabel.BackgroundTransparency = 0.4
+PursuitLabel.AnchorPoint = Vector2.new(0.5, 1); PursuitLabel.Position = UDim2.new(0.5, 0, 1, -60); PursuitLabel.Size = UDim2.new(0, 400, 0, 40)
+PursuitLabel.Font = Enum.Font.GothamBlack; PursuitLabel.Text = "🚔 SCANNING"; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0); PursuitLabel.TextSize = 16; PursuitLabel.Visible = false
+local PursuitCorner = Instance.new("UICorner", PursuitLabel); PursuitCorner.CornerRadius = UDim.new(0, 8)
+local PursuitStroke = Instance.new("UIStroke", PursuitLabel); PursuitStroke.Thickness = 2; PursuitStroke.Color = Color3.fromRGB(0, 0, 0)
+
+local RadarLabel = Instance.new("TextLabel")
+RadarLabel.Parent = PursuitHUDGui; RadarLabel.BackgroundColor3 = Color3.fromRGB(10, 10, 15); RadarLabel.BackgroundTransparency = 0.3
+RadarLabel.AnchorPoint = Vector2.new(0.5, 0); RadarLabel.Position = UDim2.new(0.5, 0, 0, 20); RadarLabel.Size = UDim2.new(0, 350, 0, 35)
+RadarLabel.Font = Enum.Font.Code; RadarLabel.Text = "📡 ALPR STANDBY"; RadarLabel.TextColor3 = Color3.fromRGB(0, 255, 0); RadarLabel.TextSize = 18; RadarLabel.Visible = false
+local RadarCorner = Instance.new("UICorner", RadarLabel); RadarCorner.CornerRadius = UDim.new(0, 6)
+local RadarStroke = Instance.new("UIStroke", RadarLabel); RadarStroke.Thickness = 1.5; RadarStroke.Color = Color3.fromRGB(0, 0, 0)
+
+if CoreGui:FindFirstChild("AxonBodycamGui") then CoreGui.AxonBodycamGui:Destroy() end
+local BodycamGui = Instance.new("ScreenGui"); BodycamGui.Name = "AxonBodycamGui"; BodycamGui.Parent = CoreGui; BodycamGui.Enabled = false
+local recText = Instance.new("TextLabel"); recText.Parent = BodycamGui; recText.BackgroundTransparency = 1; recText.Position = UDim2.new(0.02, 0, 0.05, 0); recText.Size = UDim2.new(0, 100, 0, 50); recText.Font = Enum.Font.Code; recText.Text = "🔴 REC"; recText.TextColor3 = Color3.fromRGB(255, 0, 0); recText.TextSize = 24; recText.TextXAlignment = Enum.TextXAlignment.Left
+local bcInfoText = Instance.new("TextLabel"); bcInfoText.Parent = BodycamGui; bcInfoText.BackgroundTransparency = 1; bcInfoText.Position = UDim2.new(0.02, 0, 0.1, 0); bcInfoText.Size = UDim2.new(0, 300, 0, 50); bcInfoText.Font = Enum.Font.Code; bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD"; bcInfoText.TextColor3 = Color3.fromRGB(255, 255, 255); bcInfoText.TextSize = 16; bcInfoText.TextXAlignment = Enum.TextXAlignment.Left
+local bcLogo = Instance.new("ImageLabel"); bcLogo.Parent = BodycamGui; bcLogo.BackgroundTransparency = 1; bcLogo.AnchorPoint = Vector2.new(1, 0); bcLogo.Position = UDim2.new(0.98, 0, 0.03, 0); bcLogo.Size = UDim2.new(0, 75, 0, 75); bcLogo.Image = "rbxassetid://1000010483"; bcLogo.ScaleType = Enum.ScaleType.Fit
+
+local lastBeepTime = tick()
+task.spawn(function()
+    while task.wait(0.8) do
+        if RoleplaySettings.Bodycam then
+            recText.Visible = not recText.Visible
+            bcInfoText.Text = "AXON BODY 3 | DEPT: LSPD\n" .. os.date("%Y-%m-%d %H:%M:%S")
+            if tick() - lastBeepTime >= 300 then BeepSound:Play(); lastBeepTime = tick() end
         end
     end
 end)
-UserInputService.InputEnded:Connect(function(i, g) 
-    if not g then 
-        if i.UserInputType == Enum.UserInputType.MouseButton1 then isShooting = false; if AimSettings.StickyAim then lockedTarget = nil end 
-        elseif i.KeyCode == Enum.KeyCode.LeftAlt then isBraking = false end 
-    end 
-end)
 
--- CUSTOM NO RECOIL (Bypasses Camera Springs cleanly)
-RunService:BindToRenderStep("UniversalNoRecoil", 300, function()
-    if AimSettings.NoRecoil and isShooting then
-        camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-AimSettings.RecoilPower / 10), 0, 0)
-    end
-end)
+local SuspectTracer = Drawing.new("Line"); SuspectTracer.Visible = false; SuspectTracer.Color = Color3.fromRGB(255, 0, 0); SuspectTracer.Thickness = 2
+local FOVCircle = Drawing.new("Circle"); FOVCircle.Visible = false; FOVCircle.Thickness = 1.5; FOVCircle.Color = Color3.fromRGB(255, 255, 255); FOVCircle.Filled = false; FOVCircle.Transparency = 1
+
+local function IsVisible(tPart)
+    if not AimSettings.WallCheck then return true end
+    local ray = RaycastParams.new(); ray.FilterDescendantsInstances = {lp.Character, camera}; ray.FilterType = Enum.RaycastFilterType.Exclude
+    local hit = workspace:Raycast(camera.CFrame.Position, tPart.Position - camera.CFrame.Position, ray)
+    if hit and hit.Instance then if not hit.Instance:IsDescendantOf(tPart.Parent) then return false end end
+    return true
+end
+
+local teamNames = {"None"}
+for _, team in pairs(Teams:GetTeams()) do table.insert(teamNames, team.Name) end
+
+local ESP_Cache = {}
+local Street_Cache = {}
+local function GetTeamColor(p) if p.Team then return p.Team.TeamColor.Color else return Color3.fromRGB(255, 255, 255) end end
+local function DrawLine() local l = Drawing.new("Line"); l.Thickness = 1.5; l.Visible = false; return l end
 
 RunService.RenderStepped:Connect(function()
+    -- FIX 3: BULLETPROOF NO RECOIL (Negative pulls down, Positive pushes up)
+    if AimSettings.NoRecoil and isShooting then
+        camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(AimSettings.RecoilPower / 10), 0, 0)
+    end
+
+    -- FIX 1: FOV CIRCLE TRANSPARENCY & VISIBILITY
     FOVCircle.Position = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
-    FOVCircle.Radius = AimSettings.FOVSize; FOVCircle.Visible = AimSettings.ShowFOV and AimSettings.Enabled
+    FOVCircle.Radius = AimSettings.FOVSize; FOVCircle.Visible = AimSettings.ShowFOV
     
     local target = nil; local shortest = AimSettings.FOVSize; local center = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
     
     if AimSettings.Enabled then
         if AimSettings.StickyAim and isShooting and lockedTarget and lockedTarget.Parent and lockedTarget.Parent:FindFirstChild("Humanoid") and lockedTarget.Parent.Humanoid.Health > 0 then target = lockedTarget else
             for _, p in pairs(Players:GetPlayers()) do
-                if p ~= lp and p.Character and (not AimSettings.DeadCheck or (p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0)) then
+             if p ~= lp and p.Character and (not AimSettings.DeadCheck or (p.Character:FindFirstChild("Humanoid") and p.Character.Humanoid.Health > 0)) then
                     if AimSettings.TeamCheck and p.Team == lp.Team then continue end
                     local isFriendly = false
                     if p.Team and AimSettings.FriendlyTeams then for _, tName in pairs(AimSettings.FriendlyTeams) do if p.Team.Name == tName then isFriendly = true; break end end end
@@ -232,15 +272,14 @@ RunService.RenderStepped:Connect(function()
         if target and isCurrentlyLocking then
             local fPos = target.Position
             
-            -- FIX 8 & 2: True 0 Prediction & Gravity Clamp
+            -- FIX 8: PERFECT PREDICTION AND GROUND AIM
             if AimSettings.Prediction > 0 then
                 local distToTarget = (target.Position - camera.CFrame.Position).Magnitude
                 local pingAdd = AimSettings.PingComp and math.clamp(GetPing(), 0, 0.15) or 0
-                local timeToHit = (distToTarget / 1000) * AimSettings.DistMultiplier
-                local totalPrediction = AimSettings.Prediction + pingAdd + timeToHit
+                local totalPrediction = AimSettings.Prediction + pingAdd + ((distToTarget / 1000) * AimSettings.DistMultiplier)
                 
                 local vel = target.AssemblyLinearVelocity
-                local clampedY = math.clamp(vel.Y, -15, 15) -- Stops aiming at the floor when targets fall
+                local clampedY = math.clamp(vel.Y, -15, 15) -- Stops looking at ground if they fall
                 fPos = target.Position + (Vector3.new(vel.X, clampedY, vel.Z) * totalPrediction)
             end
             
@@ -252,52 +291,167 @@ RunService.RenderStepped:Connect(function()
             if AimSettings.Triggerbot then mouse1click() end
         end
     end
-end)
 
--- FIX 1 & 4 & 7: GHOST HITBOX LOOP
--- Slowed down to 1 second to allow interaction (Holding E) and prevents frozen players
-task.spawn(function()
-    while task.wait(1) do
-        if AimSettings.HitboxExpander then
-            for _, p in pairs(Players:GetPlayers()) do
-                if p ~= lp and p.Character then
-                    local targetPart = p.Character:FindFirstChild(AimSettings.AimPart)
-                    if targetPart then
-                        local fakeBox = targetPart:FindFirstChild("GhostHitbox")
-                        if not fakeBox then
-                            fakeBox = Instance.new("Part")
-                            fakeBox.Name = "GhostHitbox"
-                            fakeBox.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize)
-                            fakeBox.Transparency = 0.6
-                            fakeBox.Color = Color3.fromRGB(200, 0, 0)
-                            fakeBox.CanCollide = false
-                            fakeBox.Massless = true
-                            fakeBox.Parent = targetPart
-                            local w = Instance.new("WeldConstraint")
-                            w.Part0 = targetPart; w.Part1 = fakeBox; w.Parent = fakeBox
-                            fakeBox.CFrame = targetPart.CFrame
-                        else
-                            fakeBox.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize)
-                        end
+    for _, p in pairs(Players:GetPlayers()) do
+        if p == lp then continue end
+        if not ESP_Cache[p] then 
+            ESP_Cache[p] = { Text = Drawing.new("Text"), Hl = Instance.new("Highlight"), Lines = {} }
+            ESP_Cache[p].Text.Size = 13; ESP_Cache[p].Text.Center = true; ESP_Cache[p].Text.Outline = true
+            ESP_Cache[p].Hl.Parent = CoreGui; ESP_Cache[p].Hl.FillTransparency = 0.5; ESP_Cache[p].Hl.OutlineTransparency = 0
+            for i = 1, 12 do table.insert(ESP_Cache[p].Lines, DrawLine()) end
+        end
+        local esp = ESP_Cache[p]; local char = p.Character; local root = char and char:FindFirstChild("HumanoidRootPart")
+        if root and ESPSettings.Enabled and char:FindFirstChild("Humanoid") and char.Humanoid.Health > 0 then
+            local tColor = GetTeamColor(p); local dist = (root.Position - camera.CFrame.Position).Magnitude
+            if dist <= ESPSettings.MaxDistance and not (ESPSettings.TeamCheck and p.Team == lp.Team) then
+                local pos, onScreen = camera:WorldToViewportPoint(root.Position)
+                if onScreen then
+                    if ESPSettings.ShowInfo then
+                        local headPos = camera:WorldToViewportPoint(root.CFrame * CFrame.new(0, 1.5 + 0.5, 0).Position)
+                        esp.Text.Text = string.format("%s\n[%d studs] [%s]\nHP: %d", p.Name, math.floor(dist), GetPlayerWeapon(char), char.Humanoid.Health)
+                        esp.Text.Position = Vector2.new(headPos.X, headPos.Y - 40); esp.Text.Color = tColor; esp.Text.Visible = true
+                    else esp.Text.Visible = false end
+                    if ESPSettings.Draw3DBox then
+                        local cf = root.CFrame; local size = Vector3.new(2, 3, 1.5)
+                        local corners = { cf*CFrame.new(size.X/2,size.Y/2,size.Z/2).Position, cf*CFrame.new(-size.X/2,size.Y/2,size.Z/2).Position, cf*CFrame.new(-size.X/2,-size.Y/2,size.Z/2).Position, cf*CFrame.new(size.X/2,-size.Y/2,size.Z/2).Position, cf*CFrame.new(size.X/2,size.Y/2,-size.Z/2).Position, cf*CFrame.new(-size.X/2,size.Y/2,-size.Z/2).Position, cf*CFrame.new(-size.X/2,-size.Y/2,-size.Z/2).Position, cf*CFrame.new(size.X/2,-size.Y/2,-size.Z/2).Position }
+                        local pts = {}
+                        for i, cPos in ipairs(corners) do local pt, _ = camera:WorldToViewportPoint(cPos); pts[i] = Vector2.new(pt.X, pt.Y) end
+                        local connections = {{1,2},{2,3},{3,4},{4,1},{5,6},{6,7},{7,8},{8,5},{1,5},{2,6},{3,7},{4,8}}
+                        for i, c in ipairs(connections) do esp.Lines[i].From = pts[c[1]]; esp.Lines[i].To = pts[c[2]]; esp.Lines[i].Color = tColor; esp.Lines[i].Visible = true end
+                    else for _, l in pairs(esp.Lines) do l.Visible = false end end
+                    if ESPSettings.Chams then esp.Hl.Adornee = char; esp.Hl.FillColor = tColor; esp.Hl.Enabled = true else esp.Hl.Enabled = false end
+                else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+            else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+        else esp.Text.Visible = false; for _, l in pairs(esp.Lines) do l.Visible = false end; esp.Hl.Enabled = false end
+    end
+
+    if ESPSettings.StreetESPEnabled then
+        local streetFolder = workspace:FindFirstChild("StreetNames")
+        if streetFolder then
+            for _, street in pairs(streetFolder:GetChildren()) do
+                if street:IsA("BasePart") then
+                    if not Street_Cache[street] then
+                        Street_Cache[street] = { Text = Drawing.new("Text"), Line = Drawing.new("Line") }
+                        Street_Cache[street].Text.Size = 15; Street_Cache[street].Text.Center = true; Street_Cache[street].Text.Outline = true; Street_Cache[street].Text.Color = Color3.fromRGB(0, 255, 204)
+                        Street_Cache[street].Line.Thickness = 1.2; Street_Cache[street].Line.Color = Color3.fromRGB(0, 255, 204)
                     end
+                    local esp = Street_Cache[street]; local distToPlayer = GetDistanceToOBB(street, camera.CFrame.Position)
+                    local skyPosition = street.Position + Vector3.new(0, ESPSettings.SkyOffset, 0)
+                    local pos, onScreen = camera:WorldToViewportPoint(skyPosition)
+                    if onScreen and distToPlayer <= ESPSettings.MaxDistance then
+                        if ESPSettings.StreetShowNames then
+                            esp.Text.Text = string.format("📍 %s [%d studs]", street.Name, math.floor(distToPlayer))
+                            esp.Text.Position = Vector2.new(pos.X, pos.Y); esp.Text.Visible = true
+                        else esp.Text.Visible = false end
+                        if ESPSettings.StreetShowTracers then
+                            esp.Line.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y); esp.Line.To = Vector2.new(pos.X, pos.Y); esp.Line.Visible = true
+                        else esp.Line.Visible = false end
+                    else esp.Text.Visible = false; esp.Line.Visible = false end
                 end
             end
+        end
+    else
+        for _, esp in pairs(Street_Cache) do esp.Text.Visible = false; esp.Line.Visible = false end
+    end
+
+    PursuitLabel.Visible = ESPSettings.ShowPursuitHUD
+    if lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") then
+        local myPos = lp.Character.HumanoidRootPart.Position; local closestStreet = "UNKNOWN"; local shortestDist = math.huge
+        local streetFolder = workspace:FindFirstChild("StreetNames")
+        if streetFolder then for _, street in pairs(streetFolder:GetChildren()) do if street:IsA("BasePart") then local dist = GetDistanceToOBB(street, myPos); if dist < shortestDist then shortestDist = dist; closestStreet = street.Name end end end end
+        
+        currentDirection = GetCompassDirection()
+        if shortestDist < 2000 then
+            currentStreetName = closestStreet; currentCalloutMsg = "1O-8O " .. currentDirection .. " " .. GetAcronym(closestStreet)
+            PursuitLabel.Text = "🚔 " .. currentCalloutMsg; PursuitLabel.TextColor3 = Color3.fromRGB(255, 204, 0)
         else
-            for _, p in pairs(Players:GetPlayers()) do
-                if p ~= lp and p.Character then
-                    local targetPart = p.Character:FindFirstChild(AimSettings.AimPart)
-                    if targetPart and targetPart:FindFirstChild("GhostHitbox") then
-                        targetPart.GhostHitbox:Destroy()
+            currentStreetName = "Out of city"; currentCalloutMsg = "1O-8O Out of city"
+            PursuitLabel.Text = "📡 DISPATCH: OUT OF CITY"; PursuitLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+        end
+    end
+
+    if RoleplaySettings.RadarEnabled then
+        local radarClosest = 300; local radarDriver, radarCar = nil, nil
+        for _, p in pairs(Players:GetPlayers()) do
+            if p ~= lp and p.Character then
+                local seat = p.Character:FindFirstChildOfClass("Humanoid") and p.Character.Humanoid.SeatPart
+                if seat and seat:IsA("VehicleSeat") then
+                    local pos, onScreen = camera:WorldToViewportPoint(seat.Position)
+                    if onScreen then
+                        local distToCenter = (Vector2.new(pos.X, pos.Y) - Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)).Magnitude
+                        if distToCenter < radarClosest then radarClosest = distToCenter; radarDriver = p; radarCar = seat end
                     end
                 end
             end
         end
+        if radarDriver and radarCar then
+            local speedRaw = radarCar.AssemblyLinearVelocity.Magnitude; local multiplier = 1.0
+            if RoleplaySettings.RadarUnit == "MPH" then multiplier = 0.6 end
+            local finalSpeed = math.floor(speedRaw * multiplier)
+            RadarLabel.Text = string.format("📡 ALPR | SPD: %d %s | DRV: %s", finalSpeed, RoleplaySettings.RadarUnit, radarDriver.Name)
+            if RoleplaySettings.RadarUnit == "MPH" and finalSpeed > 80 then RadarLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+            elseif RoleplaySettings.RadarUnit == "KMH" and finalSpeed > 130 then RadarLabel.TextColor3 = Color3.fromRGB(255, 50, 50)
+            else RadarLabel.TextColor3 = Color3.fromRGB(50, 255, 50) end
+            RadarLabel.Visible = true
+        else RadarLabel.Visible = false end
+    else RadarLabel.Visible = false end
+
+    if SuspectSettings.Enabled and SuspectSettings.Target then
+        local tPlayer = Players:FindFirstChild(SuspectSettings.Target)
+        if tPlayer and tPlayer.Character and tPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            local pos, onScreen = camera:WorldToViewportPoint(tPlayer.Character.HumanoidRootPart.Position)
+            if onScreen then SuspectTracer.From = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y); SuspectTracer.To = Vector2.new(pos.X, pos.Y); SuspectTracer.Visible = true else SuspectTracer.Visible = false end
+        else SuspectTracer.Visible = false end
+    else SuspectTracer.Visible = false end
+end)
+
+Players.PlayerRemoving:Connect(function(p)
+    if ESP_Cache[p] then ESP_Cache[p].Text:Remove(); ESP_Cache[p].Hl:Destroy(); for _, l in pairs(ESP_Cache[p].Lines) do l:Remove() end; ESP_Cache[p] = nil end
+end)
+
+-- FIX 4, 6 & 7: INTERACTABLE GHOST HITBOX TO HEAD
+task.spawn(function()
+    while task.wait(1) do
+        pcall(function()
+            if AimSettings.HitboxExpander then
+                for _, p in pairs(Players:GetPlayers()) do
+                    if p ~= lp and p.Character then
+                        local targetPart = p.Character:FindFirstChild("Head") -- Strictly targets Head
+                        if targetPart then
+                            local fakeBox = targetPart:FindFirstChild("GhostHitbox")
+                            if not fakeBox then
+                                fakeBox = Instance.new("Part"); fakeBox.Name = "GhostHitbox"
+                                fakeBox.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize)
+                                fakeBox.Transparency = 0.7; fakeBox.Color = Color3.fromRGB(200, 0, 0)
+                                fakeBox.CanCollide = false; fakeBox.Massless = true
+                                fakeBox.CanQuery = false -- LETS YOU HOLD E TO INTERACT!
+                                fakeBox.Parent = targetPart
+                                local w = Instance.new("WeldConstraint")
+                                w.Part0 = targetPart; w.Part1 = fakeBox; w.Parent = fakeBox
+                                fakeBox.CFrame = targetPart.CFrame
+                            else
+                                fakeBox.Size = Vector3.new(AimSettings.HitboxSize, AimSettings.HitboxSize, AimSettings.HitboxSize)
+                            end
+                        end
+                    end
+                end
+            else
+                for _, p in pairs(Players:GetPlayers()) do
+                    if p ~= lp and p.Character then
+                        local targetPart = p.Character:FindFirstChild("Head")
+                        if targetPart and targetPart:FindFirstChild("GhostHitbox") then
+                            targetPart.GhostHitbox:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
     end
 end)
 
 RunService.Heartbeat:Connect(function()
     local humanoid = lp.Character and lp.Character:FindFirstChildOfClass("Humanoid")
-    if not humanoid or not humanoid.Sit then return end -- FIX 5: Instantly stops applying physics when exiting car
+    if not humanoid or not humanoid.Sit then return end -- FIX 5: Safely shuts off Anti-Fling the millisecond you unsit
     local vSeat = humanoid.SeatPart
     if not vSeat or not vSeat:IsA("VehicleSeat") then return end
 
@@ -349,9 +503,7 @@ end)
 -- ==========================================================
 -- 🔑 RAYFIELD KEY SYSTEM & MENU SETUP
 -- ==========================================================
-pcall(function()
-    setclipboard("https://link-hub.net/4649544/tJXhoJ5atUsF")
-end)
+pcall(function() setclipboard("https://link-hub.net/4649544/tJXhoJ5atUsF") end)
 
 local Window = Rayfield:CreateWindow({ 
     Name = T.Title, 
@@ -394,6 +546,7 @@ CrimTab:CreateButton({Name = "🔫 Buy AS Val", Callback = function()
         local dealer = workspace:FindFirstChild("IllegalDealer")
         if root and dealer and dealer:FindFirstChild("AS Val") then
             local gun = dealer["AS Val"]; local oldPos = root.CFrame
+            local humanoid = lp.Character:FindFirstChildOfClass("Humanoid"); if humanoid and humanoid.Sit then humanoid.Sit = false; task.wait(0.1) end
             root.CFrame = gun.CFrame; task.wait(0.2) 
             local prompt = gun:FindFirstChildOfClass("ProximityPrompt", true)
             if prompt then fireproximityprompt(prompt) end
@@ -415,6 +568,7 @@ CrimTab:CreateToggle({Name = "♾️ Auto-Refill Ammo Loop", CurrentValue = fals
                     local givers = workspace:FindFirstChild("Systems") and workspace.Systems:FindFirstChild("Givers") and workspace.Systems.Givers:FindFirstChild("AmmoGivers")
                     if root and givers then
                         local oldPos = root.CFrame
+                        local humanoid = lp.Character:FindFirstChildOfClass("Humanoid"); if humanoid and humanoid.Sit then return end
                         for _, giver in pairs(givers:GetChildren()) do
                             if giver:IsA("BasePart") or giver:IsA("Model") then
                                 local targetPart = giver:IsA("BasePart") and giver or giver.PrimaryPart or giver:FindFirstChildWhichIsA("BasePart")
@@ -478,9 +632,9 @@ CrimTab:CreateToggle({Name = "🛡️ Heavy PIT Ram Bar", CurrentValue = false, 
 end})
 
 -- TRACKER TAB
-local pNames = {}
+local pNames = {"None"}
 for _, p in pairs(Players:GetPlayers()) do if p ~= lp then table.insert(pNames, p.Name) end end
-TrackTab:CreateDropdown({Name = T.SelT, Options = pNames, CurrentOption = {""}, MultipleOptions = false, Callback = function(opt) SuspectSettings.Target = opt[1] end})
+TrackTab:CreateDropdown({Name = T.SelT, Options = pNames, CurrentOption = {pNames[1]}, MultipleOptions = false, Callback = function(opt) SuspectSettings.Target = opt[1] end})
 TrackTab:CreateToggle({Name = T.DrawL, CurrentValue = false, Callback = function(v) SuspectSettings.Enabled = v end})
 
 -- MODS TAB
@@ -524,8 +678,8 @@ CTab:CreateToggle({Name = T.PingComp, CurrentValue = true, Callback = function(v
 CTab:CreateToggle({Name = T.Sticky, CurrentValue = false, Callback = function(v) AimSettings.StickyAim = v end})
 CTab:CreateToggle({Name = T.NRec, CurrentValue = false, Callback = function(v) AimSettings.NoRecoil = v end})
 
--- NEW FIX: RECOIL TUNING SLIDER (Tweak this to exactly match your gun!)
-CTab:CreateSlider({Name = "💪 Counter-Recoil Power", Range = {1, 50}, Increment = 1, CurrentValue = 5, Callback = function(v) AimSettings.RecoilPower = v end})
+-- BUG 3 & 9: COUNTER-RECOIL TUNING (Negative = Pull Down, Positive = Push Up)
+CTab:CreateSlider({Name = "💪 Counter-Recoil Power", Range = {-50, 50}, Increment = 1, CurrentValue = -5, Callback = function(v) AimSettings.RecoilPower = v end})
 
 CTab:CreateToggle({Name = T.TBot, CurrentValue = false, Callback = function(v) AimSettings.Triggerbot = v end})
 CTab:CreateToggle({Name = T.HExp, CurrentValue = false, Callback = function(v) AimSettings.HitboxExpander = v end})
@@ -542,7 +696,9 @@ CTab:CreateSlider({Name = T.RMs, Range = {1, 500}, Increment = 10, CurrentValue 
 CTab:CreateToggle({Name = T.DChk, CurrentValue = true, Callback = function(v) AimSettings.DeadCheck = v end})
 CTab:CreateToggle({Name = T.WChk, CurrentValue = false, Callback = function(v) AimSettings.WallCheck = v end})
 CTab:CreateToggle({Name = T.TChk, CurrentValue = false, Callback = function(v) AimSettings.TeamCheck = v end})
-CTab:CreateDropdown({Name = T.FTeam, Options = teamNames, MultipleOptions = true, Callback = function(opt) AimSettings.FriendlyTeams = opt end})
+local teamOptions = {"None"}
+if #teamNames > 0 then teamOptions = teamNames end
+CTab:CreateDropdown({Name = T.FTeam, Options = teamOptions, CurrentOption = {teamOptions[1]}, MultipleOptions = true, Callback = function(opt) AimSettings.FriendlyTeams = opt end})
 
 -- VEHICLE TAB
 PTab:CreateToggle({Name = T.GDes, CurrentValue = false, Callback = function(v) vehSettings.DesyncControl = v end})
